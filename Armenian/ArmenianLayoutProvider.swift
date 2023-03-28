@@ -54,7 +54,7 @@ class ArmenianKeyboardLayoutProvider: StandardKeyboardLayoutProvider {
         )
         let primaryKey = createLayoutItem(
             layout: layout,
-            action: .primary(.return),
+            action: .primary(keyboardContext.textDocumentProxy.returnKeyType?.keyboardActionReturnType ?? .return),
             width: .inputPercentage(2)
         )
         
