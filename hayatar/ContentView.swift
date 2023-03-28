@@ -8,14 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var text = ""
+    @FocusState private var isFocused: Bool
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+        TextField("Enter text", text: $text)
+            .padding()
+            .border(Color.gray)
+            .focused($isFocused)
+            .onAppear {
+                self.isFocused = true
+            }
     }
 }
 

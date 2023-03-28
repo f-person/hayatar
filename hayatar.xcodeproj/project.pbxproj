@@ -7,18 +7,56 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0208A11B29CEEF8700905755 /* ArmenianLayoutProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0208A11A29CEEF8700905755 /* ArmenianLayoutProvider.swift */; };
+		0208A11D29CEF20E00905755 /* ArmenianInputSetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0208A11C29CEF20E00905755 /* ArmenianInputSetProvider.swift */; };
 		022D42E029CE69C5000F71B1 /* hayatarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D42DF29CE69C5000F71B1 /* hayatarApp.swift */; };
 		022D42E229CE69C5000F71B1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D42E129CE69C5000F71B1 /* ContentView.swift */; };
 		022D42E429CE69C6000F71B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 022D42E329CE69C6000F71B1 /* Assets.xcassets */; };
 		022D42E729CE69C6000F71B1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 022D42E629CE69C6000F71B1 /* Preview Assets.xcassets */; };
+		022D42F429CE6A3A000F71B1 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D42F329CE6A3A000F71B1 /* KeyboardViewController.swift */; };
+		022D42F829CE6A3A000F71B1 /* Armenian.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 022D42F129CE6A39000F71B1 /* Armenian.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		022D42FF29CE6DED000F71B1 /* KeyboardKit in Frameworks */ = {isa = PBXBuildFile; productRef = 022D42FE29CE6DED000F71B1 /* KeyboardKit */; };
+		0288C5F829D3518500AF6638 /* ArmenianCalloutProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0288C5F729D3518500AF6638 /* ArmenianCalloutProvider.swift */; };
+		0288C5FA29D352B800AF6638 /* CustomActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0288C5F929D352B800AF6638 /* CustomActions.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		022D42F629CE6A3A000F71B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 022D42D429CE69C5000F71B1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 022D42F029CE6A39000F71B1;
+			remoteInfo = Armenian;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		022D42FC29CE6A3A000F71B1 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				022D42F829CE6A3A000F71B1 /* Armenian.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		0208A11A29CEEF8700905755 /* ArmenianLayoutProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmenianLayoutProvider.swift; sourceTree = "<group>"; };
+		0208A11C29CEF20E00905755 /* ArmenianInputSetProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmenianInputSetProvider.swift; sourceTree = "<group>"; };
 		022D42DC29CE69C5000F71B1 /* hayatar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hayatar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		022D42DF29CE69C5000F71B1 /* hayatarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hayatarApp.swift; sourceTree = "<group>"; };
 		022D42E129CE69C5000F71B1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		022D42E329CE69C6000F71B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		022D42E629CE69C6000F71B1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		022D42F129CE6A39000F71B1 /* Armenian.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Armenian.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		022D42F329CE6A3A000F71B1 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
+		022D42F529CE6A3A000F71B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0288C5F729D3518500AF6638 /* ArmenianCalloutProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmenianCalloutProvider.swift; sourceTree = "<group>"; };
+		0288C5F929D352B800AF6638 /* CustomActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomActions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +67,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		022D42EE29CE6A39000F71B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				022D42FF29CE6DED000F71B1 /* KeyboardKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -36,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				022D42DE29CE69C5000F71B1 /* hayatar */,
+				022D42F229CE6A3A000F71B1 /* Armenian */,
 				022D42DD29CE69C5000F71B1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -44,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				022D42DC29CE69C5000F71B1 /* hayatar.app */,
+				022D42F129CE6A39000F71B1 /* Armenian.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -67,6 +115,19 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		022D42F229CE6A3A000F71B1 /* Armenian */ = {
+			isa = PBXGroup;
+			children = (
+				022D42F329CE6A3A000F71B1 /* KeyboardViewController.swift */,
+				0208A11A29CEEF8700905755 /* ArmenianLayoutProvider.swift */,
+				0208A11C29CEF20E00905755 /* ArmenianInputSetProvider.swift */,
+				022D42F529CE6A3A000F71B1 /* Info.plist */,
+				0288C5F729D3518500AF6638 /* ArmenianCalloutProvider.swift */,
+				0288C5F929D352B800AF6638 /* CustomActions.swift */,
+			);
+			path = Armenian;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,15 +138,37 @@
 				022D42D829CE69C5000F71B1 /* Sources */,
 				022D42D929CE69C5000F71B1 /* Frameworks */,
 				022D42DA29CE69C5000F71B1 /* Resources */,
+				022D42FC29CE6A3A000F71B1 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				022D42F729CE6A3A000F71B1 /* PBXTargetDependency */,
 			);
 			name = hayatar;
 			productName = hayatar;
 			productReference = 022D42DC29CE69C5000F71B1 /* hayatar.app */;
 			productType = "com.apple.product-type.application";
+		};
+		022D42F029CE6A39000F71B1 /* Armenian */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 022D42F929CE6A3A000F71B1 /* Build configuration list for PBXNativeTarget "Armenian" */;
+			buildPhases = (
+				022D42ED29CE6A39000F71B1 /* Sources */,
+				022D42EE29CE6A39000F71B1 /* Frameworks */,
+				022D42EF29CE6A39000F71B1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Armenian;
+			packageProductDependencies = (
+				022D42FE29CE6DED000F71B1 /* KeyboardKit */,
+			);
+			productName = Armenian;
+			productReference = 022D42F129CE6A39000F71B1 /* Armenian.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -100,6 +183,9 @@
 					022D42DB29CE69C5000F71B1 = {
 						CreatedOnToolsVersion = 14.2;
 					};
+					022D42F029CE6A39000F71B1 = {
+						CreatedOnToolsVersion = 14.2;
+					};
 				};
 			};
 			buildConfigurationList = 022D42D729CE69C5000F71B1 /* Build configuration list for PBXProject "hayatar" */;
@@ -111,11 +197,15 @@
 				Base,
 			);
 			mainGroup = 022D42D329CE69C5000F71B1;
+			packageReferences = (
+				022D42FD29CE6DED000F71B1 /* XCRemoteSwiftPackageReference "KeyboardKit" */,
+			);
 			productRefGroup = 022D42DD29CE69C5000F71B1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				022D42DB29CE69C5000F71B1 /* hayatar */,
+				022D42F029CE6A39000F71B1 /* Armenian */,
 			);
 		};
 /* End PBXProject section */
@@ -127,6 +217,13 @@
 			files = (
 				022D42E729CE69C6000F71B1 /* Preview Assets.xcassets in Resources */,
 				022D42E429CE69C6000F71B1 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		022D42EF29CE6A39000F71B1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,7 +239,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		022D42ED29CE6A39000F71B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0288C5FA29D352B800AF6638 /* CustomActions.swift in Sources */,
+				0208A11B29CEEF8700905755 /* ArmenianLayoutProvider.swift in Sources */,
+				022D42F429CE6A3A000F71B1 /* KeyboardViewController.swift in Sources */,
+				0288C5F829D3518500AF6638 /* ArmenianCalloutProvider.swift in Sources */,
+				0208A11D29CEF20E00905755 /* ArmenianInputSetProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		022D42F729CE6A3A000F71B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 022D42F029CE6A39000F71B1 /* Armenian */;
+			targetProxy = 022D42F629CE6A3A000F71B1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		022D42E829CE69C6000F71B1 /* Debug */ = {
@@ -262,6 +379,7 @@
 		022D42EB29CE69C6000F71B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -270,11 +388,12 @@
 				DEVELOPMENT_TEAM = 82MV322Q6H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = fArmenian;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -291,6 +410,7 @@
 		022D42EC29CE69C6000F71B1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -299,11 +419,12 @@
 				DEVELOPMENT_TEAM = 82MV322Q6H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = fArmenian;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -311,6 +432,56 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.fperson.hayatar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		022D42FA29CE6A3A000F71B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 82MV322Q6H;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Armenian/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Armenian;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.fperson.hayatar.Armenian;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		022D42FB29CE6A3A000F71B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 82MV322Q6H;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Armenian/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Armenian;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.fperson.hayatar.Armenian;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -338,7 +509,35 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		022D42F929CE6A3A000F71B1 /* Build configuration list for PBXNativeTarget "Armenian" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				022D42FA29CE6A3A000F71B1 /* Debug */,
+				022D42FB29CE6A3A000F71B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		022D42FD29CE6DED000F71B1 /* XCRemoteSwiftPackageReference "KeyboardKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/KeyboardKit/KeyboardKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		022D42FE29CE6DED000F71B1 /* KeyboardKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 022D42FD29CE6DED000F71B1 /* XCRemoteSwiftPackageReference "KeyboardKit" */;
+			productName = KeyboardKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 022D42D429CE69C5000F71B1 /* Project object */;
 }
