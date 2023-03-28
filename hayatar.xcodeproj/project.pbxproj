@@ -17,7 +17,6 @@
 		022D42F829CE6A3A000F71B1 /* Armenian.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 022D42F129CE6A39000F71B1 /* Armenian.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		022D42FF29CE6DED000F71B1 /* KeyboardKit in Frameworks */ = {isa = PBXBuildFile; productRef = 022D42FE29CE6DED000F71B1 /* KeyboardKit */; };
 		0288C5F829D3518500AF6638 /* ArmenianCalloutProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0288C5F729D3518500AF6638 /* ArmenianCalloutProvider.swift */; };
-		0288C5FA29D352B800AF6638 /* CustomActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0288C5F929D352B800AF6638 /* CustomActions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +55,6 @@
 		022D42F329CE6A3A000F71B1 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		022D42F529CE6A3A000F71B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0288C5F729D3518500AF6638 /* ArmenianCalloutProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmenianCalloutProvider.swift; sourceTree = "<group>"; };
-		0288C5F929D352B800AF6638 /* CustomActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomActions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +121,6 @@
 				0208A11C29CEF20E00905755 /* ArmenianInputSetProvider.swift */,
 				022D42F529CE6A3A000F71B1 /* Info.plist */,
 				0288C5F729D3518500AF6638 /* ArmenianCalloutProvider.swift */,
-				0288C5F929D352B800AF6638 /* CustomActions.swift */,
 			);
 			path = Armenian;
 			sourceTree = "<group>";
@@ -243,7 +240,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0288C5FA29D352B800AF6638 /* CustomActions.swift in Sources */,
 				0208A11B29CEEF8700905755 /* ArmenianLayoutProvider.swift in Sources */,
 				022D42F429CE6A3A000F71B1 /* KeyboardViewController.swift in Sources */,
 				0288C5F829D3518500AF6638 /* ArmenianCalloutProvider.swift in Sources */,
