@@ -5,6 +5,7 @@ feels native and is usable :).
 
 ## Roadmap
 
+1. Add the globe icon on iPad
 1. Implement autocompletion
 1. Improve the numeric keyboard
 1. Add haptic feedback
