@@ -47,9 +47,11 @@ class ArmenianCalloutActionProvider: BaseCalloutActionProvider {
             case "։":
                 return [
                     .character("։"),
-                    .character("՟"),
+                    .character("«"),
                     .character("»"),
-                    .character("«")
+                    .character("՟"),
+                    .character("("),
+                    .character(")")
                 ]
             default:
                 return super.calloutActions(for: action)
