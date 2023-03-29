@@ -50,9 +50,18 @@ class ArmenianKeyboardLayoutProvider: StandardKeyboardLayoutProvider {
             width: .inputPercentage(2)
         )
         
+        let commaCalloutKey = createLayoutItem(
+            layout: layout,
+            action: .character(",")
+        )
+        let colonCalloutKey = createLayoutItem(
+            layout: layout,
+            action: .character("։")
+        )
+        
         layout.itemRows.insert(shiftKey, before: .character(isUpperCased ? "Զ" : "զ"), atRow: 3)
         layout.itemRows.insert(backspaceKey, after: .character(isUpperCased ? "Շ" : "շ"), atRow: 3)
-        layout.itemRows.append([keyboardTypeKey, spacebarKey, primaryKey])
+        layout.itemRows.append([keyboardTypeKey, spacebarKey, commaCalloutKey, colonCalloutKey, primaryKey])
         
         return layout
     }
