@@ -55,6 +55,7 @@
 		022D42F329CE6A3A000F71B1 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		022D42F529CE6A3A000F71B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0288C5F729D3518500AF6638 /* ArmenianCalloutProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmenianCalloutProvider.swift; sourceTree = "<group>"; };
+		02D494BB29D5F1C000C1D087 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +98,7 @@
 		022D42DE29CE69C5000F71B1 /* hayatar */ = {
 			isa = PBXGroup;
 			children = (
+				02D494BB29D5F1C000C1D087 /* Info.plist */,
 				022D42DF29CE69C5000F71B1 /* hayatarApp.swift */,
 				022D42E129CE69C5000F71B1 /* ContentView.swift */,
 				022D42E329CE69C6000F71B1 /* Assets.xcassets */,
@@ -385,6 +387,7 @@
 				DEVELOPMENT_TEAM = 82MV322Q6H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = hayatar/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = fArmenian;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -417,6 +420,7 @@
 				DEVELOPMENT_TEAM = 82MV322Q6H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = hayatar/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = fArmenian;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
