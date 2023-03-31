@@ -35,8 +35,9 @@ class ArmenianCalloutActionProvider: BaseCalloutActionProvider {
                     .character("Իւ"),
                     .character("Ըւ")
                 ]
-            case ",":
+            case "։":
                 return [
+                    .character("։"),
                     .character(","),
                     .character("՞"),
                     .character("֊"),
@@ -44,9 +45,9 @@ class ArmenianCalloutActionProvider: BaseCalloutActionProvider {
                     .character("՝"),
                     .character("՜")
                 ]
-            case "։":
+            case ",":
                 return [
-                    .character("։"),
+                    .character(","),
                     .character("«"),
                     .character("»"),
                     .character("—"),

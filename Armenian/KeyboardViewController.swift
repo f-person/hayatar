@@ -10,12 +10,13 @@ import KeyboardKit
 
 class KeyboardViewController: KeyboardInputViewController {
     override func viewDidLoad() {
+        NSLog("[viewDidLoad]")
         keyboardContext.setLocale(.armenian)
         
         do {
             calloutActionProvider = try ArmenianCalloutActionProvider()
         } catch {
-            print("Could not initialize ArmenianCalloutActionProvider: \(error)")
+            NSLog("Could not initialize ArmenianCalloutActionProvider: \(error)")
         }
         inputSetProvider = ArmenianInputSetProvider()
         

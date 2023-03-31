@@ -61,7 +61,18 @@ class ArmenianKeyboardLayoutProvider: StandardKeyboardLayoutProvider {
         
         layout.itemRows.insert(shiftKey, before: .character(isUpperCased ? "Զ" : "զ"), atRow: 3)
         layout.itemRows.insert(backspaceKey, after: .character(isUpperCased ? "Շ" : "շ"), atRow: 3)
-        layout.itemRows.append([keyboardTypeKey, colonCalloutKey, spacebarKey, commaCalloutKey, primaryKey])
+        
+        let shouldDisplayGlobe = context.needsInputModeSwitchKey
+        let bottomRow = [
+            keyboardTypeKey,
+            !shouldDisplayGlobe ? nil : createLayoutItem(layout: layout, action: .nextKeyboard),
+            commaCalloutKey,
+            spacebarKey,
+            colonCalloutKey,
+            primaryKey
+        ].compactMap { $0 }
+        
+        layout.itemRows.append(bottomRow)
         
         return layout
     }
