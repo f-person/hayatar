@@ -9,14 +9,10 @@ import Foundation
 import KeyboardKit
 
 public class ArmenianInputSetProvider: InputSetProvider, LocalizedService {
-    public init(
-        alphabetic: AlphabeticInputSet = .armenianPhonetic,
-        numericCurrency: String = "֏",
-        symbolicCurrency: String = "£"
-    ) {
+    public init(alphabetic: AlphabeticInputSet = .armenianPhonetic) {
         self.alphabeticInputSet = alphabetic
-        self.numericInputSet = .english(currency: numericCurrency)
-        self.symbolicInputSet = .english(currency: symbolicCurrency)
+        self.numericInputSet = .armenian()
+        self.symbolicInputSet = .english()
     }
     
     public let localeKey: String = KeyboardLocale.armenian.id
@@ -41,14 +37,21 @@ public extension AlphabeticInputSet {
 }
 
 public extension NumericInputSet {
-    static func english(currency: String) -> NumericInputSet {
-        .standard(currency: currency)
+    static let charAfterShift = "֊"
+    static let charBeforeBackspace = "»"
+    
+    static func armenian() -> NumericInputSet {
+        NumericInputSet(rows: [
+            .init(chars: "1234567890"),
+            .init(chars: "-/:;()֏&@”"),
+            .init(chars: ".?!’՟ՙ՚֎‹›"),
+            .init(chars: "֊—՞՛՜՝«»")
+        ])
     }
 }
 
 public extension SymbolicInputSet {
-    static func english(currency: String) -> SymbolicInputSet {
-        .standard(currencies: "€\(currency)¥".chars)
+    static func english() -> SymbolicInputSet {
+        .standard(currencies: "€֏¥".chars)
     }
 }
-

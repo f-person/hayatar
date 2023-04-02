@@ -10,22 +10,75 @@ import KeyboardKit
 
 class ArmenianKeyboardLayoutProvider: StandardKeyboardLayoutProvider {
     override func keyboardLayout(for context: KeyboardContext) -> KeyboardLayout {
+        switch context.keyboardType {
+        case .alphabetic(_):
+            return createAlphabeticLayout(context: context)
+        case .numeric:
+            return createNumericLayout(context: context)
+        case .symbolic:
+            return createSymbolicLayout(context: context)
+        default:
+            return super.keyboardLayout(for: context)
+        }
+    }
+    
+    private func createAlphabeticLayout(context: KeyboardContext) -> KeyboardLayout {
+        let layout = super.keyboardLayout(for: context)
+        let isUpperCased = context.isUpperCased
+        
+        layout.itemRows.insert(
+            createShiftKey(context, layout),
+            before: .character(isUpperCased ? "Զ" : "զ"),
+            atRow: 3
+        )
+        layout.itemRows.insert(
+            createBackspaceKey(layout),
+            after: .character(isUpperCased ? "Շ" : "շ"),
+            atRow: 3
+        )
+        
+        layout.itemRows.append(createBottomRow(context, layout))
+        
+        return layout
+    }
+    
+    private func createNumericLayout(context: KeyboardContext) -> KeyboardLayout {
         let layout = super.keyboardLayout(for: context)
         
-        if case .numeric = keyboardContext.keyboardType {
-            return layout
-        }
-        
-        let isUpperCased = keyboardContext.keyboardType.isAlphabeticUppercased
-        
-        let shiftKey = createLayoutItem(
+        let symbolicKey = createLayoutItem(
             layout: layout,
-            action: .shift(currentCasing: isUpperCased ? .uppercased : .lowercased)
+            action: .keyboardType(.symbolic)
         )
-        let backspaceKey = createLayoutItem(layout: layout, action: .backspace)
         
+        layout.itemRows[2] = layout.itemRows[2].map { (item: KeyboardLayoutItem ) -> KeyboardLayoutItem in
+            var modifiedItem = item
+            modifiedItem.size.width = .inputPercentage(0.1)
+            NSLog("name: \(item.action)\n\(modifiedItem)")
+            return item
+        }
+        layout.itemRows.insert(
+            symbolicKey,
+            before: .character(NumericInputSet.charAfterShift),
+            atRow: 3
+        )
+        layout.itemRows.insert(
+            createBackspaceKey(layout),
+            after: .character(NumericInputSet.charBeforeBackspace),
+            atRow: 3
+        )
+        
+        layout.itemRows.append(createBottomRow(context, layout))
+        
+        return layout
+    }
+    
+    private func createSymbolicLayout(context: KeyboardContext) -> KeyboardLayout {
+        return super.keyboardLayout(for: context)
+    }
+    
+    private func createBottomRow(_ context: KeyboardContext, _ layout: KeyboardLayout) -> KeyboardLayoutItemRow {
         let newKeyboardType: KeyboardType
-        switch keyboardContext.keyboardType {
+        switch context.keyboardType {
         case .alphabetic:
             newKeyboardType = .numeric
             break;
@@ -33,7 +86,6 @@ class ArmenianKeyboardLayoutProvider: StandardKeyboardLayoutProvider {
             newKeyboardType = .alphabetic(.auto)
             break;
         }
-        
         
         let keyboardTypeKey = createLayoutItem(
             layout: layout,
@@ -59,11 +111,8 @@ class ArmenianKeyboardLayoutProvider: StandardKeyboardLayoutProvider {
             action: .character("։")
         )
         
-        layout.itemRows.insert(shiftKey, before: .character(isUpperCased ? "Զ" : "զ"), atRow: 3)
-        layout.itemRows.insert(backspaceKey, after: .character(isUpperCased ? "Շ" : "շ"), atRow: 3)
-        
         let shouldDisplayGlobe = context.needsInputModeSwitchKey
-        let bottomRow = [
+        return [
             keyboardTypeKey,
             !shouldDisplayGlobe ? nil : createLayoutItem(layout: layout, action: .nextKeyboard),
             commaCalloutKey,
@@ -71,10 +120,6 @@ class ArmenianKeyboardLayoutProvider: StandardKeyboardLayoutProvider {
             colonCalloutKey,
             primaryKey
         ].compactMap { $0 }
-        
-        layout.itemRows.append(bottomRow)
-        
-        return layout
     }
     
     private func createLayoutItem(
@@ -88,4 +133,16 @@ class ArmenianKeyboardLayoutProvider: StandardKeyboardLayoutProvider {
             insets: layout.idealItemInsets
         )
     }
+    
+    private func createShiftKey(_ context: KeyboardContext, _ layout: KeyboardLayout) -> KeyboardLayoutItem {
+        return createLayoutItem(
+            layout: layout,
+            action: .shift(currentCasing: context.isUpperCased ? .uppercased : .lowercased)
+        )
+    }
+    
+    private func createBackspaceKey(_ layout: KeyboardLayout)  -> KeyboardLayoutItem {
+        return createLayoutItem(layout: layout, action: .backspace)
+    }
+    
 }
