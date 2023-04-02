@@ -43,37 +43,50 @@ class ArmenianKeyboardLayoutProvider: StandardKeyboardLayoutProvider {
     }
     
     private func createNumericLayout(context: KeyboardContext) -> KeyboardLayout {
+        createSecondaryLayout(
+            context,
+            action: .keyboardType(.symbolic)
+        )
+    }
+    
+    private func createSymbolicLayout(context: KeyboardContext) -> KeyboardLayout {
+        createSecondaryLayout(
+            context,
+            action: .keyboardType(.numeric)
+        )
+    }
+    
+    private func createSecondaryLayout(
+        _ context: KeyboardContext,
+        action: KeyboardAction
+    ) -> KeyboardLayout {
         let layout = super.keyboardLayout(for: context)
         
         let symbolicKey = createLayoutItem(
             layout: layout,
-            action: .keyboardType(.symbolic)
+            action: action
         )
         
         layout.itemRows[2] = layout.itemRows[2].map { (item: KeyboardLayoutItem ) -> KeyboardLayoutItem in
             var modifiedItem = item
-            modifiedItem.size.width = .inputPercentage(0.1)
+            modifiedItem.size.width = .percentage(0.1)
             NSLog("name: \(item.action)\n\(modifiedItem)")
             return item
         }
         layout.itemRows.insert(
             symbolicKey,
-            before: .character(NumericInputSet.charAfterShift),
+            before: .character(numericCharAfterKeyboardType),
             atRow: 3
         )
         layout.itemRows.insert(
             createBackspaceKey(layout),
-            after: .character(NumericInputSet.charBeforeBackspace),
+            after: .character(numericCharBeforeBackspace),
             atRow: 3
         )
         
         layout.itemRows.append(createBottomRow(context, layout))
         
         return layout
-    }
-    
-    private func createSymbolicLayout(context: KeyboardContext) -> KeyboardLayout {
-        return super.keyboardLayout(for: context)
     }
     
     private func createBottomRow(_ context: KeyboardContext, _ layout: KeyboardLayout) -> KeyboardLayoutItemRow {
