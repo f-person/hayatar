@@ -12,7 +12,6 @@ class KeyboardViewController: KeyboardInputViewController {
     override func viewDidLoad() {
         String.sentenceDelimiters = ["։"]
         
-        NSLog("[viewDidLoad]")
         keyboardContext.setLocale(.armenian)
         
         do {
@@ -26,7 +25,15 @@ class KeyboardViewController: KeyboardInputViewController {
             keyboardContext: keyboardContext,
             inputSetProvider: inputSetProvider
         )
+        
+        keyboardFeedbackSettings = KeyboardFeedbackSettings(
+            audioConfiguration: .enabled,
+            hapticConfiguration: .enabled
+        )
+        keyboardFeedbackHandler = MyKeyboardFeedbackHandler()
+        
         keyboardActionHandler = ArmenianActionHandler(inputViewController: self)
         super.viewDidLoad()
     }
 }
+

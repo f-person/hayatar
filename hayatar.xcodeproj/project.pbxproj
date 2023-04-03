@@ -17,6 +17,7 @@
 		022D42F429CE6A3A000F71B1 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D42F329CE6A3A000F71B1 /* KeyboardViewController.swift */; };
 		022D42F829CE6A3A000F71B1 /* Armenian.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 022D42F129CE6A39000F71B1 /* Armenian.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		022D42FF29CE6DED000F71B1 /* KeyboardKit in Frameworks */ = {isa = PBXBuildFile; productRef = 022D42FE29CE6DED000F71B1 /* KeyboardKit */; };
+		0256824B29DB9D44004BD8D6 /* KeyboardFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0256824A29DB9D44004BD8D6 /* KeyboardFeedback.swift */; };
 		0288C5F829D3518500AF6638 /* ArmenianCalloutProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0288C5F729D3518500AF6638 /* ArmenianCalloutProvider.swift */; };
 		02EE058A29D877C200C7752D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 02EE058929D877C200C7752D /* README.md */; };
 		02EE058C29D8B84500C7752D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EE058B29D8B84500C7752D /* Extensions.swift */; };
@@ -58,6 +59,7 @@
 		022D42F129CE6A39000F71B1 /* Armenian.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Armenian.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		022D42F329CE6A3A000F71B1 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		022D42F529CE6A3A000F71B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0256824A29DB9D44004BD8D6 /* KeyboardFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardFeedback.swift; sourceTree = "<group>"; };
 		0288C5F729D3518500AF6638 /* ArmenianCalloutProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmenianCalloutProvider.swift; sourceTree = "<group>"; };
 		02D494BB29D5F1C000C1D087 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		02EE058929D877C200C7752D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
@@ -132,6 +134,7 @@
 				0288C5F729D3518500AF6638 /* ArmenianCalloutProvider.swift */,
 				02EE058B29D8B84500C7752D /* Extensions.swift */,
 				0218B21D29DB63D90073A853 /* ArmenianActionHandler.swift */,
+				0256824A29DB9D44004BD8D6 /* KeyboardFeedback.swift */,
 			);
 			path = Armenian;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				022D42F429CE6A3A000F71B1 /* KeyboardViewController.swift in Sources */,
 				0218B21E29DB63D90073A853 /* ArmenianActionHandler.swift in Sources */,
 				0288C5F829D3518500AF6638 /* ArmenianCalloutProvider.swift in Sources */,
+				0256824B29DB9D44004BD8D6 /* KeyboardFeedback.swift in Sources */,
 				0208A11D29CEF20E00905755 /* ArmenianInputSetProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
