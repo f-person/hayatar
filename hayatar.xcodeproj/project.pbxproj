@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0208A11B29CEEF8700905755 /* ArmenianLayoutProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0208A11A29CEEF8700905755 /* ArmenianLayoutProvider.swift */; };
 		0208A11D29CEF20E00905755 /* ArmenianInputSetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0208A11C29CEF20E00905755 /* ArmenianInputSetProvider.swift */; };
+		0218B21E29DB63D90073A853 /* ArmenianActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0218B21D29DB63D90073A853 /* ArmenianActionHandler.swift */; };
 		022D42E029CE69C5000F71B1 /* hayatarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D42DF29CE69C5000F71B1 /* hayatarApp.swift */; };
 		022D42E229CE69C5000F71B1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D42E129CE69C5000F71B1 /* ContentView.swift */; };
 		022D42E429CE69C6000F71B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 022D42E329CE69C6000F71B1 /* Assets.xcassets */; };
@@ -48,6 +49,7 @@
 /* Begin PBXFileReference section */
 		0208A11A29CEEF8700905755 /* ArmenianLayoutProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmenianLayoutProvider.swift; sourceTree = "<group>"; };
 		0208A11C29CEF20E00905755 /* ArmenianInputSetProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmenianInputSetProvider.swift; sourceTree = "<group>"; };
+		0218B21D29DB63D90073A853 /* ArmenianActionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmenianActionHandler.swift; sourceTree = "<group>"; };
 		022D42DC29CE69C5000F71B1 /* hayatar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hayatar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		022D42DF29CE69C5000F71B1 /* hayatarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hayatarApp.swift; sourceTree = "<group>"; };
 		022D42E129CE69C5000F71B1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				022D42F529CE6A3A000F71B1 /* Info.plist */,
 				0288C5F729D3518500AF6638 /* ArmenianCalloutProvider.swift */,
 				02EE058B29D8B84500C7752D /* Extensions.swift */,
+				0218B21D29DB63D90073A853 /* ArmenianActionHandler.swift */,
 			);
 			path = Armenian;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				02EE058C29D8B84500C7752D /* Extensions.swift in Sources */,
 				0208A11B29CEEF8700905755 /* ArmenianLayoutProvider.swift in Sources */,
 				022D42F429CE6A3A000F71B1 /* KeyboardViewController.swift in Sources */,
+				0218B21E29DB63D90073A853 /* ArmenianActionHandler.swift in Sources */,
 				0288C5F829D3518500AF6638 /* ArmenianCalloutProvider.swift in Sources */,
 				0208A11D29CEF20E00905755 /* ArmenianInputSetProvider.swift in Sources */,
 			);

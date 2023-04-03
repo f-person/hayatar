@@ -26,11 +26,7 @@ class KeyboardViewController: KeyboardInputViewController {
             keyboardContext: keyboardContext,
             inputSetProvider: inputSetProvider
         )
+        keyboardActionHandler = ArmenianActionHandler(inputViewController: self)
         super.viewDidLoad()
-    }
-    
-    override func viewWillSetupKeyboard() {
-        super.viewWillSetupKeyboard()
-        print("[viewWillSetupKeyboard]")
     }
 }
