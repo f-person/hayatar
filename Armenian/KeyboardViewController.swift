@@ -10,6 +10,8 @@ import KeyboardKit
 
 class KeyboardViewController: KeyboardInputViewController {
     override func viewDidLoad() {
+        String.sentenceDelimiters = ["։"]
+        
         NSLog("[viewDidLoad]")
         keyboardContext.setLocale(.armenian)
         
