@@ -10,18 +10,6 @@ import KeyboardKit
 import SwiftUI
 
 /**
- Uses `.enabled` for the haptic configuration
- */
-class MyKeyboardFeedbackHandler: StandardKeyboardFeedbackHandler {
-    public init() {
-        super.init(settings:  KeyboardFeedbackSettings(
-            audioConfiguration: .standard,
-            hapticConfiguration: .enabled
-        ))
-    }
-}
-
-/**
  A modified copy of StandardHapticFeedbackEngine that makes light impact via to use `.soft` as a style
  */
 open class MyHapticFeedbackEngine: HapticFeedbackEngine {

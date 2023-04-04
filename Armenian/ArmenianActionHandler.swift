@@ -16,7 +16,7 @@ class ArmenianActionHandler: StandardKeyboardActionHandler {
     }
 }
 
-extension UITextDocumentProxy {
+private extension UITextDocumentProxy {
     func endArmenianSentence() {
         guard isCursorAtTheEndOfTheCurrentWord else { return }
         while (documentContextBeforeInput ?? "").hasSuffix(" ") {

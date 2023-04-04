@@ -64,6 +64,8 @@
 		02D494BB29D5F1C000C1D087 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		02EE058929D877C200C7752D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		02EE058B29D8B84500C7752D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		02EE490429DCC375003DDDD8 /* hayatar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = hayatar.entitlements; sourceTree = "<group>"; };
+		02EE490529DCC39B003DDDD8 /* Armenian.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Armenian.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 		022D42DE29CE69C5000F71B1 /* hayatar */ = {
 			isa = PBXGroup;
 			children = (
+				02EE490429DCC375003DDDD8 /* hayatar.entitlements */,
 				02D494BB29D5F1C000C1D087 /* Info.plist */,
 				022D42DF29CE69C5000F71B1 /* hayatarApp.swift */,
 				022D42E129CE69C5000F71B1 /* ContentView.swift */,
@@ -126,6 +129,7 @@
 		022D42F229CE6A3A000F71B1 /* Armenian */ = {
 			isa = PBXGroup;
 			children = (
+				02EE490529DCC39B003DDDD8 /* Armenian.entitlements */,
 				02EE058929D877C200C7752D /* README.md */,
 				022D42F329CE6A3A000F71B1 /* KeyboardViewController.swift */,
 				0208A11A29CEEF8700905755 /* ArmenianLayoutProvider.swift */,
@@ -397,6 +401,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_ENTITLEMENTS = hayatar/hayatar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_ASSET_PATHS = "\"hayatar/Preview Content\"";
@@ -431,6 +436,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_ENTITLEMENTS = hayatar/hayatar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_ASSET_PATHS = "\"hayatar/Preview Content\"";
@@ -461,6 +467,7 @@
 		022D42FA29CE6A3A000F71B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Armenian/Armenian.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 82MV322Q6H;
@@ -486,6 +493,7 @@
 		022D42FB29CE6A3A000F71B1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Armenian/Armenian.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 82MV322Q6H;

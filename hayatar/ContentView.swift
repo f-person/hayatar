@@ -8,17 +8,34 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var text = ""
-    @FocusState private var isFocused: Bool
-
+    /**
+     The shared store between the app view and the extension.
+     */
+    static private var sharedStore: UserDefaults? {
+        UserDefaults(suiteName: "group.dev.fperson.hayatar.shared")
+    }
+    
+    @AppStorage("enableHapticFeedback", store: sharedStore)
+    var enableHapticFeedback = true
+    
+    @AppStorage("enableAudioFeedback", store: sharedStore)
+    var enableAudioFeedback = true
+    
     var body: some View {
-        TextField("Enter text", text: $text)
-            .padding()
-            .border(Color.gray)
-            .focused($isFocused)
-            .onAppear {
-                self.isFocused = true
-            }
+        return NavigationStack {
+            VStack {
+                Form {
+                    Section("Preferences") {
+                        Toggle(isOn: $enableHapticFeedback) {
+                            Text("Haptic Feedback")
+                        }
+                        Toggle(isOn: $enableAudioFeedback) {
+                            Text("Audio Feedback")
+                        }
+                    }
+                }
+            }.navigationTitle("Armenian Keyboard")
+        }
     }
 }
 
