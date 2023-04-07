@@ -17,6 +17,13 @@
 		022D42F429CE6A3A000F71B1 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D42F329CE6A3A000F71B1 /* KeyboardViewController.swift */; };
 		022D42F829CE6A3A000F71B1 /* Armenian.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 022D42F129CE6A39000F71B1 /* Armenian.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		022D42FF29CE6DED000F71B1 /* KeyboardKit in Frameworks */ = {isa = PBXBuildFile; productRef = 022D42FE29CE6DED000F71B1 /* KeyboardKit */; };
+		02485AAC29DFABCE00244E8F /* SharedDefaults.h in Headers */ = {isa = PBXBuildFile; fileRef = 02485AAB29DFABCE00244E8F /* SharedDefaults.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02485AAF29DFABCE00244E8F /* SharedDefaults.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02485AA929DFABCE00244E8F /* SharedDefaults.framework */; };
+		02485AB029DFABCE00244E8F /* SharedDefaults.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 02485AA929DFABCE00244E8F /* SharedDefaults.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		02485AB629DFABF900244E8F /* SharedDefaults.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02485AA929DFABCE00244E8F /* SharedDefaults.framework */; };
+		02485ABC29DFAC2500244E8F /* SharedDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02485ABB29DFAC2500244E8F /* SharedDefaults.swift */; };
+		02485ABE29DFBE2500244E8F /* LabelledTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02485ABD29DFBE2500244E8F /* LabelledTextField.swift */; };
+		02485AC029DFC06700244E8F /* ResetSettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02485ABF29DFC06700244E8F /* ResetSettingsButton.swift */; };
 		0256824B29DB9D44004BD8D6 /* KeyboardFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0256824A29DB9D44004BD8D6 /* KeyboardFeedback.swift */; };
 		0288C5F829D3518500AF6638 /* ArmenianCalloutProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0288C5F729D3518500AF6638 /* ArmenianCalloutProvider.swift */; };
 		02EE058A29D877C200C7752D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 02EE058929D877C200C7752D /* README.md */; };
@@ -31,6 +38,20 @@
 			remoteGlobalIDString = 022D42F029CE6A39000F71B1;
 			remoteInfo = Armenian;
 		};
+		02485AAD29DFABCE00244E8F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 022D42D429CE69C5000F71B1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 02485AA829DFABCE00244E8F;
+			remoteInfo = SharedDefaults;
+		};
+		02485AB829DFABF900244E8F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 022D42D429CE69C5000F71B1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 02485AA829DFABCE00244E8F;
+			remoteInfo = SharedDefaults;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,6 +64,17 @@
 				022D42F829CE6A3A000F71B1 /* Armenian.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02485AB129DFABCE00244E8F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				02485AB029DFABCE00244E8F /* SharedDefaults.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -59,6 +91,11 @@
 		022D42F129CE6A39000F71B1 /* Armenian.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Armenian.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		022D42F329CE6A3A000F71B1 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		022D42F529CE6A3A000F71B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02485AA929DFABCE00244E8F /* SharedDefaults.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SharedDefaults.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		02485AAB29DFABCE00244E8F /* SharedDefaults.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SharedDefaults.h; sourceTree = "<group>"; };
+		02485ABB29DFAC2500244E8F /* SharedDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedDefaults.swift; sourceTree = "<group>"; };
+		02485ABD29DFBE2500244E8F /* LabelledTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelledTextField.swift; sourceTree = "<group>"; };
+		02485ABF29DFC06700244E8F /* ResetSettingsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetSettingsButton.swift; sourceTree = "<group>"; };
 		0256824A29DB9D44004BD8D6 /* KeyboardFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardFeedback.swift; sourceTree = "<group>"; };
 		0288C5F729D3518500AF6638 /* ArmenianCalloutProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmenianCalloutProvider.swift; sourceTree = "<group>"; };
 		02D494BB29D5F1C000C1D087 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -73,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02485AAF29DFABCE00244E8F /* SharedDefaults.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +119,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				022D42FF29CE6DED000F71B1 /* KeyboardKit in Frameworks */,
+				02485AB629DFABF900244E8F /* SharedDefaults.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02485AA629DFABCE00244E8F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,7 +138,9 @@
 			children = (
 				022D42DE29CE69C5000F71B1 /* hayatar */,
 				022D42F229CE6A3A000F71B1 /* Armenian */,
+				02485AAA29DFABCE00244E8F /* SharedDefaults */,
 				022D42DD29CE69C5000F71B1 /* Products */,
+				02485AB529DFABF900244E8F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +149,7 @@
 			children = (
 				022D42DC29CE69C5000F71B1 /* hayatar.app */,
 				022D42F129CE6A39000F71B1 /* Armenian.appex */,
+				02485AA929DFABCE00244E8F /* SharedDefaults.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -114,6 +163,8 @@
 				022D42E129CE69C5000F71B1 /* ContentView.swift */,
 				022D42E329CE69C6000F71B1 /* Assets.xcassets */,
 				022D42E529CE69C6000F71B1 /* Preview Content */,
+				02485ABD29DFBE2500244E8F /* LabelledTextField.swift */,
+				02485ABF29DFC06700244E8F /* ResetSettingsButton.swift */,
 			);
 			path = hayatar;
 			sourceTree = "<group>";
@@ -143,7 +194,34 @@
 			path = Armenian;
 			sourceTree = "<group>";
 		};
+		02485AAA29DFABCE00244E8F /* SharedDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				02485AAB29DFABCE00244E8F /* SharedDefaults.h */,
+				02485ABB29DFAC2500244E8F /* SharedDefaults.swift */,
+			);
+			path = SharedDefaults;
+			sourceTree = "<group>";
+		};
+		02485AB529DFABF900244E8F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		02485AA429DFABCE00244E8F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02485AAC29DFABCE00244E8F /* SharedDefaults.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		022D42DB29CE69C5000F71B1 /* hayatar */ = {
@@ -154,11 +232,13 @@
 				022D42D929CE69C5000F71B1 /* Frameworks */,
 				022D42DA29CE69C5000F71B1 /* Resources */,
 				022D42FC29CE6A3A000F71B1 /* Embed Foundation Extensions */,
+				02485AB129DFABCE00244E8F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				022D42F729CE6A3A000F71B1 /* PBXTargetDependency */,
+				02485AAE29DFABCE00244E8F /* PBXTargetDependency */,
 			);
 			name = hayatar;
 			productName = hayatar;
@@ -176,6 +256,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				02485AB929DFABF900244E8F /* PBXTargetDependency */,
 			);
 			name = Armenian;
 			packageProductDependencies = (
@@ -184,6 +265,24 @@
 			productName = Armenian;
 			productReference = 022D42F129CE6A39000F71B1 /* Armenian.appex */;
 			productType = "com.apple.product-type.app-extension";
+		};
+		02485AA829DFABCE00244E8F /* SharedDefaults */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 02485AB429DFABCE00244E8F /* Build configuration list for PBXNativeTarget "SharedDefaults" */;
+			buildPhases = (
+				02485AA429DFABCE00244E8F /* Headers */,
+				02485AA529DFABCE00244E8F /* Sources */,
+				02485AA629DFABCE00244E8F /* Frameworks */,
+				02485AA729DFABCE00244E8F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SharedDefaults;
+			productName = SharedDefaults;
+			productReference = 02485AA929DFABCE00244E8F /* SharedDefaults.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -200,6 +299,10 @@
 					};
 					022D42F029CE6A39000F71B1 = {
 						CreatedOnToolsVersion = 14.2;
+					};
+					02485AA829DFABCE00244E8F = {
+						CreatedOnToolsVersion = 14.3;
+						LastSwiftMigration = 1430;
 					};
 				};
 			};
@@ -221,6 +324,7 @@
 			targets = (
 				022D42DB29CE69C5000F71B1 /* hayatar */,
 				022D42F029CE6A39000F71B1 /* Armenian */,
+				02485AA829DFABCE00244E8F /* SharedDefaults */,
 			);
 		};
 /* End PBXProject section */
@@ -243,6 +347,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		02485AA729DFABCE00244E8F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -250,8 +361,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02485AC029DFC06700244E8F /* ResetSettingsButton.swift in Sources */,
 				022D42E229CE69C5000F71B1 /* ContentView.swift in Sources */,
 				022D42E029CE69C5000F71B1 /* hayatarApp.swift in Sources */,
+				02485ABE29DFBE2500244E8F /* LabelledTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +382,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		02485AA529DFABCE00244E8F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02485ABC29DFAC2500244E8F /* SharedDefaults.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -276,6 +397,16 @@
 			isa = PBXTargetDependency;
 			target = 022D42F029CE6A39000F71B1 /* Armenian */;
 			targetProxy = 022D42F629CE6A3A000F71B1 /* PBXContainerItemProxy */;
+		};
+		02485AAE29DFABCE00244E8F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 02485AA829DFABCE00244E8F /* SharedDefaults */;
+			targetProxy = 02485AAD29DFABCE00244E8F /* PBXContainerItemProxy */;
+		};
+		02485AB929DFABF900244E8F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 02485AA829DFABCE00244E8F /* SharedDefaults */;
+			targetProxy = 02485AB829DFABF900244E8F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -403,7 +534,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = hayatar/hayatar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_ASSET_PATHS = "\"hayatar/Preview Content\"";
 				DEVELOPMENT_TEAM = 82MV322Q6H;
 				ENABLE_PREVIEWS = YES;
@@ -441,7 +572,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = hayatar/hayatar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_ASSET_PATHS = "\"hayatar/Preview Content\"";
 				DEVELOPMENT_TEAM = 82MV322Q6H;
 				ENABLE_PREVIEWS = YES;
@@ -475,7 +606,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Armenian/Armenian.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = 82MV322Q6H;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Armenian/Info.plist;
@@ -501,7 +632,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Armenian/Armenian.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = 82MV322Q6H;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Armenian/Info.plist;
@@ -519,6 +650,77 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		02485AB229DFABCE00244E8F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 82MV322Q6H;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = dev.fperson.SharedDefaults;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		02485AB329DFABCE00244E8F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 82MV322Q6H;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = dev.fperson.SharedDefaults;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -548,6 +750,15 @@
 			buildConfigurations = (
 				022D42FA29CE6A3A000F71B1 /* Debug */,
 				022D42FB29CE6A3A000F71B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		02485AB429DFABCE00244E8F /* Build configuration list for PBXNativeTarget "SharedDefaults" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02485AB229DFABCE00244E8F /* Debug */,
+				02485AB329DFABCE00244E8F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

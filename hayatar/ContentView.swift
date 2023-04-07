@@ -6,36 +6,49 @@
 //
 
 import SwiftUI
+import SharedDefaults
 
 struct ContentView: View {
-    /**
-     The shared store between the app view and the extension.
-     */
-    static private var sharedStore: UserDefaults? {
-        UserDefaults(suiteName: "group.dev.fperson.hayatar.shared")
-    }
-    
-    @AppStorage("enableHapticFeedback", store: sharedStore)
-    var enableHapticFeedback = true
-    
-    @AppStorage("enableAudioFeedback", store: sharedStore)
-    var enableAudioFeedback = true
-    
+    static private var store: UserDefaults? { SharedDefaults.userDefaultsForAppGroup() }
+
+    @AppStorage(SharedDefaults.enableHapticFeedbackKey, store: store)
+    var enableHapticFeedback = SharedDefaults.enableHapticFeedback
+
+    @AppStorage(SharedDefaults.enableAudioFeedbackKey, store: store)
+    var enableAudioFeedback = SharedDefaults.enableAudioFeedback
+
+    @AppStorage(SharedDefaults.commaCalloutCharactersKey, store: store)
+    var commaCalloutCharacters = SharedDefaults.defaultCommaCalloutCharacters
+
+    @AppStorage(SharedDefaults.colonCalloutCharactersKey, store: store)
+    var colonCalloutCharacters = SharedDefaults.defaultColonCalloutCharacters
+
+    @State private var showResetAlert = false
+
     var body: some View {
-        return NavigationStack {
-            VStack {
-                Form {
-                    Section("Preferences") {
-                        Toggle(isOn: $enableHapticFeedback) {
-                            Text("Haptic Feedback")
-                        }
-                        Toggle(isOn: $enableAudioFeedback) {
-                            Text("Audio Feedback")
-                        }
+        NavigationStack {
+            Form {
+                Section("Feedback") {
+                    Toggle(isOn: $enableHapticFeedback) {
+                        Text("Haptic Feedback")
                     }
+                    Toggle(isOn: $enableAudioFeedback) {
+                        Text("Input Sound")
+                    }
+                }
+                Section("Layout") {
+                    LabelledTextField(title: "Callout characters for \",\"", text: $commaCalloutCharacters)
+                    LabelledTextField(title: "Callout characters for \"։\"", text: $colonCalloutCharacters)
+                }
+                Section {
+                    ResetSettingsButton()
                 }
             }.navigationTitle("Armenian Keyboard")
         }
+    }
+
+    func resetSettings() {
+        // Your reset settings code goes here
     }
 }
 

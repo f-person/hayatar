@@ -7,6 +7,7 @@
 
 import Foundation
 import KeyboardKit
+import SharedDefaults
 
 class ArmenianCalloutActionProvider: BaseCalloutActionProvider {
     override func calloutActions(for action: KeyboardAction) -> [KeyboardAction] {
@@ -36,26 +37,9 @@ class ArmenianCalloutActionProvider: BaseCalloutActionProvider {
                     .character("Ըւ")
                 ]
             case "։":
-                return [
-                    .character("։"),
-                    .character(","),
-                    .character("՞"),
-                    .character("֊"),
-                    .character("՛"),
-                    .character("՝"),
-                    .character("՜")
-                ]
+                return SharedDefaults.colonCalloutCharacters.map { .character(String($0)) }
             case ",":
-                return [
-                    .character(","),
-                    .character("«"),
-                    .character("»"),
-                    .character("—"),
-                    .character("՟"),
-                    .character("("),
-                    .character(")"),
-                    .character("՚")
-                ]
+                return SharedDefaults.commaCalloutCharacters.map { .character(String($0)) }
             default:
                 return super.calloutActions(for: action)
             }

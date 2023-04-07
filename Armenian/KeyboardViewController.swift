@@ -7,16 +7,9 @@
 
 import UIKit
 import KeyboardKit
+import SharedDefaults
 
 class KeyboardViewController: KeyboardInputViewController {
-    private var sharedStore: UserDefaults? {
-        UserDefaults(suiteName: "group.dev.fperson.hayatar.shared")
-    }
-    
-    private func getBool(forKey key: String, default defaultValue: Bool) -> Bool {
-        sharedStore?.object(forKey: key) as? Bool ?? defaultValue
-    }
-    
     override func viewDidLoad() {
         String.sentenceDelimiters = ["։"]
         
@@ -28,8 +21,6 @@ class KeyboardViewController: KeyboardInputViewController {
             NSLog("Could not initialize ArmenianCalloutActionProvider: \(error)")
         }
         inputSetProvider = ArmenianInputSetProvider()
-        let shouldEnableHapticFeedback = getBool(forKey: "enableHapticFeedback", default: true)
-        let shouldEnableAudioFeedback = getBool(forKey: "enableAudioFeedback", default: true)
         
         keyboardLayoutProvider = ArmenianKeyboardLayoutProvider(
             keyboardContext: keyboardContext,
@@ -37,8 +28,8 @@ class KeyboardViewController: KeyboardInputViewController {
         )
         
         keyboardFeedbackSettings = KeyboardFeedbackSettings(
-            audioConfiguration: shouldEnableAudioFeedback ? .enabled : .noFeedback,
-            hapticConfiguration: shouldEnableHapticFeedback ? .enabled : .noFeedback
+            audioConfiguration: SharedDefaults.enableAudioFeedback ? .enabled : .noFeedback,
+            hapticConfiguration: SharedDefaults.enableHapticFeedback ? .enabled : .noFeedback
         )
         keyboardFeedbackHandler = StandardKeyboardFeedbackHandler(settings: keyboardFeedbackSettings)
         
