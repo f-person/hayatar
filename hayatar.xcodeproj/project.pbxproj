@@ -25,6 +25,7 @@
 		02485ABE29DFBE2500244E8F /* LabelledTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02485ABD29DFBE2500244E8F /* LabelledTextField.swift */; };
 		02485AC029DFC06700244E8F /* ResetSettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02485ABF29DFC06700244E8F /* ResetSettingsButton.swift */; };
 		0256824B29DB9D44004BD8D6 /* KeyboardFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0256824A29DB9D44004BD8D6 /* KeyboardFeedback.swift */; };
+		025FC95A29E0FE09008B7E6B /* SyncSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025FC95929E0FE09008B7E6B /* SyncSettingsView.swift */; };
 		0288C5F829D3518500AF6638 /* ArmenianCalloutProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0288C5F729D3518500AF6638 /* ArmenianCalloutProvider.swift */; };
 		02EE058A29D877C200C7752D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 02EE058929D877C200C7752D /* README.md */; };
 		02EE058C29D8B84500C7752D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EE058B29D8B84500C7752D /* Extensions.swift */; };
@@ -97,6 +98,7 @@
 		02485ABD29DFBE2500244E8F /* LabelledTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelledTextField.swift; sourceTree = "<group>"; };
 		02485ABF29DFC06700244E8F /* ResetSettingsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetSettingsButton.swift; sourceTree = "<group>"; };
 		0256824A29DB9D44004BD8D6 /* KeyboardFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardFeedback.swift; sourceTree = "<group>"; };
+		025FC95929E0FE09008B7E6B /* SyncSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncSettingsView.swift; sourceTree = "<group>"; };
 		0288C5F729D3518500AF6638 /* ArmenianCalloutProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmenianCalloutProvider.swift; sourceTree = "<group>"; };
 		02D494BB29D5F1C000C1D087 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		02EE058929D877C200C7752D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
@@ -165,6 +167,7 @@
 				022D42E529CE69C6000F71B1 /* Preview Content */,
 				02485ABD29DFBE2500244E8F /* LabelledTextField.swift */,
 				02485ABF29DFC06700244E8F /* ResetSettingsButton.swift */,
+				025FC95929E0FE09008B7E6B /* SyncSettingsView.swift */,
 			);
 			path = hayatar;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				025FC95A29E0FE09008B7E6B /* SyncSettingsView.swift in Sources */,
 				02485AC029DFC06700244E8F /* ResetSettingsButton.swift in Sources */,
 				022D42E229CE69C5000F71B1 /* ContentView.swift in Sources */,
 				022D42E029CE69C5000F71B1 /* hayatarApp.swift in Sources */,
@@ -534,7 +538,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = hayatar/hayatar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_ASSET_PATHS = "\"hayatar/Preview Content\"";
 				DEVELOPMENT_TEAM = 82MV322Q6H;
 				ENABLE_PREVIEWS = YES;
@@ -572,7 +576,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = hayatar/hayatar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_ASSET_PATHS = "\"hayatar/Preview Content\"";
 				DEVELOPMENT_TEAM = 82MV322Q6H;
 				ENABLE_PREVIEWS = YES;
@@ -606,7 +610,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Armenian/Armenian.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = 82MV322Q6H;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Armenian/Info.plist;
@@ -632,7 +636,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Armenian/Armenian.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = 82MV322Q6H;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Armenian/Info.plist;

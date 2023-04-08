@@ -10,6 +10,7 @@ import SwiftUI
 import SharedDefaults
 
 struct ResetSettingsButton: View {
+    let onReset: () -> Void
     @State private var showAlert = false
     
     var body: some View {
@@ -25,9 +26,5 @@ struct ResetSettingsButton: View {
                   },
                   secondaryButton: .cancel())
         }
-    }
-    
-    func onReset() -> Void {
-        SharedDefaults.resetToDefaults()
     }
 }
