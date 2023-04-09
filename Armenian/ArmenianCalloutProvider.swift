@@ -37,6 +37,8 @@ class ArmenianCalloutActionProvider: BaseCalloutActionProvider {
                     .character("Ըւ")
                 ]
             case "։":
+                NSLog("colon chars: \(SharedDefaults.colonCalloutCharacters); comma chars: \(SharedDefaults.commaCalloutCharacters)")
+                
                 return SharedDefaults.colonCalloutCharacters.map { .character(String($0)) }
             case ",":
                 return SharedDefaults.commaCalloutCharacters.map { .character(String($0)) }

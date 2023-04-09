@@ -36,7 +36,7 @@ public struct SharedDefaults {
     public static var enableSync: Bool {
         set {
             if newValue {
-                syncAllPreferencesToCloud()
+                syncPreferencesToCloud()
             }
             iCloudStore?.set(newValue, forKey: enableSyncKey)
         }
@@ -47,17 +47,17 @@ public struct SharedDefaults {
         set { set(newValue, forKey: enableHapticFeedbackKey) }
         get { get(enableHapticFeedbackKey, defaultValue: defaultEnableHapticFeedback) }
     }
-    
+
     public static var enableAudioFeedback: Bool {
         set { set(newValue, forKey: enableAudioFeedbackKey) }
         get { get(enableAudioFeedbackKey, defaultValue: defaultEnableAudioFeedback) }
     }
-    
+
     public static var colonCalloutCharacters: String {
         set { set(newValue, forKey: colonCalloutCharactersKey) }
         get { get(colonCalloutCharactersKey, defaultValue: defaultColonCalloutCharacters) }
     }
-    
+
     public static var commaCalloutCharacters: String {
         set { set(newValue, forKey: commaCalloutCharactersKey) }
         get { get(commaCalloutCharactersKey, defaultValue: defaultCommaCalloutCharacters) }
@@ -71,31 +71,54 @@ public struct SharedDefaults {
     }
     
     private static func set<T>(_ value: T, forKey key: String) {
-        if let store = iCloudStore {
-            store.set(value, forKey: key)
-        } else {
-            localStore?.set(value, forKey: key)
+        localStore?.set(value, forKey: key)
+        if enableSync {
+            iCloudStore?.set(value, forKey: key)
         }
     }
-    
+
     private static func get<T>(_ key: String, defaultValue: T) -> T {
-        if let store = iCloudStore {
-            return store.object(forKey: key) as? T ?? defaultValue
+        if let localValue = localStore?.object(forKey: key) as? T {
+            return localValue
         } else {
-            return localStore?.object(forKey: key) as? T ?? defaultValue
+            return defaultValue
         }
     }
     
-    private static func syncAllPreferencesToCloud() {
+    public static func syncPreferencesToCloud() {
         guard let iCloudStore = iCloudStore else {
             NSLog("Error: iCloud store is not available")
             return
         }
-   
+        
         iCloudStore.set(enableHapticFeedback, forKey: enableHapticFeedbackKey)
         iCloudStore.set(enableAudioFeedback, forKey: enableAudioFeedbackKey)
         iCloudStore.set(colonCalloutCharacters, forKey: colonCalloutCharactersKey)
         iCloudStore.set(commaCalloutCharacters, forKey: commaCalloutCharactersKey)
+    }
+
+    public static func stopSyncingWithCloud() {
+        iCloudStore?.removeObject(forKey: enableHapticFeedbackKey)
+        iCloudStore?.removeObject(forKey: enableAudioFeedbackKey)
+        iCloudStore?.removeObject(forKey: colonCalloutCharactersKey)
+        iCloudStore?.removeObject(forKey: commaCalloutCharactersKey)
+    }
+    
+    public static func syncPreferencesToLocal() {
+        guard let iCloudStore = iCloudStore else {
+            NSLog("Error: iCloud store is not available")
+            return
+        }
+        
+        let hapticFeedback = iCloudStore.object(forKey: enableHapticFeedbackKey) as? Bool ?? defaultEnableHapticFeedback
+        let audioFeedback = iCloudStore.object(forKey: enableAudioFeedbackKey) as? Bool ?? defaultEnableAudioFeedback
+        let colonCallouts = iCloudStore.object(forKey: colonCalloutCharactersKey) as? String ?? defaultColonCalloutCharacters
+        let commaCallouts = iCloudStore.object(forKey: commaCalloutCharactersKey) as? String ?? defaultCommaCalloutCharacters
+        
+        localStore?.set(hapticFeedback, forKey: enableHapticFeedbackKey)
+        localStore?.set(audioFeedback, forKey: enableAudioFeedbackKey)
+        localStore?.set(colonCallouts, forKey: colonCalloutCharactersKey)
+        localStore?.set(commaCallouts, forKey: commaCalloutCharactersKey)
     }
 }
 

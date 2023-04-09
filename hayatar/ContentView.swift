@@ -19,7 +19,10 @@ struct ContentView: View {
     @State private var showSyncConfirmationAlert = false
     
     var body: some View {
-        NavigationStack {
+        NSLog("enableHapticFeedback: \(enableHapticFeedback), enableAudioFeedback: \(enableAudioFeedback), commaCalloutCharacters: \(commaCalloutCharacters), colonCalloutCharacters: \(colonCalloutCharacters), enableSync: \(enableSync)")
+        
+        
+        return NavigationStack {
             Form {
                 Section("Feedback") {
                     Toggle(isOn: Binding(
@@ -47,7 +50,15 @@ struct ContentView: View {
                     ))
                 }
                 
+                //                SyncSettingsView(enableSync: $enableSync)
                 SyncSettingsView(enableSync: $enableSync)
+                    .onChange(of: enableSync) { newValue in
+                        if newValue {
+                            SharedDefaults.syncPreferencesToCloud()
+                        } else {
+                            SharedDefaults.stopSyncingWithCloud()
+                        }
+                    }
                 
                 Section {
                     ResetSettingsButton(onReset: {
