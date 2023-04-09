@@ -9,31 +9,28 @@ import SwiftUI
 import SharedDefaults
 
 struct ContentView: View {
-    @State private var enableHapticFeedback = SharedDefaults.enableHapticFeedback
-    @State private var enableAudioFeedback = SharedDefaults.enableAudioFeedback
-    @State private var commaCalloutCharacters = SharedDefaults.commaCalloutCharacters
-    @State private var colonCalloutCharacters = SharedDefaults.colonCalloutCharacters
-    @State private var enableSync = SharedDefaults.enableSync
-    
     @State private var showResetAlert = false
     @State private var showSyncConfirmationAlert = false
     
+    @State private var defaults: SharedDefaults
+    init() {
+        defaults = SharedDefaults(canReadCloud: true)
+        defaults.maybeFetchCloudPreferences()
+    }
+    
     var body: some View {
-        NSLog("enableHapticFeedback: \(enableHapticFeedback), enableAudioFeedback: \(enableAudioFeedback), commaCalloutCharacters: \(commaCalloutCharacters), colonCalloutCharacters: \(colonCalloutCharacters), enableSync: \(enableSync)")
-        
-        
         return NavigationStack {
             Form {
                 Section("Feedback") {
                     Toggle(isOn: Binding(
-                        get: { enableHapticFeedback },
-                        set: { enableHapticFeedback = $0; SharedDefaults.enableHapticFeedback = $0 }
+                        get: { defaults.enableHapticFeedback },
+                        set: { defaults.enableHapticFeedback = $0 }
                     )) {
                         Text("Haptic Feedback")
                     }
                     Toggle(isOn: Binding(
-                        get: { enableAudioFeedback },
-                        set: { enableAudioFeedback = $0; SharedDefaults.enableAudioFeedback = $0 }
+                        get: { defaults.enableAudioFeedback },
+                        set: { defaults.enableAudioFeedback = $0 }
                     )) {
                         Text("Input Sound")
                     }
@@ -41,33 +38,22 @@ struct ContentView: View {
                 
                 Section("Layout") {
                     LabelledTextField(title: "Callout characters for \",\"", text: Binding(
-                        get: { commaCalloutCharacters },
-                        set: { commaCalloutCharacters = $0; SharedDefaults.commaCalloutCharacters = $0 }
+                        get: { defaults.commaCalloutCharacters },
+                        set: { defaults.commaCalloutCharacters = $0 }
                     ))
                     LabelledTextField(title: "Callout characters for \"։\"", text: Binding(
-                        get: { colonCalloutCharacters },
-                        set: { colonCalloutCharacters = $0; SharedDefaults.colonCalloutCharacters = $0 }
+                        get: { defaults.colonCalloutCharacters },
+                        set: { defaults.colonCalloutCharacters = $0 }
                     ))
                 }
                 
-                //                SyncSettingsView(enableSync: $enableSync)
-                SyncSettingsView(enableSync: $enableSync)
-                    .onChange(of: enableSync) { newValue in
-                        if newValue {
-                            SharedDefaults.syncPreferencesToCloud()
-                        } else {
-                            SharedDefaults.stopSyncingWithCloud()
-                        }
-                    }
+                SyncSettingsView(defaults: defaults)
                 
                 Section {
                     ResetSettingsButton(onReset: {
-                        SharedDefaults.resetToDefaults()
-                        
-                        enableHapticFeedback = SharedDefaults.enableHapticFeedback
-                        enableAudioFeedback = SharedDefaults.enableAudioFeedback
-                        commaCalloutCharacters = SharedDefaults.commaCalloutCharacters
-                        colonCalloutCharacters = SharedDefaults.colonCalloutCharacters
+                        defaults.resetToDefaults()
+                        // Update the view by reinitializing defaults
+                        defaults = SharedDefaults(canReadCloud: true)
                     })
                 }
             }.navigationTitle("Armenian Keyboard")

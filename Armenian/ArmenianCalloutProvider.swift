@@ -10,6 +10,11 @@ import KeyboardKit
 import SharedDefaults
 
 class ArmenianCalloutActionProvider: BaseCalloutActionProvider {
+    public init(defaults: SharedDefaults) throws {
+        self.defaults = defaults
+    }
+    private let defaults: SharedDefaults
+    
     override func calloutActions(for action: KeyboardAction) -> [KeyboardAction] {
         switch action {
         case .character(let char):
@@ -37,11 +42,9 @@ class ArmenianCalloutActionProvider: BaseCalloutActionProvider {
                     .character("Ըւ")
                 ]
             case "։":
-                NSLog("colon chars: \(SharedDefaults.colonCalloutCharacters); comma chars: \(SharedDefaults.commaCalloutCharacters)")
-                
-                return SharedDefaults.colonCalloutCharacters.map { .character(String($0)) }
+                return defaults.colonCalloutCharacters.map { .character(String($0)) }
             case ",":
-                return SharedDefaults.commaCalloutCharacters.map { .character(String($0)) }
+                return defaults.commaCalloutCharacters.map { .character(String($0)) }
             default:
                 return super.calloutActions(for: action)
             }

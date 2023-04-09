@@ -9,43 +9,62 @@ import SwiftUI
 import SharedDefaults
 
 struct SyncSettingsView: View {
-    @Binding var enableSync: Bool
-    @State private var showSyncConfirmationAlert = false
-    @State private var showErrorAlert = false
-
+    private let defaults: SharedDefaults
+    init(defaults: SharedDefaults) {
+        self.defaults = defaults
+        self.tempEnableSync = defaults.enableSync
+    }
+    
+    @State private var tempEnableSync: Bool
+    @State private var currentAlert: ActiveAlert = .none
+    
+    private func setEnableSync(to value: Bool) {
+        tempEnableSync = value
+        defaults.enableSync = value
+        currentAlert = .none
+    }
+    
+    enum ActiveAlert {
+        case none, syncConfirmation, error
+    }
+    
     var body: some View {
         Section("Synchronization") {
-            Toggle("Sync preferences via iCloud", isOn: $enableSync)
-                .onChange(of: enableSync) { newValue in
-                    if newValue != SharedDefaults.enableSync {
+            Toggle("Sync preferences via iCloud", isOn: $tempEnableSync)
+                .onChange(of: tempEnableSync) { newValue in
+                    print("newValue: \(newValue); temp: \(tempEnableSync); enableSync: \(defaults.enableSync)")
+                    if newValue != defaults.enableSync {
                         if FileManager.default.ubiquityIdentityToken != nil {
-                            showSyncConfirmationAlert = true
+                            currentAlert = .syncConfirmation
                         } else {
-                            enableSync = false
-                            showErrorAlert = true
+                            currentAlert = .error
                         }
                     }
                 }
-                .alert(isPresented: $showSyncConfirmationAlert) {
-                    Alert(
-                        title: Text("Change Sync Preferences?"),
-                        message: Text("Are you sure you want to \(enableSync ? "enable" : "disable") sync via iCloud?"),
-                        primaryButton: .default(Text("Yes")) {
-                            SharedDefaults.enableSync = enableSync
-                        },
-                        secondaryButton: .cancel(Text("No")) {
-                            enableSync = SharedDefaults.enableSync
-                        }
-                    )
-                }
-                .alert(isPresented: $showErrorAlert) {
-                    Alert(
-                        title: Text("iCloud Unavailable"),
-                        message: Text("iCloud is not available on this device. Please log in to your iCloud account and try again."),
-                        dismissButton: .default(Text("OK")) {
-                            showErrorAlert = false
-                        }
-                    )
+                .alert(isPresented: Binding(get: { currentAlert != .none }, set: { _ in })) {
+                    switch currentAlert {
+                    case .syncConfirmation:
+                        return Alert(
+                            title: Text("Change Sync Preferences?"),
+                            message: Text("Are you sure you want to \(tempEnableSync ? "enable" : "disable") sync via iCloud?"),
+                            primaryButton: .default(Text("Yes")) {
+                                setEnableSync(to: tempEnableSync)
+                            },
+                            secondaryButton: .cancel(Text("No")) {
+                                setEnableSync(to: defaults.enableSync)
+                            }
+                        )
+                    case .error:
+                        return Alert(
+                            title: Text("iCloud Unavailable"),
+                            message: Text("iCloud is not available on this device. Please log in to your iCloud account and try again."),
+                            dismissButton: .default(Text("OK")) {
+                                currentAlert = .none
+                            }
+                        )
+                    default:
+                        return Alert(title: Text("Unknown error"))
+                    }
                 }
         }
     }
@@ -53,6 +72,8 @@ struct SyncSettingsView: View {
 
 struct SyncSettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SyncSettingsView(enableSync: .constant(true))
+        SyncSettingsView(
+            defaults: SharedDefaults(canReadCloud: false)
+        )
     }
 }

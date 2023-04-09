@@ -15,10 +15,9 @@ class KeyboardViewController: KeyboardInputViewController {
         
         keyboardContext.setLocale(.armenian)
         
-        NSLog("audio: \(SharedDefaults.enableAudioFeedback); haptic: \(SharedDefaults.enableHapticFeedback); sync: \(SharedDefaults.enableSync)")
-        
+        let defaults = SharedDefaults(canReadCloud: false)
         do {
-            calloutActionProvider = try ArmenianCalloutActionProvider()
+            calloutActionProvider = try ArmenianCalloutActionProvider(defaults: defaults)
         } catch {
             NSLog("Could not initialize ArmenianCalloutActionProvider: \(error)")
         }
@@ -30,25 +29,14 @@ class KeyboardViewController: KeyboardInputViewController {
         )
         
         keyboardFeedbackSettings = KeyboardFeedbackSettings(
-            audioConfiguration: SharedDefaults.enableAudioFeedback ? .enabled : .noFeedback,
-            hapticConfiguration: SharedDefaults.enableHapticFeedback ? .enabled : .noFeedback
+            audioConfiguration: defaults.enableAudioFeedback ? .enabled : .noFeedback,
+            hapticConfiguration: defaults.enableHapticFeedback ? .enabled : .noFeedback
         )
         keyboardFeedbackHandler = StandardKeyboardFeedbackHandler(settings: keyboardFeedbackSettings)
         
         keyboardActionHandler = ArmenianActionHandler(inputViewController: self)
         
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(updateLocalUserDefaults(_:)),
-            name: NSUbiquitousKeyValueStore.didChangeExternallyNotification,
-            object: nil
-        )
-        
         super.viewDidLoad()
-    }
-    
-    @objc func updateLocalUserDefaults(_ notification: Notification) {
-        SharedDefaults.syncPreferencesToLocal()
     }
 }
 
