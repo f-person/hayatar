@@ -47,6 +47,15 @@ struct ContentView: View {
                     ))
                 }
                 
+                Section("Behavior") {
+                    Toggle(isOn: Binding(
+                        get: { defaults.enableAutocapitalization },
+                        set: { defaults.enableAutocapitalization = $0 }
+                    )) {
+                        Text("Autocapitalization")
+                    }
+                }
+                
                 SyncSettingsView(defaults: defaults)
                 
                 Section {

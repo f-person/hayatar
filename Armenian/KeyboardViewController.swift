@@ -36,6 +36,10 @@ class KeyboardViewController: KeyboardInputViewController {
         
         keyboardActionHandler = ArmenianActionHandler(inputViewController: self)
         
+        if !defaults.enableAutocapitalization {
+            keyboardContext.autocapitalizationTypeOverride = KeyboardAutocapitalizationType.none
+        }
+        
         super.viewDidLoad()
     }
 }

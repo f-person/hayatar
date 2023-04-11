@@ -33,12 +33,14 @@ public class SharedDefaults {
         public static let commaCalloutCharacters = "commaCalloutCharacters"
         public static let colonCalloutCharacters = "colonCalloutCharacters"
         public static let enableSync = "enableSync"
+        public static let enableAutocapitalization = "enableAutocapitalization"
     }
     
     public static let defaultEnableHapticFeedback = true
     public static let defaultEnableAudioFeedback = true
     public static let defaultColonCalloutCharacters = "։,՞֊՛՝՜"
     public static let defaultCommaCalloutCharacters = ",«»—՟()՚"
+    public static let defaultEnableAutocapitalization = true
     
     public var enableSync: Bool {
         set {
@@ -65,6 +67,11 @@ public class SharedDefaults {
         get { get(Keys.enableAudioFeedback, defaultValue: SharedDefaults.defaultEnableAudioFeedback) }
     }
     
+    public var enableAutocapitalization: Bool {
+        set { set(newValue, forKey: Keys.enableAutocapitalization) }
+        get { get(Keys.enableAutocapitalization, defaultValue: SharedDefaults.defaultEnableAutocapitalization) }
+    }
+    
     public var colonCalloutCharacters: String {
         set { set(newValue, forKey: Keys.colonCalloutCharacters) }
         get { get(Keys.colonCalloutCharacters, defaultValue: SharedDefaults.defaultColonCalloutCharacters) }
@@ -80,6 +87,7 @@ public class SharedDefaults {
         enableAudioFeedback = SharedDefaults.defaultEnableAudioFeedback
         colonCalloutCharacters = SharedDefaults.defaultColonCalloutCharacters
         commaCalloutCharacters = SharedDefaults.defaultCommaCalloutCharacters
+        enableAutocapitalization = SharedDefaults.defaultEnableAutocapitalization
     }
     
     private func set<T>(_ value: T, forKey key: String) {
@@ -112,11 +120,13 @@ public class SharedDefaults {
         let enableAudioFeedback = getLocal(Keys.enableAudioFeedback, defaultValue: SharedDefaults.defaultEnableAudioFeedback)
         let colonCalloutCharacters = getLocal(Keys.colonCalloutCharacters, defaultValue: SharedDefaults.defaultColonCalloutCharacters)
         let commaCalloutCharacters = getLocal(Keys.commaCalloutCharacters, defaultValue: SharedDefaults.defaultCommaCalloutCharacters)
+        let enableAutocapitalization = getLocal(Keys.enableAutocapitalization, defaultValue: SharedDefaults.defaultEnableAutocapitalization)
         
         iCloudStore.set(enableHapticFeedback, forKey: Keys.enableHapticFeedback)
         iCloudStore.set(enableAudioFeedback, forKey: Keys.enableAudioFeedback)
         iCloudStore.set(colonCalloutCharacters, forKey: Keys.colonCalloutCharacters)
         iCloudStore.set(commaCalloutCharacters, forKey: Keys.commaCalloutCharacters)
+        iCloudStore.set(enableAutocapitalization, forKey: Keys.enableAutocapitalization)
     }
     
     public func stopSyncingWithCloud() {
@@ -124,6 +134,7 @@ public class SharedDefaults {
         cloudStore?.removeObject(forKey: Keys.enableAudioFeedback)
         cloudStore?.removeObject(forKey: Keys.colonCalloutCharacters)
         cloudStore?.removeObject(forKey: Keys.commaCalloutCharacters)
+        cloudStore?.removeObject(forKey: Keys.enableAutocapitalization)
     }
     
     /**
@@ -145,10 +156,12 @@ public class SharedDefaults {
         let audioFeedback = iCloudStore.object(forKey: Keys.enableAudioFeedback) as? Bool ?? SharedDefaults.defaultEnableAudioFeedback
         let colonCallouts = iCloudStore.object(forKey: Keys.colonCalloutCharacters) as? String ?? SharedDefaults.defaultColonCalloutCharacters
         let commaCallouts = iCloudStore.object(forKey: Keys.commaCalloutCharacters) as? String ?? SharedDefaults.defaultCommaCalloutCharacters
+        let enableAutocapitalization = iCloudStore.object(forKey: Keys.enableAutocapitalization) as? Bool? ?? SharedDefaults.defaultEnableAutocapitalization
         
         localStore?.set(hapticFeedback, forKey: Keys.enableHapticFeedback)
         localStore?.set(audioFeedback, forKey: Keys.enableAudioFeedback)
         localStore?.set(colonCallouts, forKey: Keys.colonCalloutCharacters)
         localStore?.set(commaCallouts, forKey: Keys.commaCalloutCharacters)
+        localStore?.set(enableAutocapitalization, forKey: Keys.enableAutocapitalization)
     }
 }
