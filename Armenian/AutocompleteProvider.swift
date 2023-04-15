@@ -35,10 +35,10 @@ class HunspellAutocompleteProvider: AutocompleteProvider {
     }
     
     var locale: Locale = .current
-    var canIgnoreWords: Bool { false }
-    var canLearnWords: Bool { false }
-    var ignoredWords: [String] = []
-    var learnedWords: [String] = []
+    let canIgnoreWords: Bool = false
+    let canLearnWords: Bool = false
+    let ignoredWords: [String] = []
+    let learnedWords: [String] = []
     
     func hasIgnoredWord(_ word: String) -> Bool { false }
     func hasLearnedWord(_ word: String) -> Bool { false }
