@@ -24,9 +24,33 @@
 		02485ABC29DFAC2500244E8F /* SharedDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02485ABB29DFAC2500244E8F /* SharedDefaults.swift */; };
 		02485ABE29DFBE2500244E8F /* LabelledTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02485ABD29DFBE2500244E8F /* LabelledTextField.swift */; };
 		02485AC029DFC06700244E8F /* ResetSettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02485ABF29DFC06700244E8F /* ResetSettingsButton.swift */; };
+		02519A4329E4D7E60014B4CD /* AutocompleteProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02519A4229E4D7E60014B4CD /* AutocompleteProvider.swift */; };
 		0256824B29DB9D44004BD8D6 /* KeyboardFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0256824A29DB9D44004BD8D6 /* KeyboardFeedback.swift */; };
 		025FC95A29E0FE09008B7E6B /* SyncSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025FC95929E0FE09008B7E6B /* SyncSettingsView.swift */; };
+		0274E27629EAD4B500AC6CB6 /* README-hy.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0274E27329EAD4B500AC6CB6 /* README-hy.txt */; };
+		0274E27729EAD4B500AC6CB6 /* hy_AM.dic in Resources */ = {isa = PBXBuildFile; fileRef = 0274E27429EAD4B500AC6CB6 /* hy_AM.dic */; };
+		0274E27829EAD4B500AC6CB6 /* hy_AM.aff in Resources */ = {isa = PBXBuildFile; fileRef = 0274E27529EAD4B500AC6CB6 /* hy_AM.aff */; };
+		0274E27B29EB099E00AC6CB6 /* HunspellBridge.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0274E27929EB099E00AC6CB6 /* HunspellBridge.mm */; };
 		0288C5F829D3518500AF6638 /* ArmenianCalloutProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0288C5F729D3518500AF6638 /* ArmenianCalloutProvider.swift */; };
+		02D0226D29E848EA00C34C0A /* README in Resources */ = {isa = PBXBuildFile; fileRef = 02D0223329E848E900C34C0A /* README */; };
+		02D0226E29E848EA00C34C0A /* license.hunspell in Resources */ = {isa = PBXBuildFile; fileRef = 02D0223429E848E900C34C0A /* license.hunspell */; };
+		02D0227029E848EA00C34C0A /* dictionary.lst in Resources */ = {isa = PBXBuildFile; fileRef = 02D0223829E848E900C34C0A /* dictionary.lst */; };
+		02D0227729E848EA00C34C0A /* hunzip.mm in Sources */ = {isa = PBXBuildFile; fileRef = 02D0224529E848E900C34C0A /* hunzip.mm */; };
+		02D0227829E848EA00C34C0A /* hunspell.mm in Sources */ = {isa = PBXBuildFile; fileRef = 02D0224829E848E900C34C0A /* hunspell.mm */; };
+		02D0227B29E848EA00C34C0A /* SpellChecker.mm in Sources */ = {isa = PBXBuildFile; fileRef = 02D0224F29E848E900C34C0A /* SpellChecker.mm */; };
+		02D0227C29E848EA00C34C0A /* hunvisapi.h.in in Resources */ = {isa = PBXBuildFile; fileRef = 02D0225029E848E900C34C0A /* hunvisapi.h.in */; };
+		02D0227D29E848EA00C34C0A /* license.myspell in Resources */ = {isa = PBXBuildFile; fileRef = 02D0225129E848EA00C34C0A /* license.myspell */; };
+		02D0227E29E848EA00C34C0A /* makefile.mk in Resources */ = {isa = PBXBuildFile; fileRef = 02D0225329E848EA00C34C0A /* makefile.mk */; };
+		02D0228029E848EA00C34C0A /* filemgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = 02D0225629E848EA00C34C0A /* filemgr.mm */; };
+		02D0228329E848EA00C34C0A /* affentry.mm in Sources */ = {isa = PBXBuildFile; fileRef = 02D0225929E848EA00C34C0A /* affentry.mm */; };
+		02D0228529E848EA00C34C0A /* replist.mm in Sources */ = {isa = PBXBuildFile; fileRef = 02D0225B29E848EA00C34C0A /* replist.mm */; };
+		02D0228729E848EA00C34C0A /* phonet.mm in Sources */ = {isa = PBXBuildFile; fileRef = 02D0226229E848EA00C34C0A /* phonet.mm */; };
+		02D0228829E848EA00C34C0A /* hunspell.dsp in Resources */ = {isa = PBXBuildFile; fileRef = 02D0226329E848EA00C34C0A /* hunspell.dsp */; };
+		02D0228929E848EA00C34C0A /* affixmgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = 02D0226429E848EA00C34C0A /* affixmgr.mm */; };
+		02D0228A29E848EA00C34C0A /* dictmgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = 02D0226529E848EA00C34C0A /* dictmgr.mm */; };
+		02D0228B29E848EA00C34C0A /* csutil.mm in Sources */ = {isa = PBXBuildFile; fileRef = 02D0226629E848EA00C34C0A /* csutil.mm */; };
+		02D0228D29E848EA00C34C0A /* hashmgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = 02D0226929E848EA00C34C0A /* hashmgr.mm */; };
+		02D0228E29E848EA00C34C0A /* suggestmgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = 02D0226C29E848EA00C34C0A /* suggestmgr.mm */; };
 		02EE058A29D877C200C7752D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 02EE058929D877C200C7752D /* README.md */; };
 		02EE058C29D8B84500C7752D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EE058B29D8B84500C7752D /* Extensions.swift */; };
 /* End PBXBuildFile section */
@@ -97,9 +121,54 @@
 		02485ABB29DFAC2500244E8F /* SharedDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedDefaults.swift; sourceTree = "<group>"; };
 		02485ABD29DFBE2500244E8F /* LabelledTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelledTextField.swift; sourceTree = "<group>"; };
 		02485ABF29DFC06700244E8F /* ResetSettingsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetSettingsButton.swift; sourceTree = "<group>"; };
+		02519A4229E4D7E60014B4CD /* AutocompleteProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutocompleteProvider.swift; sourceTree = "<group>"; };
 		0256824A29DB9D44004BD8D6 /* KeyboardFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardFeedback.swift; sourceTree = "<group>"; };
 		025FC95929E0FE09008B7E6B /* SyncSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncSettingsView.swift; sourceTree = "<group>"; };
+		0274E27329EAD4B500AC6CB6 /* README-hy.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "README-hy.txt"; sourceTree = "<group>"; };
+		0274E27429EAD4B500AC6CB6 /* hy_AM.dic */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hy_AM.dic; sourceTree = "<group>"; };
+		0274E27529EAD4B500AC6CB6 /* hy_AM.aff */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hy_AM.aff; sourceTree = "<group>"; };
+		0274E27929EB099E00AC6CB6 /* HunspellBridge.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = HunspellBridge.mm; sourceTree = "<group>"; };
+		0274E27A29EB099E00AC6CB6 /* HunspellBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HunspellBridge.h; sourceTree = "<group>"; };
 		0288C5F729D3518500AF6638 /* ArmenianCalloutProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmenianCalloutProvider.swift; sourceTree = "<group>"; };
+		02D0223129E848E800C34C0A /* Armenian-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Armenian-Bridging-Header.h"; sourceTree = "<group>"; };
+		02D0223229E848E900C34C0A /* hashmgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hashmgr.h; sourceTree = "<group>"; };
+		02D0223329E848E900C34C0A /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		02D0223429E848E900C34C0A /* license.hunspell */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.hunspell; sourceTree = "<group>"; };
+		02D0223729E848E900C34C0A /* hunspell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hunspell.h; sourceTree = "<group>"; };
+		02D0223829E848E900C34C0A /* dictionary.lst */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dictionary.lst; sourceTree = "<group>"; };
+		02D0223929E848E900C34C0A /* htypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = htypes.h; sourceTree = "<group>"; };
+		02D0223C29E848E900C34C0A /* dictmgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dictmgr.h; sourceTree = "<group>"; };
+		02D0223D29E848E900C34C0A /* replist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = replist.h; sourceTree = "<group>"; };
+		02D0224229E848E900C34C0A /* atypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = atypes.h; sourceTree = "<group>"; };
+		02D0224329E848E900C34C0A /* SpellChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpellChecker.h; sourceTree = "<group>"; };
+		02D0224429E848E900C34C0A /* baseaffix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = baseaffix.h; sourceTree = "<group>"; };
+		02D0224529E848E900C34C0A /* hunzip.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = hunzip.mm; sourceTree = "<group>"; };
+		02D0224629E848E900C34C0A /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		02D0224729E848E900C34C0A /* phonet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = phonet.h; sourceTree = "<group>"; };
+		02D0224829E848E900C34C0A /* hunspell.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = hunspell.mm; sourceTree = "<group>"; };
+		02D0224A29E848E900C34C0A /* langnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = langnum.h; sourceTree = "<group>"; };
+		02D0224D29E848E900C34C0A /* affentry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = affentry.h; sourceTree = "<group>"; };
+		02D0224E29E848E900C34C0A /* filemgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = filemgr.h; sourceTree = "<group>"; };
+		02D0224F29E848E900C34C0A /* SpellChecker.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SpellChecker.mm; sourceTree = "<group>"; };
+		02D0225029E848E900C34C0A /* hunvisapi.h.in */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hunvisapi.h.in; sourceTree = "<group>"; };
+		02D0225129E848EA00C34C0A /* license.myspell */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.myspell; sourceTree = "<group>"; };
+		02D0225229E848EA00C34C0A /* csutil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = csutil.h; sourceTree = "<group>"; };
+		02D0225329E848EA00C34C0A /* makefile.mk */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = makefile.mk; sourceTree = "<group>"; };
+		02D0225529E848EA00C34C0A /* hunvisapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hunvisapi.h; sourceTree = "<group>"; };
+		02D0225629E848EA00C34C0A /* filemgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = filemgr.mm; sourceTree = "<group>"; };
+		02D0225929E848EA00C34C0A /* affentry.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = affentry.mm; sourceTree = "<group>"; };
+		02D0225B29E848EA00C34C0A /* replist.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = replist.mm; sourceTree = "<group>"; };
+		02D0225D29E848EA00C34C0A /* suggestmgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = suggestmgr.h; sourceTree = "<group>"; };
+		02D0225E29E848EA00C34C0A /* w_char.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = w_char.h; sourceTree = "<group>"; };
+		02D0226229E848EA00C34C0A /* phonet.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = phonet.mm; sourceTree = "<group>"; };
+		02D0226329E848EA00C34C0A /* hunspell.dsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hunspell.dsp; sourceTree = "<group>"; };
+		02D0226429E848EA00C34C0A /* affixmgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = affixmgr.mm; sourceTree = "<group>"; };
+		02D0226529E848EA00C34C0A /* dictmgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = dictmgr.mm; sourceTree = "<group>"; };
+		02D0226629E848EA00C34C0A /* csutil.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = csutil.mm; sourceTree = "<group>"; };
+		02D0226829E848EA00C34C0A /* affixmgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = affixmgr.h; sourceTree = "<group>"; };
+		02D0226929E848EA00C34C0A /* hashmgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = hashmgr.mm; sourceTree = "<group>"; };
+		02D0226B29E848EA00C34C0A /* hunzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hunzip.h; sourceTree = "<group>"; };
+		02D0226C29E848EA00C34C0A /* suggestmgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = suggestmgr.mm; sourceTree = "<group>"; };
 		02D494BB29D5F1C000C1D087 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		02EE058929D877C200C7752D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		02EE058B29D8B84500C7752D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -183,6 +252,7 @@
 		022D42F229CE6A3A000F71B1 /* Armenian */ = {
 			isa = PBXGroup;
 			children = (
+				02D0223029E847EE00C34C0A /* Hunspell */,
 				02EE490529DCC39B003DDDD8 /* Armenian.entitlements */,
 				02EE058929D877C200C7752D /* README.md */,
 				022D42F329CE6A3A000F71B1 /* KeyboardViewController.swift */,
@@ -193,6 +263,7 @@
 				02EE058B29D8B84500C7752D /* Extensions.swift */,
 				0218B21D29DB63D90073A853 /* ArmenianActionHandler.swift */,
 				0256824A29DB9D44004BD8D6 /* KeyboardFeedback.swift */,
+				02519A4229E4D7E60014B4CD /* AutocompleteProvider.swift */,
 			);
 			path = Armenian;
 			sourceTree = "<group>";
@@ -211,6 +282,57 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		02D0223029E847EE00C34C0A /* Hunspell */ = {
+			isa = PBXGroup;
+			children = (
+				02D0224D29E848E900C34C0A /* affentry.h */,
+				02D0225929E848EA00C34C0A /* affentry.mm */,
+				02D0226829E848EA00C34C0A /* affixmgr.h */,
+				02D0226429E848EA00C34C0A /* affixmgr.mm */,
+				02D0224229E848E900C34C0A /* atypes.h */,
+				02D0224429E848E900C34C0A /* baseaffix.h */,
+				02D0224629E848E900C34C0A /* config.h */,
+				02D0225229E848EA00C34C0A /* csutil.h */,
+				02D0226629E848EA00C34C0A /* csutil.mm */,
+				0274E27A29EB099E00AC6CB6 /* HunspellBridge.h */,
+				0274E27929EB099E00AC6CB6 /* HunspellBridge.mm */,
+				02D0223829E848E900C34C0A /* dictionary.lst */,
+				02D0223C29E848E900C34C0A /* dictmgr.h */,
+				02D0226529E848EA00C34C0A /* dictmgr.mm */,
+				02D0224E29E848E900C34C0A /* filemgr.h */,
+				02D0225629E848EA00C34C0A /* filemgr.mm */,
+				02D0223229E848E900C34C0A /* hashmgr.h */,
+				02D0226929E848EA00C34C0A /* hashmgr.mm */,
+				02D0223929E848E900C34C0A /* htypes.h */,
+				02D0226329E848EA00C34C0A /* hunspell.dsp */,
+				02D0223729E848E900C34C0A /* hunspell.h */,
+				02D0224829E848E900C34C0A /* hunspell.mm */,
+				02D0225529E848EA00C34C0A /* hunvisapi.h */,
+				02D0225029E848E900C34C0A /* hunvisapi.h.in */,
+				02D0226B29E848EA00C34C0A /* hunzip.h */,
+				02D0224529E848E900C34C0A /* hunzip.mm */,
+				02D0224A29E848E900C34C0A /* langnum.h */,
+				02D0223429E848E900C34C0A /* license.hunspell */,
+				02D0225129E848EA00C34C0A /* license.myspell */,
+				0274E27529EAD4B500AC6CB6 /* hy_AM.aff */,
+				0274E27429EAD4B500AC6CB6 /* hy_AM.dic */,
+				0274E27329EAD4B500AC6CB6 /* README-hy.txt */,
+				02D0225329E848EA00C34C0A /* makefile.mk */,
+				02D0224729E848E900C34C0A /* phonet.h */,
+				02D0226229E848EA00C34C0A /* phonet.mm */,
+				02D0223329E848E900C34C0A /* README */,
+				02D0223D29E848E900C34C0A /* replist.h */,
+				02D0225B29E848EA00C34C0A /* replist.mm */,
+				02D0224329E848E900C34C0A /* SpellChecker.h */,
+				02D0224F29E848E900C34C0A /* SpellChecker.mm */,
+				02D0225D29E848EA00C34C0A /* suggestmgr.h */,
+				02D0226C29E848EA00C34C0A /* suggestmgr.mm */,
+				02D0225E29E848EA00C34C0A /* w_char.h */,
+				02D0223129E848E800C34C0A /* Armenian-Bridging-Header.h */,
+			);
+			path = Hunspell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,6 +424,7 @@
 					};
 					022D42F029CE6A39000F71B1 = {
 						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1430;
 					};
 					02485AA829DFABCE00244E8F = {
 						CreatedOnToolsVersion = 14.3;
@@ -347,6 +470,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0274E27829EAD4B500AC6CB6 /* hy_AM.aff in Resources */,
+				02D0226E29E848EA00C34C0A /* license.hunspell in Resources */,
+				0274E27729EAD4B500AC6CB6 /* hy_AM.dic in Resources */,
+				02D0227029E848EA00C34C0A /* dictionary.lst in Resources */,
+				02D0227E29E848EA00C34C0A /* makefile.mk in Resources */,
+				02D0226D29E848EA00C34C0A /* README in Resources */,
+				02D0227C29E848EA00C34C0A /* hunvisapi.h.in in Resources */,
+				02D0228829E848EA00C34C0A /* hunspell.dsp in Resources */,
+				02D0227D29E848EA00C34C0A /* license.myspell in Resources */,
+				0274E27629EAD4B500AC6CB6 /* README-hy.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,12 +510,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				02EE058C29D8B84500C7752D /* Extensions.swift in Sources */,
+				02D0227B29E848EA00C34C0A /* SpellChecker.mm in Sources */,
+				02D0228329E848EA00C34C0A /* affentry.mm in Sources */,
+				0274E27B29EB099E00AC6CB6 /* HunspellBridge.mm in Sources */,
 				0208A11B29CEEF8700905755 /* ArmenianLayoutProvider.swift in Sources */,
+				02D0227729E848EA00C34C0A /* hunzip.mm in Sources */,
+				02D0228E29E848EA00C34C0A /* suggestmgr.mm in Sources */,
+				02519A4329E4D7E60014B4CD /* AutocompleteProvider.swift in Sources */,
 				022D42F429CE6A3A000F71B1 /* KeyboardViewController.swift in Sources */,
 				0218B21E29DB63D90073A853 /* ArmenianActionHandler.swift in Sources */,
+				02D0227829E848EA00C34C0A /* hunspell.mm in Sources */,
+				02D0228D29E848EA00C34C0A /* hashmgr.mm in Sources */,
 				0288C5F829D3518500AF6638 /* ArmenianCalloutProvider.swift in Sources */,
+				02D0228729E848EA00C34C0A /* phonet.mm in Sources */,
 				0256824B29DB9D44004BD8D6 /* KeyboardFeedback.swift in Sources */,
+				02D0228529E848EA00C34C0A /* replist.mm in Sources */,
+				02D0228029E848EA00C34C0A /* filemgr.mm in Sources */,
 				0208A11D29CEF20E00905755 /* ArmenianInputSetProvider.swift in Sources */,
+				02D0228B29E848EA00C34C0A /* csutil.mm in Sources */,
+				02D0228929E848EA00C34C0A /* affixmgr.mm in Sources */,
+				02D0228A29E848EA00C34C0A /* dictmgr.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -608,6 +755,7 @@
 		022D42FA29CE6A3A000F71B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Armenian/Armenian.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 24;
@@ -626,6 +774,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Armenian/Hunspell/Armenian-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -634,6 +784,7 @@
 		022D42FB29CE6A3A000F71B1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Armenian/Armenian.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 24;
@@ -652,6 +803,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Armenian/Hunspell/Armenian-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
