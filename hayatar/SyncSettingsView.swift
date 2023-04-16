@@ -12,7 +12,7 @@ struct SyncSettingsView: View {
     private let defaults: SharedDefaults
     init(defaults: SharedDefaults) {
         self.defaults = defaults
-        self.tempEnableSync = defaults.enableSync
+        self.tempEnableSync = defaults.enableSync.value
     }
     
     @State private var tempEnableSync: Bool
@@ -20,7 +20,7 @@ struct SyncSettingsView: View {
     
     private func setEnableSync(to value: Bool) {
         tempEnableSync = value
-        defaults.enableSync = value
+        defaults.enableSync.value = value
         currentAlert = .none
     }
     
@@ -33,7 +33,7 @@ struct SyncSettingsView: View {
             Toggle("Sync preferences via iCloud", isOn: $tempEnableSync)
                 .onChange(of: tempEnableSync) { newValue in
                     print("newValue: \(newValue); temp: \(tempEnableSync); enableSync: \(defaults.enableSync)")
-                    if newValue != defaults.enableSync {
+                    if newValue != defaults.enableSync.value {
                         if FileManager.default.ubiquityIdentityToken != nil {
                             currentAlert = .syncConfirmation
                         } else {
@@ -51,7 +51,7 @@ struct SyncSettingsView: View {
                                 setEnableSync(to: tempEnableSync)
                             },
                             secondaryButton: .cancel(Text("No")) {
-                                setEnableSync(to: defaults.enableSync)
+                                setEnableSync(to: defaults.enableSync.value)
                             }
                         )
                     case .error:
@@ -73,7 +73,7 @@ struct SyncSettingsView: View {
 struct SyncSettingsView_Previews: PreviewProvider {
     static var previews: some View {
         SyncSettingsView(
-            defaults: SharedDefaults(canReadCloud: false)
+            defaults: SharedDefaults(canAccessCloud: false)
         )
     }
 }

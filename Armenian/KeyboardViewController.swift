@@ -16,7 +16,7 @@ class KeyboardViewController: KeyboardInputViewController {
         keyboardContext.setLocale(.armenian)
         autocompleteProvider = HunspellAutocompleteProvider()
         
-        let defaults = SharedDefaults(canReadCloud: false)
+        let defaults = SharedDefaults(canAccessCloud: false)
         do {
             calloutActionProvider = try ArmenianCalloutActionProvider(defaults: defaults)
         } catch {
@@ -30,14 +30,14 @@ class KeyboardViewController: KeyboardInputViewController {
         )
         
         keyboardFeedbackSettings = KeyboardFeedbackSettings(
-            audioConfiguration: defaults.enableAudioFeedback ? .enabled : .noFeedback,
-            hapticConfiguration: defaults.enableHapticFeedback ? .enabled : .noFeedback
+            audioConfiguration: defaults.enableAudioFeedback.value ? .enabled : .noFeedback,
+            hapticConfiguration: defaults.enableHapticFeedback.value ? .enabled : .noFeedback
         )
         keyboardFeedbackHandler = StandardKeyboardFeedbackHandler(settings: keyboardFeedbackSettings)
         
         keyboardActionHandler = ArmenianActionHandler(inputViewController: self)
         
-        if !defaults.enableAutocapitalization {
+        if !defaults.enableAutocapitalization.value {
             keyboardContext.autocapitalizationTypeOverride = KeyboardAutocapitalizationType.none
         }
         

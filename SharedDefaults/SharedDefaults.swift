@@ -8,10 +8,10 @@
 import Foundation
 
 public class SharedDefaults {
-    public init(canReadCloud: Bool) {
-        self.canReadCloud = canReadCloud
+    public init(canAccessCloud: Bool) {
+        self.canAccessCloud = canAccessCloud
     }
-    private let canReadCloud: Bool
+    private let canAccessCloud: Bool
     
     public static let appGroupID = "group.dev.fperson.hayatar.shareddefaults"
     
@@ -20,95 +20,39 @@ public class SharedDefaults {
     }
     
     private var cloudStore: NSUbiquitousKeyValueStore? {
-        if FileManager.default.ubiquityIdentityToken != nil {
+        if canAccessCloud && FileManager.default.ubiquityIdentityToken != nil {
             return NSUbiquitousKeyValueStore.default
         } else {
             return nil
         }
     }
     
-    public struct Keys {
-        public static let enableHapticFeedback = "enableHapticFeedback"
-        public static let enableAudioFeedback = "enableAudioFeedback"
-        public static let commaCalloutCharacters = "commaCalloutCharacters"
-        public static let colonCalloutCharacters = "colonCalloutCharacters"
-        public static let enableSync = "enableSync"
-        public static let enableAutocapitalization = "enableAutocapitalization"
+    private var shouldUseCloud: Bool {
+        let enableSyncKey = PreferenceKey.enableSync
+        
+        return canAccessCloud && cloudStore?.bool(forKey: enableSyncKey.rawValue) ?? enableSyncKey.defaultValue as! Bool
     }
     
-    public static let defaultEnableHapticFeedback = true
-    public static let defaultEnableAudioFeedback = true
-    public static let defaultColonCalloutCharacters = "։,՞֊՛՝՜"
-    public static let defaultCommaCalloutCharacters = ",«»—՟()՚"
-    public static let defaultEnableAutocapitalization = true
+    private lazy var storages = Storage(local: localStore!, cloud: cloudStore, shouldUseCloud: shouldUseCloud)
     
-    public var enableSync: Bool {
-        set {
-            cloudStore?.set(newValue, forKey: Keys.enableSync)
-            if newValue {
-                syncPreferencesToCloud()
-            } else {
-                syncPreferencesToLocal()
-                stopSyncingWithCloud()
-            }
-        }
-        get {
-            return cloudStore?.bool(forKey: Keys.enableSync) ?? false
-        }
-    }
+    public lazy var enableHapticFeedback = Preference<Bool>(storage: storages, key: .enableHapticFeedback)
+    public lazy var enableAudioFeedback = Preference<Bool>(storage: storages, key: .enableAudioFeedback)
+    public lazy var colonCalloutCharacters = Preference<String>(storage: storages, key: .colonCalloutCharacters)
+    public lazy var commaCalloutCharacters = Preference<String>(storage: storages, key: .commaCalloutCharacters)
+    public lazy var enableAutocapitalization = Preference<Bool>(storage: storages, key: .enableAutocapitalization)
     
-    public var enableHapticFeedback: Bool {
-        set { set(newValue, forKey: Keys.enableHapticFeedback) }
-        get { get(Keys.enableHapticFeedback, defaultValue: SharedDefaults.defaultEnableHapticFeedback) }
-    }
-    
-    public var enableAudioFeedback: Bool {
-        set { set(newValue, forKey: Keys.enableAudioFeedback) }
-        get { get(Keys.enableAudioFeedback, defaultValue: SharedDefaults.defaultEnableAudioFeedback) }
-    }
-    
-    public var enableAutocapitalization: Bool {
-        set { set(newValue, forKey: Keys.enableAutocapitalization) }
-        get { get(Keys.enableAutocapitalization, defaultValue: SharedDefaults.defaultEnableAutocapitalization) }
-    }
-    
-    public var colonCalloutCharacters: String {
-        set { set(newValue, forKey: Keys.colonCalloutCharacters) }
-        get { get(Keys.colonCalloutCharacters, defaultValue: SharedDefaults.defaultColonCalloutCharacters) }
-    }
-    
-    public var commaCalloutCharacters: String {
-        set { set(newValue, forKey: Keys.commaCalloutCharacters) }
-        get { get(Keys.commaCalloutCharacters, defaultValue: SharedDefaults.defaultCommaCalloutCharacters) }
-    }
+    public lazy var enableSync: Preference<Bool> = {
+        var storage = storages
+        storage.shouldUseCloud = true
+        return Preference<Bool>(storage: storage, key: .enableSync)
+    }()
     
     public func resetToDefaults() {
-        enableHapticFeedback = SharedDefaults.defaultEnableHapticFeedback
-        enableAudioFeedback = SharedDefaults.defaultEnableAudioFeedback
-        colonCalloutCharacters = SharedDefaults.defaultColonCalloutCharacters
-        commaCalloutCharacters = SharedDefaults.defaultCommaCalloutCharacters
-        enableAutocapitalization = SharedDefaults.defaultEnableAutocapitalization
-    }
-    
-    private func set<T>(_ value: T, forKey key: String) {
-        localStore?.set(value, forKey: key)
-        if enableSync {
-            cloudStore?.set(value, forKey: key)
-        }
-    }
-    
-    private func get<T>(_ key: String, defaultValue: T) -> T {
-        if canReadCloud && enableSync {
-            return cloudStore?.object(forKey: key) as? T ?? defaultValue
-        } else if let localValue = localStore?.object(forKey: key) as? T {
-            return localValue
-        } else {
-            return defaultValue
-        }
-    }
-    
-    private func getLocal<T>(_ key: String, defaultValue: T) -> T {
-        return localStore?.object(forKey: key) as? T ?? defaultValue
+        enableHapticFeedback.value = enableHapticFeedback.key.defaultValue as! Bool
+        enableAudioFeedback.value = enableAudioFeedback.key.defaultValue as! Bool
+        colonCalloutCharacters.value = colonCalloutCharacters.key.defaultValue as! String
+        commaCalloutCharacters.value = commaCalloutCharacters.key.defaultValue as! String
+        enableAutocapitalization.value = enableAutocapitalization.key.defaultValue as! Bool
     }
     
     public func syncPreferencesToCloud() {
@@ -116,33 +60,16 @@ public class SharedDefaults {
             NSLog("Error: iCloud store is not available")
             return
         }
-        let enableHapticFeedback = getLocal(Keys.enableHapticFeedback, defaultValue: SharedDefaults.defaultEnableHapticFeedback)
-        let enableAudioFeedback = getLocal(Keys.enableAudioFeedback, defaultValue: SharedDefaults.defaultEnableAudioFeedback)
-        let colonCalloutCharacters = getLocal(Keys.colonCalloutCharacters, defaultValue: SharedDefaults.defaultColonCalloutCharacters)
-        let commaCalloutCharacters = getLocal(Keys.commaCalloutCharacters, defaultValue: SharedDefaults.defaultCommaCalloutCharacters)
-        let enableAutocapitalization = getLocal(Keys.enableAutocapitalization, defaultValue: SharedDefaults.defaultEnableAutocapitalization)
         
-        iCloudStore.set(enableHapticFeedback, forKey: Keys.enableHapticFeedback)
-        iCloudStore.set(enableAudioFeedback, forKey: Keys.enableAudioFeedback)
-        iCloudStore.set(colonCalloutCharacters, forKey: Keys.colonCalloutCharacters)
-        iCloudStore.set(commaCalloutCharacters, forKey: Keys.commaCalloutCharacters)
-        iCloudStore.set(enableAutocapitalization, forKey: Keys.enableAutocapitalization)
+        for key in PreferenceKey.allCases {
+            let localValue = getLocal(key.rawValue, defaultValue: key.defaultValue)
+            iCloudStore.set(localValue, forKey: key.rawValue)
+        }
     }
     
     public func stopSyncingWithCloud() {
-        cloudStore?.removeObject(forKey: Keys.enableHapticFeedback)
-        cloudStore?.removeObject(forKey: Keys.enableAudioFeedback)
-        cloudStore?.removeObject(forKey: Keys.colonCalloutCharacters)
-        cloudStore?.removeObject(forKey: Keys.commaCalloutCharacters)
-        cloudStore?.removeObject(forKey: Keys.enableAutocapitalization)
-    }
-    
-    /**
-     Fetches cloud preferences if sync is enabled.
-     */
-    public func maybeFetchCloudPreferences() {
-        if enableSync {
-            syncPreferencesToLocal()
+        for key in PreferenceKey.allCases {
+            cloudStore?.removeObject(forKey: key.rawValue)
         }
     }
     
@@ -152,16 +79,22 @@ public class SharedDefaults {
             return
         }
         
-        let hapticFeedback = iCloudStore.object(forKey: Keys.enableHapticFeedback) as? Bool ?? SharedDefaults.defaultEnableHapticFeedback
-        let audioFeedback = iCloudStore.object(forKey: Keys.enableAudioFeedback) as? Bool ?? SharedDefaults.defaultEnableAudioFeedback
-        let colonCallouts = iCloudStore.object(forKey: Keys.colonCalloutCharacters) as? String ?? SharedDefaults.defaultColonCalloutCharacters
-        let commaCallouts = iCloudStore.object(forKey: Keys.commaCalloutCharacters) as? String ?? SharedDefaults.defaultCommaCalloutCharacters
-        let enableAutocapitalization = iCloudStore.object(forKey: Keys.enableAutocapitalization) as? Bool? ?? SharedDefaults.defaultEnableAutocapitalization
-        
-        localStore?.set(hapticFeedback, forKey: Keys.enableHapticFeedback)
-        localStore?.set(audioFeedback, forKey: Keys.enableAudioFeedback)
-        localStore?.set(colonCallouts, forKey: Keys.colonCalloutCharacters)
-        localStore?.set(commaCallouts, forKey: Keys.commaCalloutCharacters)
-        localStore?.set(enableAutocapitalization, forKey: Keys.enableAutocapitalization)
+        for key in PreferenceKey.allCases {
+            let cloudValue = iCloudStore.object(forKey: key.rawValue) ?? key.defaultValue
+            localStore?.set(cloudValue, forKey: key.rawValue)
+        }
+    }
+    
+    private func getLocal<T>(_ key: String, defaultValue: T) -> T {
+        return localStore?.object(forKey: key) as? T ?? defaultValue
+    }
+    
+    /**
+     Fetches cloud preferences if sync is enabled.
+     */
+    public func maybeFetchCloudPreferences() {
+        if enableSync.value {
+            syncPreferencesToLocal()
+        }
     }
 }

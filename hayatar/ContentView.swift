@@ -14,7 +14,7 @@ struct ContentView: View {
     
     @State private var defaults: SharedDefaults
     init() {
-        defaults = SharedDefaults(canReadCloud: true)
+        defaults = SharedDefaults(canAccessCloud: true)
         defaults.maybeFetchCloudPreferences()
     }
     
@@ -23,14 +23,14 @@ struct ContentView: View {
             Form {
                 Section("Feedback") {
                     Toggle(isOn: Binding(
-                        get: { defaults.enableHapticFeedback },
-                        set: { defaults.enableHapticFeedback = $0 }
+                        get: { defaults.enableHapticFeedback.value },
+                        set: { defaults.enableHapticFeedback.value = $0 }
                     )) {
                         Text("Haptic Feedback")
                     }
                     Toggle(isOn: Binding(
-                        get: { defaults.enableAudioFeedback },
-                        set: { defaults.enableAudioFeedback = $0 }
+                        get: { defaults.enableAudioFeedback.value },
+                        set: { defaults.enableAudioFeedback.value = $0 }
                     )) {
                         Text("Input Sound")
                     }
@@ -38,19 +38,19 @@ struct ContentView: View {
                 
                 Section("Layout") {
                     LabelledTextField(title: "Callout characters for \",\"", text: Binding(
-                        get: { defaults.commaCalloutCharacters },
-                        set: { defaults.commaCalloutCharacters = $0 }
+                        get: { defaults.commaCalloutCharacters.value },
+                        set: { defaults.commaCalloutCharacters.value = $0 }
                     ))
                     LabelledTextField(title: "Callout characters for \"։\"", text: Binding(
-                        get: { defaults.colonCalloutCharacters },
-                        set: { defaults.colonCalloutCharacters = $0 }
+                        get: { defaults.colonCalloutCharacters.value },
+                        set: { defaults.colonCalloutCharacters.value = $0 }
                     ))
                 }
                 
                 Section("Behavior") {
                     Toggle(isOn: Binding(
-                        get: { defaults.enableAutocapitalization },
-                        set: { defaults.enableAutocapitalization = $0 }
+                        get: { defaults.enableAutocapitalization.value },
+                        set: { defaults.enableAutocapitalization.value = $0 }
                     )) {
                         Text("Autocapitalization")
                     }
@@ -62,7 +62,7 @@ struct ContentView: View {
                     ResetSettingsButton(onReset: {
                         defaults.resetToDefaults()
                         // Update the view by reinitializing defaults
-                        defaults = SharedDefaults(canReadCloud: true)
+                        defaults = SharedDefaults(canAccessCloud: true)
                     })
                 }
             }.navigationTitle("Armenian Keyboard")

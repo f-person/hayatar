@@ -42,9 +42,9 @@ class ArmenianCalloutActionProvider: BaseCalloutActionProvider {
                     .character("Ըւ")
                 ]
             case "։":
-                return defaults.colonCalloutCharacters.map { .character(String($0)) }
+                return defaults.colonCalloutCharacters.value.map { .character(String($0)) }
             case ",":
-                return defaults.commaCalloutCharacters.map { .character(String($0)) }
+                return defaults.commaCalloutCharacters.value.map { .character(String($0)) }
             default:
                 return super.calloutActions(for: action)
             }
