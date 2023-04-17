@@ -18,11 +18,12 @@ class ArmenianCalloutActionProvider: BaseCalloutActionProvider {
     override func calloutActions(for action: KeyboardAction) -> [KeyboardAction] {
         switch action {
         case .character(let char):
+            let singleCallout = ArmenianCalloutActionProvider.singleCharacterCallouts[char.lowercased()]
+            if singleCallout != nil {
+                return [.character(singleCallout!)]
+            }
+            
             switch char {
-            case "ե":
-                return [.character("ե"), .character("և")]
-            case "Ե":
-                return [.character("Ե"), .character("և")]
             case "ւ":
                 return [
                     .character("ւ"),
@@ -52,4 +53,17 @@ class ArmenianCalloutActionProvider: BaseCalloutActionProvider {
             return super.calloutActions(for: action)
         }
     }
+}
+
+extension ArmenianCalloutActionProvider {
+    /**
+     A dictionary of characters that have a single callout option.
+     Each key represents a character (usually, in the Armenian alphabet),
+     and its corresponding value represents its callout character.
+     */
+    static let singleCharacterCallouts: [String: String] = [
+        "ե": "և",
+        "է": "1", "թ": "2", "փ": "3", "ձ": "4", "ջ": "5",
+        "ր": "6", "չ": "7", "ճ": "8", "ժ": "9", "ծ": "0"
+    ]
 }

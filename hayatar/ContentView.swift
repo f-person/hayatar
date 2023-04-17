@@ -37,6 +37,12 @@ struct ContentView: View {
                 }
                 
                 Section("Layout") {
+                    Toggle(isOn: Binding(
+                        get: { defaults.displayCalloutHints.value },
+                        set: { defaults.displayCalloutHints.value = $0 }
+                    )) {
+                        Text("Display callout hints")
+                    }
                     LabelledTextField(title: "Callout characters for \",\"", text: Binding(
                         get: { defaults.commaCalloutCharacters.value },
                         set: { defaults.commaCalloutCharacters.value = $0 }

@@ -110,9 +110,12 @@ class ArmenianKeyboardLayoutProvider: StandardKeyboardLayoutProvider {
             action: .space,
             width: .available
         )
+        let primaryAction = KeyboardAction.primary(
+            keyboardContext.textDocumentProxy.returnKeyType?.keyboardActionReturnType ?? .return
+        )
         let primaryKey = createLayoutItem(
             layout: layout,
-            action: .primary(keyboardContext.textDocumentProxy.returnKeyType?.keyboardActionReturnType ?? .return),
+            action: primaryAction,
             width: .inputPercentage(2)
         )
         
@@ -158,5 +161,4 @@ class ArmenianKeyboardLayoutProvider: StandardKeyboardLayoutProvider {
     private func createBackspaceKey(_ layout: KeyboardLayout)  -> KeyboardLayoutItem {
         return createLayoutItem(layout: layout, action: .backspace)
     }
-    
 }

@@ -29,8 +29,9 @@ public class SharedDefaults {
     
     private var shouldUseCloud: Bool {
         let enableSyncKey = PreferenceKey.enableSync
+        lazy var isSyncEnabled = cloudStore?.bool(forKey: enableSyncKey.rawValue) ?? enableSyncKey.defaultValue as! Bool
         
-        return canAccessCloud && cloudStore?.bool(forKey: enableSyncKey.rawValue) ?? enableSyncKey.defaultValue as! Bool
+        return canAccessCloud && isSyncEnabled
     }
     
     private lazy var storages = Storage(local: localStore!, cloud: cloudStore, shouldUseCloud: shouldUseCloud)
@@ -40,10 +41,11 @@ public class SharedDefaults {
     public lazy var colonCalloutCharacters = Preference<String>(storage: storages, key: .colonCalloutCharacters)
     public lazy var commaCalloutCharacters = Preference<String>(storage: storages, key: .commaCalloutCharacters)
     public lazy var enableAutocapitalization = Preference<Bool>(storage: storages, key: .enableAutocapitalization)
+    public lazy var displayCalloutHints = Preference<Bool>(storage: storages, key: .displayCalloutHints)
     
     public lazy var enableSync: Preference<Bool> = {
         var storage = storages
-        storage.shouldUseCloud = true
+        storage.shouldUseCloud = canAccessCloud
         return Preference<Bool>(storage: storage, key: .enableSync)
     }()
     

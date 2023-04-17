@@ -6,17 +6,19 @@
 //
 
 import UIKit
+import SwiftUI
 import KeyboardKit
 import SharedDefaults
 
 class KeyboardViewController: KeyboardInputViewController {
+    private let defaults = SharedDefaults(canAccessCloud: false)
+    
     override func viewDidLoad() {
         String.sentenceDelimiters = ["։"]
         
         keyboardContext.setLocale(.armenian)
         autocompleteProvider = HunspellAutocompleteProvider()
         
-        let defaults = SharedDefaults(canAccessCloud: false)
         do {
             calloutActionProvider = try ArmenianCalloutActionProvider(defaults: defaults)
         } catch {
@@ -43,5 +45,48 @@ class KeyboardViewController: KeyboardInputViewController {
         
         super.viewDidLoad()
     }
+    
+    override func viewWillSetupKeyboard() {
+        setup {
+            customSystemKeyboard(
+                controller: $0,
+                shouldDisplayCalloutHints: self.defaults.displayCalloutHints.value
+            )
+        }
+    }
+}
+
+func customSystemKeyboard(
+    controller: KeyboardInputViewController,
+    shouldDisplayCalloutHints: Bool
+) -> some View {
+    return SystemKeyboard(
+        controller: controller,
+        buttonContent: { item in
+            let content = SystemKeyboardButtonContent(
+                action: item.action,
+                appearance: controller.keyboardAppearance,
+                keyboardContext: controller.keyboardContext
+            )
+            
+            if !shouldDisplayCalloutHints {
+                content
+            } else if case .character(let char) = item.action,
+                      let singleCallout = ArmenianCalloutActionProvider.singleCharacterCallouts[char.lowercased()] {
+                
+                ZStack {
+                    content
+                    Text(singleCallout)
+                        .font(.caption2)
+                        .foregroundColor(Color.secondary)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
+                        .padding(.trailing, 1)
+                        .padding(.top, -1)
+                }
+            } else {
+                content
+            }
+        }
+    )
 }
 

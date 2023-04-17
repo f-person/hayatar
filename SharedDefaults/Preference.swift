@@ -32,6 +32,7 @@ public enum PreferenceKey: String, CaseIterable {
     case commaCalloutCharacters
     case enableSync
     case enableAutocapitalization
+    case displayCalloutHints
     
     var defaultValue: Any {
         switch self {
@@ -46,6 +47,8 @@ public enum PreferenceKey: String, CaseIterable {
         case .enableSync:
             return false
         case .enableAutocapitalization:
+            return true
+        case .displayCalloutHints:
             return true
         }
     }
