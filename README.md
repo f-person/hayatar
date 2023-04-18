@@ -22,12 +22,6 @@ Longer-term stuff is below:
   that powers the word suggestions/spell checking
 * [Armenian spell checker dictionary](https://addons.mozilla.org/en-US/firefox/addon/armenian-spell-checker-diction/),
   the dictionary that powers the spell checking
-
-### Beta testers
-* My friends
-* Everyone from the [discussion chat](https://t.me/hayatar_keyboard)
-
-...for using the keyboard and giving feedback.
-
-And kudos to all of my friends who are not using iOS but support the project
-and provide input.
+* My friends and everyone from the [discussion chat](https://t.me/hayatar_keyboard)
+  for using the keyboard and giving feedback
+* My friends who are not using iOS but support the project and provide input
