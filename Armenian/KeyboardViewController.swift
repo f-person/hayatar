@@ -48,7 +48,7 @@ class KeyboardViewController: KeyboardInputViewController {
     
     override func viewWillSetupKeyboard() {
         setup {
-            customSystemKeyboard(
+            self.customSystemKeyboard(
                 controller: $0,
                 shouldDisplayCalloutHints: self.defaults.displayCalloutHints.value
             )
@@ -56,37 +56,56 @@ class KeyboardViewController: KeyboardInputViewController {
     }
 }
 
-func customSystemKeyboard(
-    controller: KeyboardInputViewController,
-    shouldDisplayCalloutHints: Bool
-) -> some View {
-    return SystemKeyboard(
-        controller: controller,
-        buttonContent: { item in
-            let content = SystemKeyboardButtonContent(
-                action: item.action,
-                appearance: controller.keyboardAppearance,
-                keyboardContext: controller.keyboardContext
-            )
-            
-            if !shouldDisplayCalloutHints {
-                content
-            } else if case .character(let char) = item.action,
-                      let singleCallout = ArmenianCalloutActionProvider.singleCharacterCallouts[char.lowercased()] {
+extension KeyboardViewController {
+    public func customSystemKeyboard(
+        controller: KeyboardInputViewController,
+        shouldDisplayCalloutHints: Bool
+    ) -> some View {
+        let hintFont = self.hintFont
+        let hintPadding = self.hintPadding
+        
+        return SystemKeyboard(
+            controller: controller,
+            buttonContent: { item in
+                let content = SystemKeyboardButtonContent(
+                    action: item.action,
+                    appearance: controller.keyboardAppearance,
+                    keyboardContext: controller.keyboardContext
+                )
                 
-                ZStack {
+                if !shouldDisplayCalloutHints {
                     content
-                    Text(singleCallout)
-                        .font(.caption2)
-                        .foregroundColor(Color.secondary)
-                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
-                        .padding(.trailing, 1)
-                        .padding(.top, -1)
+                } else if case .character(let char) = item.action,
+                          let singleCallout = ArmenianCalloutActionProvider.singleCharacterCallouts[char.lowercased()] {
+                    
+                    ZStack {
+                        content
+                        Text(singleCallout)
+                            .font(hintFont)
+                            .foregroundColor(Color.secondary)
+                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
+                            .padding(hintPadding)
+                    }
+                } else {
+                    content
                 }
-            } else {
-                content
             }
+        )
+    }
+    
+    private var hintFont: Font {
+        if keyboardContext.deviceType == .pad {
+            return .system(size: 14)
+        } else {
+            return .system(size: 10)
         }
-    )
+    }
+    
+    private var hintPadding: EdgeInsets {
+        if keyboardContext.deviceType == .pad {
+            return .init(top: 3, leading: 0, bottom: 0, trailing: 5)
+        } else {
+            return .init(top: 1, leading: 0, bottom: 0, trailing: 2)
+        }
+    }
 }
-
