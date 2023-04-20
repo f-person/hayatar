@@ -111,7 +111,7 @@ class ArmenianKeyboardLayoutProvider: StandardKeyboardLayoutProvider {
             width: .available
         )
         let primaryAction = KeyboardAction.primary(
-            keyboardContext.textDocumentProxy.returnKeyType?.keyboardActionReturnType ?? .return
+            keyboardContext.textDocumentProxy.returnKeyType?.keyboardReturnKeyType ?? .return
         )
         let primaryKey = createLayoutItem(
             layout: layout,

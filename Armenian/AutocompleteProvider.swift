@@ -36,6 +36,10 @@ class HunspellAutocompleteProvider: AutocompleteProvider {
                 suggestionText = $0
             }
             
+            if text.first!.isUppercase {
+                  suggestionText = suggestionText.capitalizingFirstLetter()
+              }
+            
             return AutocompleteSuggestion(text: suggestionText)
         }
         
@@ -63,6 +67,11 @@ class HunspellAutocompleteProvider: AutocompleteProvider {
     func unlearnWord(_ word: String) {}
 }
 
+extension String {
+    func capitalizingFirstLetter() -> String {
+        return prefix(1).uppercased() + dropFirst()
+    }
+}
 
 class SpellCheckerWrapper {
     private let spellChecker: SpellChecker
