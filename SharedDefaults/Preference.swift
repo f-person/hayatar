@@ -33,6 +33,7 @@ public enum PreferenceKey: String, CaseIterable {
     case enableSync
     case enableAutocapitalization
     case displayCalloutHints
+    case replaceYev
     
     var defaultValue: Any {
         switch self {
@@ -50,6 +51,8 @@ public enum PreferenceKey: String, CaseIterable {
             return true
         case .displayCalloutHints:
             return true
+        case .replaceYev:
+            return false
         }
     }
 }

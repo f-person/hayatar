@@ -7,8 +7,14 @@
 
 import Foundation
 import KeyboardKit
+import SharedDefaults
 
 class HunspellAutocompleteProvider: AutocompleteProvider {
+    init(defaults: SharedDefaults) {
+        self.defaults = defaults
+    }
+    private let defaults: SharedDefaults
+    
     private let spellChecker: SpellCheckerWrapper = SpellCheckerWrapper()
     
     func autocompleteSuggestions(for text: String, completion: AutocompleteCompletion) {
@@ -18,10 +24,19 @@ class HunspellAutocompleteProvider: AutocompleteProvider {
         }
         NSLog("Gettings suggestions for \(text)")
         
-        let suggestions = spellChecker.getSuggestions(for: text)
+        let normalizedText = text.lowercased().replacingOccurrences(of: "եւ", with: "և")
+        let suggestions = spellChecker.getSuggestions(for: normalizedText)
         NSLog("Got suggestions: \(suggestions)")
+        let replaceYev = defaults.replaceYev.value
         var autocompleteSuggestions = suggestions.prefix(3).map {
-            AutocompleteSuggestion(text: $0)
+            var suggestionText: String
+            if replaceYev {
+                suggestionText = $0.replacingOccurrences(of: "և", with: "եւ")
+            } else {
+                suggestionText = $0
+            }
+            
+            return AutocompleteSuggestion(text: suggestionText)
         }
         
         if autocompleteSuggestions.count < 3 {

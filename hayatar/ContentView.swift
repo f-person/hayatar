@@ -62,6 +62,15 @@ struct ContentView: View {
                     }
                 }
                 
+                Section("Suggestions") {
+                    Toggle(isOn: Binding(
+                        get: { defaults.replaceYev.value },
+                        set: { defaults.replaceYev.value = $0 }
+                    )) {
+                        Text("Replace «և» with «եւ»")
+                    }
+                }
+                
                 SyncSettingsView(defaults: defaults)
                 
                 Section {

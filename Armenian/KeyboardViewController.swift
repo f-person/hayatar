@@ -17,7 +17,7 @@ class KeyboardViewController: KeyboardInputViewController {
         String.sentenceDelimiters = ["։"]
         
         keyboardContext.setLocale(.armenian)
-        autocompleteProvider = HunspellAutocompleteProvider()
+        autocompleteProvider = HunspellAutocompleteProvider(defaults: defaults)
         
         do {
             calloutActionProvider = try ArmenianCalloutActionProvider(defaults: defaults)

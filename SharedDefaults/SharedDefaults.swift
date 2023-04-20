@@ -42,6 +42,7 @@ public class SharedDefaults {
     public lazy var commaCalloutCharacters = Preference<String>(storage: storages, key: .commaCalloutCharacters)
     public lazy var enableAutocapitalization = Preference<Bool>(storage: storages, key: .enableAutocapitalization)
     public lazy var displayCalloutHints = Preference<Bool>(storage: storages, key: .displayCalloutHints)
+    public lazy var replaceYev = Preference<Bool>(storage: storages, key: .replaceYev)
     
     public lazy var enableSync: Preference<Bool> = {
         var storage = storages
