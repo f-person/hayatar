@@ -91,6 +91,8 @@ class ArmenianKeyboardLayoutProvider: StandardKeyboardLayoutProvider {
     }
     
     private func createBottomRow(_ context: KeyboardContext, _ layout: KeyboardLayout) -> KeyboardLayoutItemRow {
+        let bottomSystemKeyWidth = bottomSystemButtonWidth(for: context)
+        
         let newKeyboardType: KeyboardType
         switch context.keyboardType {
         case .alphabetic:
@@ -103,7 +105,8 @@ class ArmenianKeyboardLayoutProvider: StandardKeyboardLayoutProvider {
         
         let keyboardTypeKey = createLayoutItem(
             layout: layout,
-            action: .keyboardType(newKeyboardType)
+            action: .keyboardType(newKeyboardType),
+            width: bottomSystemKeyWidth
         )
         let spacebarKey = createLayoutItem(
             layout: layout,
@@ -111,7 +114,7 @@ class ArmenianKeyboardLayoutProvider: StandardKeyboardLayoutProvider {
             width: .available
         )
         let primaryAction = KeyboardAction.primary(
-            keyboardContext.textDocumentProxy.returnKeyType?.keyboardReturnKeyType ?? .return
+            context.textDocumentProxy.returnKeyType?.keyboardReturnKeyType ?? .return
         )
         let primaryKey = createLayoutItem(
             layout: layout,
@@ -129,14 +132,32 @@ class ArmenianKeyboardLayoutProvider: StandardKeyboardLayoutProvider {
         )
         
         let shouldDisplayGlobe = context.needsInputModeSwitchKey
+        lazy var globeItem = createLayoutItem(
+            layout: layout,
+            action: .nextKeyboard,
+            width: bottomSystemKeyWidth
+        )
         return [
             keyboardTypeKey,
-            !shouldDisplayGlobe ? nil : createLayoutItem(layout: layout, action: .nextKeyboard),
+            !shouldDisplayGlobe ? nil : globeItem,
             commaCalloutKey,
             spacebarKey,
             colonCalloutKey,
             primaryKey
         ].compactMap { $0 }
+    }
+    
+    
+    /**
+     The width of bottom system buttons.
+     */
+    private func bottomSystemButtonWidth(for context: KeyboardContext) -> KeyboardLayoutItemWidth {
+        if context.deviceType == .phone {
+            let isPortrait = context.interfaceOrientation.isPortrait
+            return .percentage(isPortrait ? 0.123 : 0.095)
+        } else {
+            return .input
+        }
     }
     
     private func createLayoutItem(
