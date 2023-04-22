@@ -28,7 +28,7 @@ class HunspellAutocompleteProvider: AutocompleteProvider {
         let suggestions = spellChecker.getSuggestions(for: normalizedText)
         NSLog("Got suggestions: \(suggestions)")
         let replaceYev = defaults.replaceYev.value
-        var autocompleteSuggestions = suggestions.prefix(3).map {
+        var autocompleteSuggestions = suggestions.map {
             var suggestionText: String
             if replaceYev {
                 suggestionText = $0.replacingOccurrences(of: "և", with: "եւ")
@@ -43,7 +43,7 @@ class HunspellAutocompleteProvider: AutocompleteProvider {
             return AutocompleteSuggestion(text: suggestionText)
         }
         
-        if autocompleteSuggestions.count < 3 {
+        if !autocompleteSuggestions.contains(where: { suggestion -> Bool in suggestion.text == text }) {
             autocompleteSuggestions.insert(
                 AutocompleteSuggestion(text: text, title: "«\(text)»"),
                 at: 0
