@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		020237DE29F4AAAC0024FF8B /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020237DD29F4AAAC0024FF8B /* KeyboardView.swift */; };
 		0208A11B29CEEF8700905755 /* ArmenianLayoutProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0208A11A29CEEF8700905755 /* ArmenianLayoutProvider.swift */; };
 		0208A11D29CEF20E00905755 /* ArmenianInputSetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0208A11C29CEF20E00905755 /* ArmenianInputSetProvider.swift */; };
 		0218B21E29DB63D90073A853 /* ArmenianActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0218B21D29DB63D90073A853 /* ArmenianActionHandler.swift */; };
@@ -107,6 +108,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		020237DD29F4AAAC0024FF8B /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
 		0208A11A29CEEF8700905755 /* ArmenianLayoutProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmenianLayoutProvider.swift; sourceTree = "<group>"; };
 		0208A11C29CEF20E00905755 /* ArmenianInputSetProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmenianInputSetProvider.swift; sourceTree = "<group>"; };
 		0218B21D29DB63D90073A853 /* ArmenianActionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmenianActionHandler.swift; sourceTree = "<group>"; };
@@ -268,6 +270,7 @@
 				0218B21D29DB63D90073A853 /* ArmenianActionHandler.swift */,
 				0256824A29DB9D44004BD8D6 /* KeyboardFeedback.swift */,
 				02519A4229E4D7E60014B4CD /* AutocompleteProvider.swift */,
+				020237DD29F4AAAC0024FF8B /* KeyboardView.swift */,
 			);
 			path = Armenian;
 			sourceTree = "<group>";
@@ -530,6 +533,7 @@
 				0288C5F829D3518500AF6638 /* ArmenianCalloutProvider.swift in Sources */,
 				02D0228729E848EA00C34C0A /* phonet.mm in Sources */,
 				0256824B29DB9D44004BD8D6 /* KeyboardFeedback.swift in Sources */,
+				020237DE29F4AAAC0024FF8B /* KeyboardView.swift in Sources */,
 				02D0228529E848EA00C34C0A /* replist.mm in Sources */,
 				02D0228029E848EA00C34C0A /* filemgr.mm in Sources */,
 				0208A11D29CEF20E00905755 /* ArmenianInputSetProvider.swift in Sources */,
