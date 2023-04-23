@@ -11,13 +11,13 @@ public struct Storage {
     public var local: UserDefaults
     public var cloud: NSUbiquitousKeyValueStore?
     public var shouldUseCloud: Bool
-
+    
     public init(local: UserDefaults, cloud: NSUbiquitousKeyValueStore?, shouldUseCloud: Bool) {
         self.local = local
         self.cloud = cloud
         self.shouldUseCloud = shouldUseCloud
     }
-
+    
     public func get<T>(_ key: String, defaultValue: T) -> T {
         if shouldUseCloud, let cloudValue = cloud?.object(forKey: key) as? T {
             return cloudValue
@@ -27,7 +27,7 @@ public struct Storage {
             return defaultValue
         }
     }
-
+    
     public func set<T>(_ value: T, forKey key: String) {
         local.set(value, forKey: key)
         if shouldUseCloud {

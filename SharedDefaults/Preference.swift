@@ -34,8 +34,9 @@ public enum PreferenceKey: String, CaseIterable {
     case enableAutocapitalization
     case displayCalloutHints
     case replaceYev
+    case spellCheckDictionary
     
-    var defaultValue: Any {
+    public var defaultValue: Any {
         switch self {
         case .enableHapticFeedback:
             return true
@@ -53,6 +54,40 @@ public enum PreferenceKey: String, CaseIterable {
             return true
         case .replaceYev:
             return false
+        case .spellCheckDictionary:
+            return SpellCheckDictionary.armenianSpellCheckDictionary.rawValue
+        }
+    }
+}
+
+public enum SpellCheckDictionary: String, CaseIterable {
+    case armenianSpellCheckDictionary
+    case martakertHyspell
+    
+    public var filename: String {
+        switch self {
+        case .armenianSpellCheckDictionary:
+            return "arm_spellcheck_dict"
+        case .martakertHyspell:
+            return "martakert_hyspell"
+        }
+    }
+    
+    public var name: String {
+        switch self {
+        case .armenianSpellCheckDictionary:
+            return "Armenian Spell Checker Dictionary"
+        case .martakertHyspell:
+            return "Hyspell by martakert"
+        }
+    }
+    
+    public var totalWords: Int {
+        switch self {
+        case .armenianSpellCheckDictionary:
+            return 47306
+        case .martakertHyspell:
+            return 65344
         }
     }
 }

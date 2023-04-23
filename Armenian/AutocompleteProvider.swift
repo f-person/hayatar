@@ -12,6 +12,11 @@ import SharedDefaults
 class HunspellAutocompleteProvider: AutocompleteProvider {
     init(defaults: SharedDefaults) {
         self.defaults = defaults
+        if let dictionary = SpellCheckDictionary(rawValue: defaults.spellCheckDictionary.value) {
+            spellChecker.updateLanguage(dictionary.filename)
+        } else {
+            spellChecker.updateLanguage(PreferenceKey.spellCheckDictionary.defaultValue as! String)
+        }
     }
     private let defaults: SharedDefaults
     
@@ -74,13 +79,12 @@ extension String {
 }
 
 class SpellCheckerWrapper {
-    private let spellChecker: SpellChecker
+    private let spellChecker: SpellChecker = SpellChecker()
     private var isLoaded = false
     
-    init() {
-        spellChecker = SpellChecker()
-        // TODO(f-person): Add support for other dictionaries
-        updateLanguage("hy_AM")
+    public func updateLanguage(_ language: String) {
+        isLoaded = false
+        spellChecker.updateLanguage(language)
         isLoaded = true
     }
     
@@ -92,9 +96,5 @@ class SpellCheckerWrapper {
         let suggestions = spellChecker.getSuggestionsForWord(word)
         NSLog("[SpellCheckerWrapper] suggestions: \(suggestions ?? [])")
         return suggestions as? [String] ?? []
-    }
-    
-    private func updateLanguage(_ language: String) {
-        spellChecker.updateLanguage(language)
     }
 }

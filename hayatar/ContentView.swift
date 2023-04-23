@@ -9,12 +9,14 @@ import SwiftUI
 import SharedDefaults
 
 struct ContentView: View {
-    @State private var showResetAlert = false
-    @State private var showSyncConfirmationAlert = false
-    
+    @State private var tempSelectedDictionary: SpellCheckDictionary
     @State private var defaults: SharedDefaults
+    
     init() {
-        defaults = SharedDefaults(canAccessCloud: true)
+        let sharedDefaults = SharedDefaults(canAccessCloud: true)
+        defaults = sharedDefaults
+        self.tempSelectedDictionary = SpellCheckDictionary(rawValue: sharedDefaults.spellCheckDictionary.value)!
+        
         defaults.maybeFetchCloudPreferences()
     }
     
@@ -69,6 +71,13 @@ struct ContentView: View {
                     )) {
                         Text("Replace «և» with «եւ»")
                     }
+                    Picker("Dictionary", selection: $tempSelectedDictionary) {
+                        ForEach(SpellCheckDictionary.allCases, id: \.self) { dictionary in
+                            Text("\(dictionary.name)\n(\(dictionary.totalWords) words)").tag(dictionary.rawValue)
+                        }
+                    }.onChange(of: tempSelectedDictionary) {
+                        defaults.spellCheckDictionary.value = $0.rawValue
+                    }
                 }
                 
                 SyncSettingsView(defaults: defaults)
@@ -78,6 +87,7 @@ struct ContentView: View {
                         defaults.resetToDefaults()
                         // Update the view by reinitializing defaults
                         defaults = SharedDefaults(canAccessCloud: true)
+                        self.tempSelectedDictionary = SpellCheckDictionary(rawValue: defaults.spellCheckDictionary.value)!
                     })
                 }
             }.navigationTitle("Armenian Keyboard")

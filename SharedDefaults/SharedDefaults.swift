@@ -43,6 +43,7 @@ public class SharedDefaults {
     public lazy var enableAutocapitalization = Preference<Bool>(storage: storages, key: .enableAutocapitalization)
     public lazy var displayCalloutHints = Preference<Bool>(storage: storages, key: .displayCalloutHints)
     public lazy var replaceYev = Preference<Bool>(storage: storages, key: .replaceYev)
+    public lazy var spellCheckDictionary = Preference<String>(storage: storages, key: .spellCheckDictionary)
     
     public lazy var enableSync: Preference<Bool> = {
         var storage = storages
@@ -56,6 +57,9 @@ public class SharedDefaults {
         colonCalloutCharacters.value = colonCalloutCharacters.key.defaultValue as! String
         commaCalloutCharacters.value = commaCalloutCharacters.key.defaultValue as! String
         enableAutocapitalization.value = enableAutocapitalization.key.defaultValue as! Bool
+        displayCalloutHints.value = displayCalloutHints.key.defaultValue as! Bool
+        replaceYev.value = replaceYev.key.defaultValue as! Bool
+        spellCheckDictionary.value = spellCheckDictionary.key.defaultValue as! String
     }
     
     public func syncPreferencesToCloud() {

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		020237DE29F4AAAC0024FF8B /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020237DD29F4AAAC0024FF8B /* KeyboardView.swift */; };
+		020237E529F550490024FF8B /* martakert_hyspell.dic in Resources */ = {isa = PBXBuildFile; fileRef = 020237E229F550490024FF8B /* martakert_hyspell.dic */; };
+		020237E629F550490024FF8B /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 020237E329F550490024FF8B /* LICENSE */; };
+		020237E729F550490024FF8B /* martakert_hyspell.aff in Resources */ = {isa = PBXBuildFile; fileRef = 020237E429F550490024FF8B /* martakert_hyspell.aff */; };
 		0208A11B29CEEF8700905755 /* ArmenianLayoutProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0208A11A29CEEF8700905755 /* ArmenianLayoutProvider.swift */; };
 		0208A11D29CEF20E00905755 /* ArmenianInputSetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0208A11C29CEF20E00905755 /* ArmenianInputSetProvider.swift */; };
 		0218B21E29DB63D90073A853 /* ArmenianActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0218B21D29DB63D90073A853 /* ArmenianActionHandler.swift */; };
@@ -28,9 +31,9 @@
 		02519A4329E4D7E60014B4CD /* AutocompleteProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02519A4229E4D7E60014B4CD /* AutocompleteProvider.swift */; };
 		0256824B29DB9D44004BD8D6 /* KeyboardFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0256824A29DB9D44004BD8D6 /* KeyboardFeedback.swift */; };
 		025FC95A29E0FE09008B7E6B /* SyncSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025FC95929E0FE09008B7E6B /* SyncSettingsView.swift */; };
-		0274E27629EAD4B500AC6CB6 /* README-hy.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0274E27329EAD4B500AC6CB6 /* README-hy.txt */; };
-		0274E27729EAD4B500AC6CB6 /* hy_AM.dic in Resources */ = {isa = PBXBuildFile; fileRef = 0274E27429EAD4B500AC6CB6 /* hy_AM.dic */; };
-		0274E27829EAD4B500AC6CB6 /* hy_AM.aff in Resources */ = {isa = PBXBuildFile; fileRef = 0274E27529EAD4B500AC6CB6 /* hy_AM.aff */; };
+		0274E27629EAD4B500AC6CB6 /* README-arm_spellcheck_dict.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0274E27329EAD4B500AC6CB6 /* README-arm_spellcheck_dict.txt */; };
+		0274E27729EAD4B500AC6CB6 /* arm_spellcheck_dict.dic in Resources */ = {isa = PBXBuildFile; fileRef = 0274E27429EAD4B500AC6CB6 /* arm_spellcheck_dict.dic */; };
+		0274E27829EAD4B500AC6CB6 /* arm_spellcheck_dict.aff in Resources */ = {isa = PBXBuildFile; fileRef = 0274E27529EAD4B500AC6CB6 /* arm_spellcheck_dict.aff */; };
 		0274E27B29EB099E00AC6CB6 /* HunspellBridge.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0274E27929EB099E00AC6CB6 /* HunspellBridge.mm */; };
 		0274E27D29EB5DC400AC6CB6 /* Preference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0274E27C29EB5DC400AC6CB6 /* Preference.swift */; };
 		0274E27F29EB632600AC6CB6 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0274E27E29EB632500AC6CB6 /* Storage.swift */; };
@@ -109,6 +112,9 @@
 
 /* Begin PBXFileReference section */
 		020237DD29F4AAAC0024FF8B /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
+		020237E229F550490024FF8B /* martakert_hyspell.dic */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = martakert_hyspell.dic; sourceTree = "<group>"; };
+		020237E329F550490024FF8B /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		020237E429F550490024FF8B /* martakert_hyspell.aff */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = martakert_hyspell.aff; sourceTree = "<group>"; };
 		0208A11A29CEEF8700905755 /* ArmenianLayoutProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmenianLayoutProvider.swift; sourceTree = "<group>"; };
 		0208A11C29CEF20E00905755 /* ArmenianInputSetProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmenianInputSetProvider.swift; sourceTree = "<group>"; };
 		0218B21D29DB63D90073A853 /* ArmenianActionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmenianActionHandler.swift; sourceTree = "<group>"; };
@@ -128,9 +134,9 @@
 		02519A4229E4D7E60014B4CD /* AutocompleteProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutocompleteProvider.swift; sourceTree = "<group>"; };
 		0256824A29DB9D44004BD8D6 /* KeyboardFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardFeedback.swift; sourceTree = "<group>"; };
 		025FC95929E0FE09008B7E6B /* SyncSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncSettingsView.swift; sourceTree = "<group>"; };
-		0274E27329EAD4B500AC6CB6 /* README-hy.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "README-hy.txt"; sourceTree = "<group>"; };
-		0274E27429EAD4B500AC6CB6 /* hy_AM.dic */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hy_AM.dic; sourceTree = "<group>"; };
-		0274E27529EAD4B500AC6CB6 /* hy_AM.aff */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hy_AM.aff; sourceTree = "<group>"; };
+		0274E27329EAD4B500AC6CB6 /* README-arm_spellcheck_dict.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "README-arm_spellcheck_dict.txt"; sourceTree = "<group>"; };
+		0274E27429EAD4B500AC6CB6 /* arm_spellcheck_dict.dic */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = arm_spellcheck_dict.dic; sourceTree = "<group>"; };
+		0274E27529EAD4B500AC6CB6 /* arm_spellcheck_dict.aff */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = arm_spellcheck_dict.aff; sourceTree = "<group>"; };
 		0274E27929EB099E00AC6CB6 /* HunspellBridge.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = HunspellBridge.mm; sourceTree = "<group>"; };
 		0274E27A29EB099E00AC6CB6 /* HunspellBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HunspellBridge.h; sourceTree = "<group>"; };
 		0274E27C29EB5DC400AC6CB6 /* Preference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preference.swift; sourceTree = "<group>"; };
@@ -210,6 +216,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		020237DF29F5496B0024FF8B /* Dictionaries */ = {
+			isa = PBXGroup;
+			children = (
+				020237E129F550050024FF8B /* martakert_hyspell */,
+				020237E029F54DA40024FF8B /* arm_spellcheck_dict */,
+			);
+			path = Dictionaries;
+			sourceTree = "<group>";
+		};
+		020237E029F54DA40024FF8B /* arm_spellcheck_dict */ = {
+			isa = PBXGroup;
+			children = (
+				0274E27529EAD4B500AC6CB6 /* arm_spellcheck_dict.aff */,
+				0274E27329EAD4B500AC6CB6 /* README-arm_spellcheck_dict.txt */,
+				0274E27429EAD4B500AC6CB6 /* arm_spellcheck_dict.dic */,
+			);
+			path = arm_spellcheck_dict;
+			sourceTree = "<group>";
+		};
+		020237E129F550050024FF8B /* martakert_hyspell */ = {
+			isa = PBXGroup;
+			children = (
+				020237E329F550490024FF8B /* LICENSE */,
+				020237E429F550490024FF8B /* martakert_hyspell.aff */,
+				020237E229F550490024FF8B /* martakert_hyspell.dic */,
+			);
+			path = martakert_hyspell;
+			sourceTree = "<group>";
+		};
 		022D42D329CE69C5000F71B1 = {
 			isa = PBXGroup;
 			children = (
@@ -258,6 +293,7 @@
 		022D42F229CE6A3A000F71B1 /* Armenian */ = {
 			isa = PBXGroup;
 			children = (
+				020237DF29F5496B0024FF8B /* Dictionaries */,
 				02D0223029E847EE00C34C0A /* Hunspell */,
 				02EE490529DCC39B003DDDD8 /* Armenian.entitlements */,
 				02EE058929D877C200C7752D /* README.md */,
@@ -325,9 +361,6 @@
 				02D0224A29E848E900C34C0A /* langnum.h */,
 				02D0223429E848E900C34C0A /* license.hunspell */,
 				02D0225129E848EA00C34C0A /* license.myspell */,
-				0274E27529EAD4B500AC6CB6 /* hy_AM.aff */,
-				0274E27429EAD4B500AC6CB6 /* hy_AM.dic */,
-				0274E27329EAD4B500AC6CB6 /* README-hy.txt */,
 				02D0225329E848EA00C34C0A /* makefile.mk */,
 				02D0224729E848E900C34C0A /* phonet.h */,
 				02D0226229E848EA00C34C0A /* phonet.mm */,
@@ -479,16 +512,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0274E27829EAD4B500AC6CB6 /* hy_AM.aff in Resources */,
+				0274E27829EAD4B500AC6CB6 /* arm_spellcheck_dict.aff in Resources */,
 				02D0226E29E848EA00C34C0A /* license.hunspell in Resources */,
-				0274E27729EAD4B500AC6CB6 /* hy_AM.dic in Resources */,
+				0274E27729EAD4B500AC6CB6 /* arm_spellcheck_dict.dic in Resources */,
 				02D0227029E848EA00C34C0A /* dictionary.lst in Resources */,
 				02D0227E29E848EA00C34C0A /* makefile.mk in Resources */,
 				02D0226D29E848EA00C34C0A /* README in Resources */,
+				020237E629F550490024FF8B /* LICENSE in Resources */,
+				020237E729F550490024FF8B /* martakert_hyspell.aff in Resources */,
 				02D0227C29E848EA00C34C0A /* hunvisapi.h.in in Resources */,
+				020237E529F550490024FF8B /* martakert_hyspell.dic in Resources */,
 				02D0228829E848EA00C34C0A /* hunspell.dsp in Resources */,
 				02D0227D29E848EA00C34C0A /* license.myspell in Resources */,
-				0274E27629EAD4B500AC6CB6 /* README-hy.txt in Resources */,
+				0274E27629EAD4B500AC6CB6 /* README-arm_spellcheck_dict.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
