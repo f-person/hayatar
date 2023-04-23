@@ -37,8 +37,8 @@ class HunspellAutocompleteProvider: AutocompleteProvider {
             }
             
             if text.first!.isUppercase {
-                  suggestionText = suggestionText.capitalizingFirstLetter()
-              }
+                suggestionText = suggestionText.capitalizingFirstLetter()
+            }
             
             return AutocompleteSuggestion(text: suggestionText)
         }
