@@ -44,7 +44,7 @@ public extension NumericInputSet {
     static func armenian() -> NumericInputSet {
         NumericInputSet(rows: [
             .init(chars: "1234567890"),
-            .init(chars: "-/:;()֏&@”"),
+            .init(chars: "-/:;()֏&@\""),
             .init(chars: ".?!’՟ՙ՚֎‹›"),
             .init(chars: "֊—՞՛՜՝«»")
         ])
