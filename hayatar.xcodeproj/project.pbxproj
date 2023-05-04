@@ -11,11 +11,13 @@
 		020237E529F550490024FF8B /* martakert_hyspell.dic in Resources */ = {isa = PBXBuildFile; fileRef = 020237E229F550490024FF8B /* martakert_hyspell.dic */; };
 		020237E629F550490024FF8B /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 020237E329F550490024FF8B /* LICENSE */; };
 		020237E729F550490024FF8B /* martakert_hyspell.aff in Resources */ = {isa = PBXBuildFile; fileRef = 020237E429F550490024FF8B /* martakert_hyspell.aff */; };
+		0207FDB629FC873F00D041B7 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0207FDB529FC873F00D041B7 /* AppView.swift */; };
+		0207FDBB29FC8DF800D041B7 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0207FDBA29FC8DF800D041B7 /* AboutView.swift */; };
 		0208A11B29CEEF8700905755 /* ArmenianLayoutProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0208A11A29CEEF8700905755 /* ArmenianLayoutProvider.swift */; };
 		0208A11D29CEF20E00905755 /* ArmenianInputSetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0208A11C29CEF20E00905755 /* ArmenianInputSetProvider.swift */; };
 		0218B21E29DB63D90073A853 /* ArmenianActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0218B21D29DB63D90073A853 /* ArmenianActionHandler.swift */; };
 		022D42E029CE69C5000F71B1 /* hayatarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D42DF29CE69C5000F71B1 /* hayatarApp.swift */; };
-		022D42E229CE69C5000F71B1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D42E129CE69C5000F71B1 /* ContentView.swift */; };
+		022D42E229CE69C5000F71B1 /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D42E129CE69C5000F71B1 /* PreferencesView.swift */; };
 		022D42E429CE69C6000F71B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 022D42E329CE69C6000F71B1 /* Assets.xcassets */; };
 		022D42E729CE69C6000F71B1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 022D42E629CE69C6000F71B1 /* Preview Assets.xcassets */; };
 		022D42F429CE6A3A000F71B1 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D42F329CE6A3A000F71B1 /* KeyboardViewController.swift */; };
@@ -115,12 +117,14 @@
 		020237E229F550490024FF8B /* martakert_hyspell.dic */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = martakert_hyspell.dic; sourceTree = "<group>"; };
 		020237E329F550490024FF8B /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		020237E429F550490024FF8B /* martakert_hyspell.aff */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = martakert_hyspell.aff; sourceTree = "<group>"; };
+		0207FDB529FC873F00D041B7 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		0207FDBA29FC8DF800D041B7 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		0208A11A29CEEF8700905755 /* ArmenianLayoutProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmenianLayoutProvider.swift; sourceTree = "<group>"; };
 		0208A11C29CEF20E00905755 /* ArmenianInputSetProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmenianInputSetProvider.swift; sourceTree = "<group>"; };
 		0218B21D29DB63D90073A853 /* ArmenianActionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmenianActionHandler.swift; sourceTree = "<group>"; };
 		022D42DC29CE69C5000F71B1 /* hayatar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hayatar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		022D42DF29CE69C5000F71B1 /* hayatarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hayatarApp.swift; sourceTree = "<group>"; };
-		022D42E129CE69C5000F71B1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		022D42E129CE69C5000F71B1 /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
 		022D42E329CE69C6000F71B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		022D42E629CE69C6000F71B1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		022D42F129CE6A39000F71B1 /* Armenian.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Armenian.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -245,6 +249,44 @@
 			path = martakert_hyspell;
 			sourceTree = "<group>";
 		};
+		0207FDB229FC867600D041B7 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				0207FDB929FC8DEF00D041B7 /* About */,
+				0207FDB429FC872A00D041B7 /* App */,
+				022D42DF29CE69C5000F71B1 /* hayatarApp.swift */,
+				0207FDB329FC869900D041B7 /* Preferences */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		0207FDB329FC869900D041B7 /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				022D42E129CE69C5000F71B1 /* PreferencesView.swift */,
+				02485ABD29DFBE2500244E8F /* LabelledTextField.swift */,
+				02485ABF29DFC06700244E8F /* ResetSettingsButton.swift */,
+				025FC95929E0FE09008B7E6B /* SyncSettingsView.swift */,
+			);
+			path = Preferences;
+			sourceTree = "<group>";
+		};
+		0207FDB429FC872A00D041B7 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				0207FDB529FC873F00D041B7 /* AppView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		0207FDB929FC8DEF00D041B7 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				0207FDBA29FC8DF800D041B7 /* AboutView.swift */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
 		022D42D329CE69C5000F71B1 = {
 			isa = PBXGroup;
 			children = (
@@ -269,15 +311,11 @@
 		022D42DE29CE69C5000F71B1 /* hayatar */ = {
 			isa = PBXGroup;
 			children = (
+				0207FDB229FC867600D041B7 /* src */,
 				02EE490429DCC375003DDDD8 /* hayatar.entitlements */,
 				02D494BB29D5F1C000C1D087 /* Info.plist */,
-				022D42DF29CE69C5000F71B1 /* hayatarApp.swift */,
-				022D42E129CE69C5000F71B1 /* ContentView.swift */,
 				022D42E329CE69C6000F71B1 /* Assets.xcassets */,
 				022D42E529CE69C6000F71B1 /* Preview Content */,
-				02485ABD29DFBE2500244E8F /* LabelledTextField.swift */,
-				02485ABF29DFC06700244E8F /* ResetSettingsButton.swift */,
-				025FC95929E0FE09008B7E6B /* SyncSettingsView.swift */,
 			);
 			path = hayatar;
 			sourceTree = "<group>";
@@ -543,8 +581,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				025FC95A29E0FE09008B7E6B /* SyncSettingsView.swift in Sources */,
+				0207FDBB29FC8DF800D041B7 /* AboutView.swift in Sources */,
 				02485AC029DFC06700244E8F /* ResetSettingsButton.swift in Sources */,
-				022D42E229CE69C5000F71B1 /* ContentView.swift in Sources */,
+				0207FDB629FC873F00D041B7 /* AppView.swift in Sources */,
+				022D42E229CE69C5000F71B1 /* PreferencesView.swift in Sources */,
 				022D42E029CE69C5000F71B1 /* hayatarApp.swift in Sources */,
 				02485ABE29DFBE2500244E8F /* LabelledTextField.swift in Sources */,
 			);

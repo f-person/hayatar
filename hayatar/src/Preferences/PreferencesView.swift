@@ -8,7 +8,7 @@
 import SwiftUI
 import SharedDefaults
 
-struct ContentView: View {
+struct PreferencesView: View {
     @State private var tempSelectedDictionary: SpellCheckDictionary
     @State private var defaults: SharedDefaults
     
@@ -97,6 +97,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        PreferencesView()
     }
 }
