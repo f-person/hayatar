@@ -27,11 +27,9 @@ class HunspellAutocompleteProvider: AutocompleteProvider {
             completion(.success([]))
             return
         }
-        NSLog("Gettings suggestions for \(text)")
         
         let normalizedText = text.lowercased().replacingOccurrences(of: "եւ", with: "և")
         let suggestions = spellChecker.getSuggestions(for: normalizedText)
-        NSLog("Got suggestions: \(suggestions)")
         let replaceYev = defaults.replaceYev.value
         var autocompleteSuggestions = suggestions.map {
             var suggestionText: String
@@ -94,7 +92,6 @@ class SpellCheckerWrapper {
         }
         
         let suggestions = spellChecker.getSuggestionsForWord(word)
-        NSLog("[SpellCheckerWrapper] suggestions: \(suggestions ?? [])")
         return suggestions as? [String] ?? []
     }
 }
