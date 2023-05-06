@@ -59,9 +59,7 @@ class KeyboardViewController: KeyboardInputViewController {
                 keyboardAppearance: controller.keyboardAppearance,
                 keyboardActionHandler: controller.keyboardActionHandler,
                 keyboardLayoutProvider: controller.keyboardLayoutProvider,
-                keyboardContext: controller.keyboardContext,
                 calloutContext: controller.calloutContext,
-                autocompleteContext: controller.autocompleteContext,
                 insertAutocompleteSuggestion: { [weak controller] suggestion in
                     controller?.insertAutocompleteSuggestion(suggestion)
                 },

@@ -14,11 +14,12 @@ struct KeyboardView: View {
     let keyboardAppearance: KeyboardAppearance
     let keyboardActionHandler: KeyboardActionHandler
     let keyboardLayoutProvider: KeyboardLayoutProvider
-    let keyboardContext: KeyboardContext
     let calloutContext: KeyboardCalloutContext?
-    let autocompleteContext: AutocompleteContext
     let insertAutocompleteSuggestion: (AutocompleteSuggestion) -> Void
     let width: CGFloat
+    
+    @EnvironmentObject private var autocompleteContext: AutocompleteContext
+    @EnvironmentObject private var keyboardContext: KeyboardContext
     
     var body: some View {
         let hintFont = self.hintFont
