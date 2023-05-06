@@ -10,14 +10,15 @@ import SwiftUI
 import KeyboardKit
 
 struct KeyboardView: View {
-    let controller: KeyboardInputViewController
     let shouldDisplayCalloutHints: Bool
-    
-    @EnvironmentObject
-    private var autocompleteContext: AutocompleteContext
-    
-    @EnvironmentObject
-    private var keyboardContext: KeyboardContext
+    let keyboardAppearance: KeyboardAppearance
+    let keyboardActionHandler: KeyboardActionHandler
+    let keyboardLayoutProvider: KeyboardLayoutProvider
+    let keyboardContext: KeyboardContext
+    let calloutContext: KeyboardCalloutContext?
+    let autocompleteContext: AutocompleteContext
+    let insertAutocompleteSuggestion: (AutocompleteSuggestion) -> Void
+    let width: CGFloat
     
     var body: some View {
         let hintFont = self.hintFont
@@ -27,13 +28,20 @@ struct KeyboardView: View {
             autocompleteToolbar
             
             SystemKeyboard(
-                controller: controller,
-                autocompleteToolbarMode: .none,
+                layout: keyboardLayoutProvider.keyboardLayout(for: keyboardContext),
+                appearance: keyboardAppearance,
+                actionHandler: keyboardActionHandler,
+                autocompleteContext: autocompleteContext,
+                autocompleteToolbar: .none,
+                autocompleteToolbarAction: insertAutocompleteSuggestion,
+                keyboardContext: keyboardContext,
+                calloutContext: calloutContext,
+                width: width,
                 buttonContent: { item in
                     let content = SystemKeyboardButtonContent(
                         action: item.action,
-                        appearance: controller.keyboardAppearance,
-                        keyboardContext: controller.keyboardContext
+                        appearance: keyboardAppearance,
+                        keyboardContext: keyboardContext
                     )
                     
                     if !shouldDisplayCalloutHints {
@@ -79,7 +87,7 @@ struct KeyboardView: View {
             AutocompleteToolbar(
                 suggestions: autocompleteContext.suggestions,
                 locale: keyboardContext.locale,
-                suggestionAction: controller.insertAutocompleteSuggestion
+                suggestionAction: insertAutocompleteSuggestion
             )
         }
         .opacity(keyboardContext.prefersAutocomplete ? 1 : 0) // Still allocate height to make room for callouts

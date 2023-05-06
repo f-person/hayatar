@@ -13,6 +13,10 @@ import SharedDefaults
 class KeyboardViewController: KeyboardInputViewController {
     private let defaults = SharedDefaults(canAccessCloud: false)
     
+    deinit {
+        NSLog("++ Deinit KVC")
+    }
+    
     override func viewDidLoad() {
         String.sentenceDelimiters = ["։"]
         
@@ -47,11 +51,21 @@ class KeyboardViewController: KeyboardInputViewController {
     }
     
     override func viewWillSetupKeyboard() {
-        super.viewWillSetupKeyboard()
-        setup { controller in
+        let shouldDisplayCalloutHints = defaults.displayCalloutHints.value
+
+        setup {controller in
             KeyboardView(
-                controller: controller,
-                shouldDisplayCalloutHints: self.defaults.displayCalloutHints.value
+                shouldDisplayCalloutHints: shouldDisplayCalloutHints,
+                keyboardAppearance: controller.keyboardAppearance,
+                keyboardActionHandler: controller.keyboardActionHandler,
+                keyboardLayoutProvider: controller.keyboardLayoutProvider,
+                keyboardContext: controller.keyboardContext,
+                calloutContext: controller.calloutContext,
+                autocompleteContext: controller.autocompleteContext,
+                insertAutocompleteSuggestion: { [weak controller] suggestion in
+                    controller?.insertAutocompleteSuggestion(suggestion)
+                },
+                width: controller.view.frame.width
             )
         }
     }

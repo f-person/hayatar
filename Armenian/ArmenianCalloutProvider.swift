@@ -15,6 +15,10 @@ class ArmenianCalloutActionProvider: BaseCalloutActionProvider {
     }
     private let defaults: SharedDefaults
     
+    deinit {
+        NSLog("++ [deinit] ArmenianCalloutActionProvider")
+    }
+    
     override func calloutActions(for action: KeyboardAction) -> [KeyboardAction] {
         switch action {
         case .character(let char):

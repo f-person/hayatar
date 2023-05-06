@@ -9,8 +9,14 @@ import Foundation
 
 public class SharedDefaults {
     public init(canAccessCloud: Bool) {
+        NSLog("++ Init defaults")
         self.canAccessCloud = canAccessCloud
     }
+    
+    deinit {
+        NSLog("++ DeInit defaults")
+    }
+    
     private let canAccessCloud: Bool
     
     public static let appGroupID = "group.dev.fperson.hayatar.shareddefaults"

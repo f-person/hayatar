@@ -845,6 +845,7 @@
 		022D42FA29CE6A3A000F71B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Armenian/Armenian.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -874,6 +875,7 @@
 		022D42FB29CE6A3A000F71B1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Armenian/Armenian.entitlements;
 				CODE_SIGN_STYLE = Automatic;
