@@ -13,10 +13,6 @@ import SharedDefaults
 class KeyboardViewController: KeyboardInputViewController {
     private let defaults = SharedDefaults(canAccessCloud: false)
     
-    deinit {
-        NSLog("++ Deinit KVC")
-    }
-    
     override func viewDidLoad() {
         String.sentenceDelimiters = ["։"]
         
