@@ -25,3 +25,9 @@ Longer-term stuff is below:
 * My friends and everyone from the [discussion chat](https://t.me/hayatar_keyboard)
   for using the keyboard and giving feedback
 * My friends who are not using iOS but support the project and provide input
+
+## Support
+If you enjoy the app and want to support what I do
+
+
+<a href="https://www.buymeacoffee.com/fperson" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41"  width="174"></a>
