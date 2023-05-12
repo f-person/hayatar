@@ -9,14 +9,14 @@ import Foundation
 import SwiftUI
 
 struct RootView: View {
-    @State private var selection = 1
+    @State private var selection = 0
     
     var body: some View {
         TabView(selection: $selection) {
             InstructionsView()
                 .tabItem {
-                    Image(systemName: "1.circle")
-                    Text("Instructions")
+                    Image(systemName: "sparkles")
+                    Text("About")
                 }
                 .tag(0)
             

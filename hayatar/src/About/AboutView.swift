@@ -9,33 +9,49 @@ import Foundation
 import SwiftUI
 
 struct InstructionsView: View {
+    let github = "https://github.com/f-person/hayatar"
+    var githubIssues: String { "\(github)/issues" }
+    let website = "https://hayatar.fperson.dev"
+    let telegramChat = "https://t.me/hayatar_keyboard"
+    
     var body: some View {
         NavigationView {
-            ScrollView {
-                VStack(alignment: .leading, spacing: 0) {
-                    Text("How to Add the Keyboard")
-                        .font(.largeTitle)
-                        .bold()
-                    
-                    Text("Go to your device's Settings app.")
-                    
-                    Text("Scroll down and tap on \"General\".")
-                    
-                    Text("Tap on \"Keyboard\".")
-                    
-                    Group {
-                        Text("Tap on \"Keyboards\" at the top of the screen.")
-                        
-                        Text("Tap on \"Add New Keyboard...\".")
-                        Text("Find and select the custom keyboard from the list.")
+            List {
+                Section(header: Text("Project")) {
+                    HStack {
+                        Image(systemName: "paperplane")
+                        Link(
+                            "Join the project discussion on Telegram",
+                            destination: URL(string: telegramChat)!
+                        )
+                    }
+                    HStack {
+                        Image(systemName: "network")
+                        Link(
+                            "Website",
+                            destination: URL(string: website)!
+                        )
+                    }
+                    HStack {
+                        Image(systemName: "curlybraces")
+                        Link(
+                            "Source Code",
+                            destination: URL(string: github)!
+                        )
+                    }
+                    HStack {
+                        Image(systemName: "lightbulb")
+                        Link(
+                            "Issues & Feature requests",
+                            destination: URL(string: githubIssues)!
+                        )
                     }
                 }
-                .padding()
             }
-            .navigationBarTitle("Instructions", displayMode: .inline)
+            .listStyle(.insetGrouped)
+            .navigationTitle("About Hayatar")
         }
-    }
-}
+    }}
 
 struct InstructionsView_Previews: PreviewProvider {
     static var previews: some View {

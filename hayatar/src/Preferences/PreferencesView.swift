@@ -90,7 +90,7 @@ struct PreferencesView: View {
                         self.tempSelectedDictionary = SpellCheckDictionary(rawValue: defaults.spellCheckDictionary.value)!
                     })
                 }
-            }.navigationTitle("Armenian Keyboard")
+            }.navigationTitle("Preferences")
         }
     }
 }
