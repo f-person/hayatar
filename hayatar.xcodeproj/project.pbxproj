@@ -16,6 +16,7 @@
 		0208A11B29CEEF8700905755 /* ArmenianLayoutProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0208A11A29CEEF8700905755 /* ArmenianLayoutProvider.swift */; };
 		0208A11D29CEF20E00905755 /* ArmenianInputSetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0208A11C29CEF20E00905755 /* ArmenianInputSetProvider.swift */; };
 		0218B21E29DB63D90073A853 /* ArmenianActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0218B21D29DB63D90073A853 /* ArmenianActionHandler.swift */; };
+		0227F0512A0FC8D100C67168 /* InstructionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0227F0502A0FC8D100C67168 /* InstructionsView.swift */; };
 		022D42E029CE69C5000F71B1 /* hayatarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D42DF29CE69C5000F71B1 /* hayatarApp.swift */; };
 		022D42E229CE69C5000F71B1 /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D42E129CE69C5000F71B1 /* PreferencesView.swift */; };
 		022D42E429CE69C6000F71B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 022D42E329CE69C6000F71B1 /* Assets.xcassets */; };
@@ -121,6 +122,7 @@
 		0208A11A29CEEF8700905755 /* ArmenianLayoutProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmenianLayoutProvider.swift; sourceTree = "<group>"; };
 		0208A11C29CEF20E00905755 /* ArmenianInputSetProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmenianInputSetProvider.swift; sourceTree = "<group>"; };
 		0218B21D29DB63D90073A853 /* ArmenianActionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmenianActionHandler.swift; sourceTree = "<group>"; };
+		0227F0502A0FC8D100C67168 /* InstructionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsView.swift; sourceTree = "<group>"; };
 		022D42DC29CE69C5000F71B1 /* hayatar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hayatar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		022D42DF29CE69C5000F71B1 /* hayatarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hayatarApp.swift; sourceTree = "<group>"; };
 		022D42E129CE69C5000F71B1 /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 			isa = PBXGroup;
 			children = (
 				0207FDBA29FC8DF800D041B7 /* AboutView.swift */,
+				0227F0502A0FC8D100C67168 /* InstructionsView.swift */,
 			);
 			path = About;
 			sourceTree = "<group>";
@@ -579,6 +582,7 @@
 			files = (
 				025FC95A29E0FE09008B7E6B /* SyncSettingsView.swift in Sources */,
 				0207FDBB29FC8DF800D041B7 /* AboutView.swift in Sources */,
+				0227F0512A0FC8D100C67168 /* InstructionsView.swift in Sources */,
 				02485AC029DFC06700244E8F /* ResetSettingsButton.swift in Sources */,
 				0207FDB629FC873F00D041B7 /* AppView.swift in Sources */,
 				022D42E229CE69C5000F71B1 /* PreferencesView.swift in Sources */,
@@ -769,13 +773,13 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = hayatar/hayatar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 41;
+				CURRENT_PROJECT_VERSION = 42;
 				DEVELOPMENT_ASSET_PATHS = "\"hayatar/Preview Content\"";
 				DEVELOPMENT_TEAM = 82MV322Q6H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = hayatar/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = fArmenian;
+				INFOPLIST_KEY_CFBundleDisplayName = Hayatar;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -808,13 +812,13 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = hayatar/hayatar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 41;
+				CURRENT_PROJECT_VERSION = 42;
 				DEVELOPMENT_ASSET_PATHS = "\"hayatar/Preview Content\"";
 				DEVELOPMENT_TEAM = 82MV322Q6H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = hayatar/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = fArmenian;
+				INFOPLIST_KEY_CFBundleDisplayName = Hayatar;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

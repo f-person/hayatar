@@ -16,72 +16,79 @@ struct AboutView: View {
     let fpersonLink = "https://github.com/f-person"
     
     @EnvironmentObject var selectionData: SelectionData
+    @AppStorage("isBottomSheetPresented") private var isBottomSheetPresented = true
     
     var body: some View {
-        NavigationView {
-            VStack {
-                List {
-                    Section(header: Text("App")) {
+        NavigationStack {
+            List {
+                Section(header: Text("Keyboard")) {
+                    Button(action: {
+                        isBottomSheetPresented = true
+                    }) {
                         HStack {
                             Image(systemName: "keyboard")
-                            Text("How to install").foregroundColor(Color.accentColor)
-                        }
-                        Button (action: {
-                            selectionData.selection = 1
-                        }) {
-                            HStack {
-                                Image(systemName: "slider.horizontal.3")
-                                    .foregroundColor(Color.primary)
-                                Text("Customize").foregroundColor(Color.accentColor)
-                            }
+                                .foregroundColor(Color.primary)
+                            Text("How to enable").foregroundColor(Color.accentColor)
                         }
                     }
-                    
-                    Section(header: Text("Project")) {
+                    .sheet(isPresented: $isBottomSheetPresented) {
+                        InstructionsView (onOk: {
+                            isBottomSheetPresented = false
+                        })
+                    }
+                    Button (action: {
+                        selectionData.selection = 1
+                    }) {
                         HStack {
-                            Image(systemName: "paperplane")
-                            Link(
-                                "Join project discussion on Telegram",
-                                destination: URL(string: telegramChat)!
-                            )
-                        }
-                        HStack {
-                            Image(systemName: "network")
-                            Link(
-                                "Website",
-                                destination: URL(string: website)!
-                            )
-                        }
-                        HStack {
-                            Image(systemName: "curlybraces")
-                            Link(
-                                "Source Code",
-                                destination: URL(string: github)!
-                            )
-                        }
-                        HStack {
-                            Image(systemName: "lightbulb")
-                            Link(
-                                "Issues & Feature requests",
-                                destination: URL(string: githubIssues)!
-                            )
+                            Image(systemName: "slider.horizontal.3")
+                                .foregroundColor(Color.primary)
+                            Text("Customize").foregroundColor(Color.accentColor)
                         }
                     }
-                    
-                    Link(
-                        "Made by f-person in\u{00A0}🇦🇲\u{00A0}Yerevan,\u{00A0}Armenia",
-                        destination: URL(string: fpersonLink)!
-                    )
-                    .multilineTextAlignment(.center)
-                    .frame(maxWidth: .infinity, alignment: .center)
-                    .foregroundColor(Color.indigo)
-                    .listRowBackground(Color.clear)
                 }
-                .listStyle(.insetGrouped)
-                .navigationTitle("About Hayatar")
                 
+                Section(header: Text("Project")) {
+                    HStack {
+                        Image(systemName: "paperplane")
+                        Link(
+                            "Join project discussion on Telegram",
+                            destination: URL(string: telegramChat)!
+                        )
+                    }
+                    HStack {
+                        Image(systemName: "network")
+                        Link(
+                            "Website",
+                            destination: URL(string: website)!
+                        )
+                    }
+                    HStack {
+                        Image(systemName: "curlybraces")
+                        Link(
+                            "Source Code",
+                            destination: URL(string: github)!
+                        )
+                    }
+                    HStack {
+                        Image(systemName: "lightbulb")
+                        Link(
+                            "Issues & Feature requests",
+                            destination: URL(string: githubIssues)!
+                        )
+                    }
+                }
+                
+                Link(
+                    "Made by f-person in\u{00A0}🇦🇲\u{00A0}Yerevan,\u{00A0}Armenia",
+                    destination: URL(string: fpersonLink)!
+                )
+                .multilineTextAlignment(.center)
+                .frame(maxWidth: .infinity, alignment: .center)
+                .foregroundColor(Color.indigo)
+                .listRowBackground(Color.clear)
             }
-            
+            .listStyle(.insetGrouped)
+            .navigationTitle("About Hayatar")
         }
     }}
 
