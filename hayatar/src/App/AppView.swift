@@ -8,12 +8,17 @@
 import Foundation
 import SwiftUI
 
-struct RootView: View {
-    @State private var selection = 0
+class SelectionData: ObservableObject {
+    @Published var selection = 0
+}
+
+struct AppView: View {
+    @StateObject private var selectionData = SelectionData()
     
     var body: some View {
-        TabView(selection: $selection) {
-            InstructionsView()
+        TabView(selection: $selectionData.selection) {
+            AboutView()
+                .environmentObject(selectionData)
                 .tabItem {
                     Image(systemName: "sparkles")
                     Text("About")
@@ -30,8 +35,8 @@ struct RootView: View {
     }
 }
 
-struct RootView_Previews: PreviewProvider {
+struct AppView_Previews: PreviewProvider {
     static var previews: some View {
-        RootView()
+        AppView()
     }
 }
