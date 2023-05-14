@@ -28,7 +28,7 @@ struct AboutView: View {
                         HStack {
                             Image(systemName: "keyboard")
                                 .foregroundColor(Color.primary)
-                            Text("How to enable").foregroundColor(Color.accentColor)
+                            Text("Show setup instructions").foregroundColor(Color.accentColor)
                         }
                     }
                     .sheet(isPresented: $isBottomSheetPresented) {
@@ -79,7 +79,7 @@ struct AboutView: View {
                 }
                 
                 Link(
-                    "Made by f-person in\u{00A0}🇦🇲\u{00A0}Yerevan,\u{00A0}Armenia",
+                    "Made with lots of ❤️\u{00A0}and\u{00A0}🍵\nin Yerevan\u{00A0}🇦🇲 by\u{00A0}f-person",
                     destination: URL(string: fpersonLink)!
                 )
                 .multilineTextAlignment(.center)

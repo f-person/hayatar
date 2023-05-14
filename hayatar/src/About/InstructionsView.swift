@@ -40,7 +40,7 @@ struct InstructionsView: View {
                     instructionImage("instruciton_switches")
                     
                     InstructionView(iconName: "lock.shield", instruction: "Switch 'Allow Full Access' on for the best experience")
-                    Text("Hayatar doesn't collect any data and never will. You deserve privacy <3")
+                    Text("Hayatar doesn't collect any data and never will.\nYour privacy matters <3")
                         .font(.footnote)
                         .foregroundColor(.gray)
                     
