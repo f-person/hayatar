@@ -43,12 +43,14 @@ class KeyboardViewController: KeyboardInputViewController {
             keyboardContext.autocapitalizationTypeOverride = KeyboardAutocapitalizationType.none
         }
         
+        keyboardAppearance = ArmenianKeyboardAppearance(keyboardContext: keyboardContext)
+        
         super.viewDidLoad()
     }
     
     override func viewWillSetupKeyboard() {
         let shouldDisplayCalloutHints = defaults.displayCalloutHints.value
-
+        
         setup {controller in
             KeyboardView(
                 shouldDisplayCalloutHints: shouldDisplayCalloutHints,

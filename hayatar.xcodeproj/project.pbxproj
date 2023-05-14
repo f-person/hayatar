@@ -33,6 +33,7 @@
 		02485AC029DFC06700244E8F /* ResetSettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02485ABF29DFC06700244E8F /* ResetSettingsButton.swift */; };
 		02519A4329E4D7E60014B4CD /* AutocompleteProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02519A4229E4D7E60014B4CD /* AutocompleteProvider.swift */; };
 		025FC95A29E0FE09008B7E6B /* SyncSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025FC95929E0FE09008B7E6B /* SyncSettingsView.swift */; };
+		026C77C42A11320900CDBE33 /* KeyboardAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026C77C32A11320900CDBE33 /* KeyboardAppearance.swift */; };
 		0274E27629EAD4B500AC6CB6 /* README-arm_spellcheck_dict.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0274E27329EAD4B500AC6CB6 /* README-arm_spellcheck_dict.txt */; };
 		0274E27729EAD4B500AC6CB6 /* arm_spellcheck_dict.dic in Resources */ = {isa = PBXBuildFile; fileRef = 0274E27429EAD4B500AC6CB6 /* arm_spellcheck_dict.dic */; };
 		0274E27829EAD4B500AC6CB6 /* arm_spellcheck_dict.aff in Resources */ = {isa = PBXBuildFile; fileRef = 0274E27529EAD4B500AC6CB6 /* arm_spellcheck_dict.aff */; };
@@ -138,6 +139,7 @@
 		02485ABF29DFC06700244E8F /* ResetSettingsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetSettingsButton.swift; sourceTree = "<group>"; };
 		02519A4229E4D7E60014B4CD /* AutocompleteProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutocompleteProvider.swift; sourceTree = "<group>"; };
 		025FC95929E0FE09008B7E6B /* SyncSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncSettingsView.swift; sourceTree = "<group>"; };
+		026C77C32A11320900CDBE33 /* KeyboardAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardAppearance.swift; sourceTree = "<group>"; };
 		0274E27329EAD4B500AC6CB6 /* README-arm_spellcheck_dict.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "README-arm_spellcheck_dict.txt"; sourceTree = "<group>"; };
 		0274E27429EAD4B500AC6CB6 /* arm_spellcheck_dict.dic */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = arm_spellcheck_dict.dic; sourceTree = "<group>"; };
 		0274E27529EAD4B500AC6CB6 /* arm_spellcheck_dict.aff */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = arm_spellcheck_dict.aff; sourceTree = "<group>"; };
@@ -345,6 +347,7 @@
 				0218B21D29DB63D90073A853 /* ArmenianActionHandler.swift */,
 				02519A4229E4D7E60014B4CD /* AutocompleteProvider.swift */,
 				020237DD29F4AAAC0024FF8B /* KeyboardView.swift */,
+				026C77C32A11320900CDBE33 /* KeyboardAppearance.swift */,
 			);
 			path = Armenian;
 			sourceTree = "<group>";
@@ -599,6 +602,7 @@
 				02D0227B29E848EA00C34C0A /* SpellChecker.mm in Sources */,
 				02D0228329E848EA00C34C0A /* affentry.mm in Sources */,
 				0274E27B29EB099E00AC6CB6 /* HunspellBridge.mm in Sources */,
+				026C77C42A11320900CDBE33 /* KeyboardAppearance.swift in Sources */,
 				0208A11B29CEEF8700905755 /* ArmenianLayoutProvider.swift in Sources */,
 				02D0227729E848EA00C34C0A /* hunzip.mm in Sources */,
 				02D0228E29E848EA00C34C0A /* suggestmgr.mm in Sources */,
