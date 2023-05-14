@@ -34,6 +34,7 @@
 		02519A4329E4D7E60014B4CD /* AutocompleteProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02519A4229E4D7E60014B4CD /* AutocompleteProvider.swift */; };
 		025FC95A29E0FE09008B7E6B /* SyncSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025FC95929E0FE09008B7E6B /* SyncSettingsView.swift */; };
 		026C77C42A11320900CDBE33 /* KeyboardAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026C77C32A11320900CDBE33 /* KeyboardAppearance.swift */; };
+		026C77C62A11493B00CDBE33 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 026C77C52A11493B00CDBE33 /* Settings.bundle */; };
 		0274E27629EAD4B500AC6CB6 /* README-arm_spellcheck_dict.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0274E27329EAD4B500AC6CB6 /* README-arm_spellcheck_dict.txt */; };
 		0274E27729EAD4B500AC6CB6 /* arm_spellcheck_dict.dic in Resources */ = {isa = PBXBuildFile; fileRef = 0274E27429EAD4B500AC6CB6 /* arm_spellcheck_dict.dic */; };
 		0274E27829EAD4B500AC6CB6 /* arm_spellcheck_dict.aff in Resources */ = {isa = PBXBuildFile; fileRef = 0274E27529EAD4B500AC6CB6 /* arm_spellcheck_dict.aff */; };
@@ -140,6 +141,7 @@
 		02519A4229E4D7E60014B4CD /* AutocompleteProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutocompleteProvider.swift; sourceTree = "<group>"; };
 		025FC95929E0FE09008B7E6B /* SyncSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncSettingsView.swift; sourceTree = "<group>"; };
 		026C77C32A11320900CDBE33 /* KeyboardAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardAppearance.swift; sourceTree = "<group>"; };
+		026C77C52A11493B00CDBE33 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		0274E27329EAD4B500AC6CB6 /* README-arm_spellcheck_dict.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "README-arm_spellcheck_dict.txt"; sourceTree = "<group>"; };
 		0274E27429EAD4B500AC6CB6 /* arm_spellcheck_dict.dic */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = arm_spellcheck_dict.dic; sourceTree = "<group>"; };
 		0274E27529EAD4B500AC6CB6 /* arm_spellcheck_dict.aff */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = arm_spellcheck_dict.aff; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 		022D42D329CE69C5000F71B1 = {
 			isa = PBXGroup;
 			children = (
+				026C77C52A11493B00CDBE33 /* Settings.bundle */,
 				022D42DE29CE69C5000F71B1 /* hayatar */,
 				022D42F229CE6A3A000F71B1 /* Armenian */,
 				02485AAA29DFABCE00244E8F /* SharedDefaults */,
@@ -543,6 +546,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				026C77C62A11493B00CDBE33 /* Settings.bundle in Resources */,
 				02EE058A29D877C200C7752D /* README.md in Resources */,
 				022D42E729CE69C6000F71B1 /* Preview Assets.xcassets in Resources */,
 				022D42E429CE69C6000F71B1 /* Assets.xcassets in Resources */,

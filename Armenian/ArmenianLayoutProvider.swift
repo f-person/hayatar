@@ -71,7 +71,7 @@ class ArmenianKeyboardLayoutProvider: StandardKeyboardLayoutProvider {
         // hence I need to manually adjust the width of each item.
         layout.itemRows[2] = layout.itemRows[2].map { (item: KeyboardLayoutItem ) -> KeyboardLayoutItem in
             var modifiedItem = item
-            modifiedItem.size.width = .inputPercentage(0.1)
+            modifiedItem.size.width = .percentage(0.1)
             return modifiedItem
         }
         layout.itemRows.insert(
