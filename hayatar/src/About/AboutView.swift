@@ -14,6 +14,8 @@ struct AboutView: View {
     let website = "https://hayatar.fperson.dev"
     let telegramChat = "https://t.me/hayatar_keyboard"
     let fpersonLink = "https://github.com/f-person"
+    let privacyPolicy = "https://hayatar.fperson.dev/privacypolicy"
+    var acknowledgements: String { "\(github)/#acknowledgements" }
     
     @EnvironmentObject var selectionData: SelectionData
     @AppStorage("isBottomSheetPresented") private var isBottomSheetPresented = true
@@ -28,7 +30,7 @@ struct AboutView: View {
                         HStack {
                             Image(systemName: "keyboard")
                                 .foregroundColor(Color.primary)
-                            Text("Show setup instructions").foregroundColor(Color.accentColor)
+                            Text("Show Setup Instructions").foregroundColor(Color.accentColor)
                         }
                     }
                     .sheet(isPresented: $isBottomSheetPresented) {
@@ -51,7 +53,7 @@ struct AboutView: View {
                     HStack {
                         Image(systemName: "paperplane")
                         Link(
-                            "Join project discussion on Telegram",
+                            "Join Project Discussion on Telegram",
                             destination: URL(string: telegramChat)!
                         )
                     }
@@ -72,8 +74,26 @@ struct AboutView: View {
                     HStack {
                         Image(systemName: "lightbulb")
                         Link(
-                            "Issues & Feature requests",
+                            "Issues & Feature Requests",
                             destination: URL(string: githubIssues)!
+                        )
+                    }
+                }
+                
+                Section {
+                    HStack {
+                        Image(systemName: "lock.shield")
+                        Link(
+                            "Privacy Policy",
+                            destination: URL(string: privacyPolicy)!
+                        )
+                    }
+                    
+                    HStack {
+                        Image(systemName: "heart")
+                        Link(
+                            "Acknowledgements",
+                            destination: URL(string: acknowledgements)!
                         )
                     }
                 }
