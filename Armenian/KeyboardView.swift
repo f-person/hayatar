@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import KeyboardKit
+import SharedDefaults
 
 struct KeyboardView: View {
     let shouldDisplayCalloutHints: Bool
@@ -17,6 +18,7 @@ struct KeyboardView: View {
     let calloutContext: KeyboardCalloutContext?
     let insertAutocompleteSuggestion: (AutocompleteSuggestion) -> Void
     let width: CGFloat
+    let layout: SLayout
     
     @EnvironmentObject private var autocompleteContext: AutocompleteContext
     @EnvironmentObject private var keyboardContext: KeyboardContext
@@ -48,7 +50,7 @@ struct KeyboardView: View {
                     if !shouldDisplayCalloutHints {
                         content
                     } else if case .character(let char) = item.action,
-                              let singleCallout = ArmenianCalloutActionProvider.singleCharacterCallouts[char.lowercased()] {
+                              let singleCallout = layout.singleCharacterCallouts[char.lowercased()] {
                         
                         ZStack {
                             content

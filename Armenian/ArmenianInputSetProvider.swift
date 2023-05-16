@@ -7,14 +7,15 @@
 
 import Foundation
 import KeyboardKit
+import SharedDefaults
 
 
 public let numericCharAfterKeyboardType = "֊"
 public let numericCharBeforeBackspace = "»"
 
 public class ArmenianInputSetProvider: InputSetProvider, LocalizedService {
-    public init(alphabetic: AlphabeticInputSet = .armenianPhonetic) {
-        self.alphabeticInputSet = alphabetic
+    public init(layout: Layout) {
+        self.alphabeticInputSet = layout.inputSet
         self.numericInputSet = .armenian()
         self.symbolicInputSet = .armenian()
     }
@@ -26,18 +27,6 @@ public class ArmenianInputSetProvider: InputSetProvider, LocalizedService {
     public let numericInputSet: NumericInputSet
     
     public let symbolicInputSet: SymbolicInputSet
-}
-
-public extension AlphabeticInputSet {
-    /**
-     An Armenian phonetic input set
-     */
-    static let armenianPhonetic = AlphabeticInputSet(rows: [
-        .init(chars: "էթփձջրչճժծ"),
-        .init(chars: "քոեռտըւիօպ"),
-        .init(chars: "ասդֆգհյկլխ"),
-        .init(chars: "զղցվբնմշ"),
-    ])
 }
 
 public extension NumericInputSet {

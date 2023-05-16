@@ -50,6 +50,7 @@ public class SharedDefaults {
     public lazy var displayCalloutHints = Preference<Bool>(storage: storages, key: .displayCalloutHints)
     public lazy var replaceYev = Preference<Bool>(storage: storages, key: .replaceYev)
     public lazy var spellCheckDictionary = Preference<String>(storage: storages, key: .spellCheckDictionary)
+    public lazy var layout = Preference<String>(storage: storages, key: .layout)
     
     public lazy var enableSync: Preference<Bool> = {
         var storage = storages

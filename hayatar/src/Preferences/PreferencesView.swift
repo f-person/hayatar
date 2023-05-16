@@ -10,12 +10,14 @@ import SharedDefaults
 
 struct PreferencesView: View {
     @State private var tempSelectedDictionary: SpellCheckDictionary
+    @State private var tempSelectedLayout: SLayout
     @State private var defaults: SharedDefaults
     
     init() {
         let sharedDefaults = SharedDefaults(canAccessCloud: true)
         defaults = sharedDefaults
         self.tempSelectedDictionary = SpellCheckDictionary(rawValue: sharedDefaults.spellCheckDictionary.value)!
+        self.tempSelectedLayout = SLayout(rawValue: sharedDefaults.layout.value)!
         
         defaults.maybeFetchCloudPreferences()
     }
@@ -53,6 +55,13 @@ struct PreferencesView: View {
                         get: { defaults.colonCalloutCharacters.value },
                         set: { defaults.colonCalloutCharacters.value = $0 }
                     ))
+                    Picker("Keyboard Layout", selection: $tempSelectedLayout) {
+                        ForEach(Layout.allCases, id: \.self) { layout in
+                            Text(layout.name).tag(layout.rawValue)
+                        }
+                    }.onChange(of: tempSelectedLayout) {
+                        defaults.layout.value = $0.rawValue
+                    }
                 }
                 
                 Section("Behavior") {
