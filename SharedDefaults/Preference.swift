@@ -35,6 +35,7 @@ public enum PreferenceKey: String, CaseIterable {
     case displayCalloutHints
     case replaceYev
     case spellCheckDictionary
+    case layout
     
     public var defaultValue: Any {
         switch self {
@@ -56,6 +57,8 @@ public enum PreferenceKey: String, CaseIterable {
             return false
         case .spellCheckDictionary:
             return SpellCheckDictionary.armenianSpellCheckDictionary.rawValue
+        case .layout:
+            return Layout.phonetic.rawValue
         }
     }
 }
@@ -88,6 +91,25 @@ public enum SpellCheckDictionary: String, CaseIterable {
             return 47306
         case .martakertHyspell:
             return 65344
+        }
+    }
+}
+
+/**
+ This exists to fix naming conflicts with SwiftUI
+ */
+public typealias SLayout = Layout
+
+public enum Layout: String, CaseIterable {
+    case phonetic
+    case western
+    
+    public var name: String {
+        switch self {
+        case .phonetic:
+            return "Phonetic"
+        case .western:
+            return "Western"
         }
     }
 }

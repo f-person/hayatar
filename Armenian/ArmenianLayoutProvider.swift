@@ -7,39 +7,62 @@
 
 import Foundation
 import KeyboardKit
+import SharedDefaults
 
 class ArmenianKeyboardLayoutProvider: StandardKeyboardLayoutProvider {
+    init(keyboardContext: KeyboardContext, inputSetProvider: InputSetProvider, layout: Layout) {
+        self.layout = layout
+        
+        super.init(keyboardContext: keyboardContext, inputSetProvider: inputSetProvider)
+    }
+    let layout: Layout
+    
     override func keyboardLayout(for context: KeyboardContext) -> KeyboardLayout {
+        let keyboardLayout: KeyboardLayout
+        
         switch context.keyboardType {
         case .alphabetic(_):
-            return createAlphabeticLayout(context: context)
+            keyboardLayout = createAlphabeticLayout(context: context)
         case .numeric:
-            return createNumericLayout(context: context)
+            keyboardLayout = createNumericLayout(context: context)
         case .symbolic:
-            return createSymbolicLayout(context: context)
+            keyboardLayout = createSymbolicLayout(context: context)
         default:
-            return super.keyboardLayout(for: context)
+            keyboardLayout = super.keyboardLayout(for: context)
         }
+        
+        let rowWidthOverrides = layout.rowWidthPercentageOverrides(for: context.keyboardType)
+        if !rowWidthOverrides.isEmpty {
+            for (index, value) in rowWidthOverrides {
+                keyboardLayout.itemRows[index] = keyboardLayout.itemRows[index].map { (item: KeyboardLayoutItem ) -> KeyboardLayoutItem in
+                    var modifiedItem = item
+                    modifiedItem.size.width = .percentage(value)
+                    return modifiedItem
+                }
+            }
+        }
+        
+        return keyboardLayout
     }
     
     private func createAlphabeticLayout(context: KeyboardContext) -> KeyboardLayout {
-        let layout = super.keyboardLayout(for: context)
+        let keyboardLayout = super.keyboardLayout(for: context)
         let isUpperCased = context.isUpperCased
         
-        layout.itemRows.insert(
-            createShiftKey(context, layout),
+        keyboardLayout.itemRows.insert(
+            createShiftKey(context, keyboardLayout),
             before: .character(isUpperCased ? "Զ" : "զ"),
             atRow: 3
         )
-        layout.itemRows.insert(
-            createBackspaceKey(layout),
-            after: .character(isUpperCased ? "Շ" : "շ"),
+        keyboardLayout.itemRows.insert(
+            createBackspaceKey(keyboardLayout),
+            after: layout.characterBeforeBackspace(isUpperCased),
             atRow: 3
         )
         
-        layout.itemRows.append(createBottomRow(context, layout))
+        keyboardLayout.itemRows.append(createBottomRow(context, keyboardLayout))
         
-        return layout
+        return keyboardLayout
     }
     
     private func createNumericLayout(context: KeyboardContext) -> KeyboardLayout {

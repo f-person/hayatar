@@ -13,12 +13,15 @@ class ArmenianCalloutActionProvider: BaseCalloutActionProvider {
     public init(defaults: SharedDefaults) throws {
         self.defaults = defaults
     }
+    // TODO(f-person): Maybe we shouldn't keep an instance of defaults and instead keep only the required properties
     private let defaults: SharedDefaults
     
     override func calloutActions(for action: KeyboardAction) -> [KeyboardAction] {
         switch action {
         case .character(let char):
-            let singleCallout = ArmenianCalloutActionProvider.singleCharacterCallouts[char.lowercased()]
+            let layout = Layout(rawValue: defaults.layout.value)
+            let singleCallout = layout?.singleCharacterCallouts[char.lowercased()]
+            
             if singleCallout != nil {
                 return [.character(singleCallout!)]
             }
@@ -55,17 +58,4 @@ class ArmenianCalloutActionProvider: BaseCalloutActionProvider {
             return super.calloutActions(for: action)
         }
     }
-}
-
-extension ArmenianCalloutActionProvider {
-    /**
-     A dictionary of characters that have a single callout option.
-     Each key represents a character (usually, in the Armenian alphabet),
-     and its corresponding value represents its callout character.
-     */
-    static let singleCharacterCallouts: [String: String] = [
-        "ե": "և",
-        "է": "1", "թ": "2", "փ": "3", "ձ": "4", "ջ": "5",
-        "ր": "6", "չ": "7", "ճ": "8", "ժ": "9", "ծ": "0"
-    ]
 }

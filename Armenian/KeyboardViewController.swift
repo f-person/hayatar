@@ -16,6 +16,8 @@ class KeyboardViewController: KeyboardInputViewController {
     override func viewDidLoad() {
         String.sentenceDelimiters = ["։"]
         
+        let layout = Layout(rawValue: defaults.layout.value)!
+        
         keyboardContext.setLocale(.armenian)
         autocompleteProvider = HunspellAutocompleteProvider(defaults: defaults)
         
@@ -24,11 +26,12 @@ class KeyboardViewController: KeyboardInputViewController {
         } catch {
             NSLog("Could not initialize ArmenianCalloutActionProvider: \(error)")
         }
-        inputSetProvider = ArmenianInputSetProvider()
+        inputSetProvider = ArmenianInputSetProvider(layout: layout)
         
         keyboardLayoutProvider = ArmenianKeyboardLayoutProvider(
             keyboardContext: keyboardContext,
-            inputSetProvider: inputSetProvider
+            inputSetProvider: inputSetProvider,
+            layout: layout
         )
         
         keyboardFeedbackSettings = KeyboardFeedbackSettings(
@@ -50,6 +53,7 @@ class KeyboardViewController: KeyboardInputViewController {
     
     override func viewWillSetupKeyboard() {
         let shouldDisplayCalloutHints = defaults.displayCalloutHints.value
+        let layout = Layout(rawValue: defaults.layout.value)!
         
         setup {controller in
             KeyboardView(
@@ -61,7 +65,8 @@ class KeyboardViewController: KeyboardInputViewController {
                 insertAutocompleteSuggestion: { [weak controller] suggestion in
                     controller?.insertAutocompleteSuggestion(suggestion)
                 },
-                width: controller.view.frame.width
+                width: controller.view.frame.width,
+                layout: layout
             )
         }
     }
