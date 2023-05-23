@@ -87,7 +87,8 @@ class ArmenianKeyboardLayoutProvider: StandardKeyboardLayoutProvider {
         
         let symbolicKey = createLayoutItem(
             layout: layout,
-            action: action
+            action: action,
+            width: .percentage(0.1)
         )
         
         // The third row is special and behaves differently,
@@ -142,16 +143,18 @@ class ArmenianKeyboardLayoutProvider: StandardKeyboardLayoutProvider {
         let primaryKey = createLayoutItem(
             layout: layout,
             action: primaryAction,
-            width: .inputPercentage(2)
+            width: .percentage(0.2)
         )
         
         let commaCalloutKey = createLayoutItem(
             layout: layout,
-            action: .character(",")
+            action: .character(","),
+            width: .percentage(0.1)
         )
         let colonCalloutKey = createLayoutItem(
             layout: layout,
-            action: .character("։")
+            action: .character("։"),
+            width: .percentage(0.1)
         )
         
         let shouldDisplayGlobe = context.needsInputModeSwitchKey

@@ -7,6 +7,7 @@
 
 import Foundation
 import KeyboardKit
+import SwiftUI
 
 /**
  A slightly modified version of `StandardKeyboardAppearance` that makes the button font
