@@ -59,6 +59,9 @@ struct KeyboardView: View {
                                 .foregroundColor(Color.secondary)
                                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
                                 .padding(hintPadding)
+                                // A hacky fix for the keyboardType button. If I try to render just `content`
+                                // when `isAlphabetic` is true, it will always render with `isPressed == true`.
+                                .opacity(keyboardContext.keyboardType.isAlphabetic ? 1 : 0)
                         }
                     } else {
                         content
