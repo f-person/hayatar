@@ -13,7 +13,7 @@ struct InstructionsView: View {
     let onOk: () -> Void
     
     var body: some View {
-        NavigationStack {
+        ConditionalNavigationView {
             ScrollView {
                 VStack(alignment: .leading, spacing: 10) {
                     Text("Open app settings with the button below")
@@ -28,7 +28,7 @@ struct InstructionsView: View {
                             Text("Open Settings")
                         }
                     }
-                    .buttonStyle(.borderedProminent)
+                    .modifier(ConditionalButtonStyle())
                     .frame(maxWidth: .infinity, alignment: .center)
                     
                     InstructionView(iconName: "keyboard", instruction: "In Settings, tap on 'Keyboards'")
@@ -50,7 +50,7 @@ struct InstructionsView: View {
                             Text("Done")
                         }
                     }
-                    .buttonStyle(.borderedProminent)
+                    .modifier(ConditionalButtonStyle())
                     .frame(maxWidth: .infinity, alignment: .center)
                 }
                 .padding()

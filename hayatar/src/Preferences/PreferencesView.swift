@@ -23,9 +23,9 @@ struct PreferencesView: View {
     }
     
     var body: some View {
-        return NavigationStack {
+        return ConditionalNavigationView {
             Form {
-                Section("Feedback") {
+                Section(header: Text("Feedback")) {
                     Toggle(isOn: Binding(
                         get: { defaults.enableHapticFeedback.value },
                         set: { defaults.enableHapticFeedback.value = $0 }
@@ -40,7 +40,7 @@ struct PreferencesView: View {
                     }
                 }
                 
-                Section("Layout") {
+                Section(header: Text("Layout")) {
                     Toggle(isOn: Binding(
                         get: { defaults.displayCalloutHints.value },
                         set: { defaults.displayCalloutHints.value = $0 }
@@ -64,7 +64,7 @@ struct PreferencesView: View {
                     }
                 }
                 
-                Section("Behavior") {
+                Section(header: Text("Behavior")) {
                     Toggle(isOn: Binding(
                         get: { defaults.enableAutocapitalization.value },
                         set: { defaults.enableAutocapitalization.value = $0 }
@@ -73,7 +73,7 @@ struct PreferencesView: View {
                     }
                 }
                 
-                Section("Suggestions") {
+                Section(header: Text("Suggestions")) {
                     Toggle(isOn: Binding(
                         get: { defaults.replaceYev.value },
                         set: { defaults.replaceYev.value = $0 }

@@ -29,7 +29,7 @@ struct SyncSettingsView: View {
     }
     
     var body: some View {
-        Section("Synchronization") {
+        Section(header: Text("Synchronization")) {
             Toggle("Sync preferences via iCloud", isOn: $tempEnableSync)
                 .onChange(of: tempEnableSync) { newValue in
                     print("newValue: \(newValue); temp: \(tempEnableSync); enableSync: \(defaults.enableSync)")

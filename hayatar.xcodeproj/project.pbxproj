@@ -43,6 +43,7 @@
 		0274E27F29EB632600AC6CB6 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0274E27E29EB632500AC6CB6 /* Storage.swift */; };
 		0288C5F829D3518500AF6638 /* ArmenianCalloutProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0288C5F729D3518500AF6638 /* ArmenianCalloutProvider.swift */; };
 		02AA52A32A143D7D00447ED9 /* LayoutExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AA52A22A143D7D00447ED9 /* LayoutExtensions.swift */; };
+		02B121822A1D82D600A167BA /* ConditionalComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B121802A1D829E00A167BA /* ConditionalComponents.swift */; };
 		02D0226D29E848EA00C34C0A /* README in Resources */ = {isa = PBXBuildFile; fileRef = 02D0223329E848E900C34C0A /* README */; };
 		02D0226E29E848EA00C34C0A /* license.hunspell in Resources */ = {isa = PBXBuildFile; fileRef = 02D0223429E848E900C34C0A /* license.hunspell */; };
 		02D0227029E848EA00C34C0A /* dictionary.lst in Resources */ = {isa = PBXBuildFile; fileRef = 02D0223829E848E900C34C0A /* dictionary.lst */; };
@@ -152,6 +153,7 @@
 		0274E27E29EB632500AC6CB6 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		0288C5F729D3518500AF6638 /* ArmenianCalloutProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmenianCalloutProvider.swift; sourceTree = "<group>"; };
 		02AA52A22A143D7D00447ED9 /* LayoutExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutExtensions.swift; sourceTree = "<group>"; };
+		02B121802A1D829E00A167BA /* ConditionalComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionalComponents.swift; sourceTree = "<group>"; };
 		02D0223129E848E800C34C0A /* Armenian-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Armenian-Bridging-Header.h"; sourceTree = "<group>"; };
 		02D0223229E848E900C34C0A /* hashmgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hashmgr.h; sourceTree = "<group>"; };
 		02D0223329E848E900C34C0A /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 		0207FDB229FC867600D041B7 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				02B121802A1D829E00A167BA /* ConditionalComponents.swift */,
 				0207FDB929FC8DEF00D041B7 /* About */,
 				0207FDB429FC872A00D041B7 /* App */,
 				022D42DF29CE69C5000F71B1 /* hayatarApp.swift */,
@@ -596,6 +599,7 @@
 				02485AC029DFC06700244E8F /* ResetSettingsButton.swift in Sources */,
 				0207FDB629FC873F00D041B7 /* AppView.swift in Sources */,
 				022D42E229CE69C5000F71B1 /* PreferencesView.swift in Sources */,
+				02B121822A1D82D600A167BA /* ConditionalComponents.swift in Sources */,
 				022D42E029CE69C5000F71B1 /* hayatarApp.swift in Sources */,
 				02485ABE29DFBE2500244E8F /* LabelledTextField.swift in Sources */,
 			);
@@ -712,7 +716,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -766,7 +770,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -785,7 +789,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = hayatar/hayatar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 45;
+				CURRENT_PROJECT_VERSION = 47;
 				DEVELOPMENT_ASSET_PATHS = "\"hayatar/Preview Content\"";
 				DEVELOPMENT_TEAM = 82MV322Q6H;
 				ENABLE_PREVIEWS = YES;
@@ -798,12 +802,12 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.fperson.hayatar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -824,7 +828,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = hayatar/hayatar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 45;
+				CURRENT_PROJECT_VERSION = 47;
 				DEVELOPMENT_ASSET_PATHS = "\"hayatar/Preview Content\"";
 				DEVELOPMENT_TEAM = 82MV322Q6H;
 				ENABLE_PREVIEWS = YES;
@@ -837,12 +841,12 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.fperson.hayatar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -860,18 +864,19 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Armenian/Armenian.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 45;
+				CURRENT_PROJECT_VERSION = 47;
 				DEVELOPMENT_TEAM = 82MV322Q6H;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Armenian/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Armenian;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.fperson.hayatar.Armenian;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -889,18 +894,19 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Armenian/Armenian.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 45;
+				CURRENT_PROJECT_VERSION = 47;
 				DEVELOPMENT_TEAM = 82MV322Q6H;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Armenian/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Armenian;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.fperson.hayatar.Armenian;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

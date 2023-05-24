@@ -21,7 +21,16 @@ struct AboutView: View {
     @AppStorage("isBottomSheetPresented") private var isBottomSheetPresented = true
     
     var body: some View {
-        NavigationStack {
+        var linkForegroundColor: Color {
+            if #available(iOS 15.0, *) {
+                return Color.indigo
+            } else {
+                return Color.blue
+            }
+        }
+        
+        ConditionalNavigationView {
+            
             List {
                 Section(header: Text("Keyboard")) {
                     Button(action: {
@@ -104,13 +113,15 @@ struct AboutView: View {
                 )
                 .multilineTextAlignment(.center)
                 .frame(maxWidth: .infinity, alignment: .center)
-                .foregroundColor(Color.indigo)
+                .foregroundColor(linkForegroundColor)
                 .listRowBackground(Color.clear)
             }
-            .listStyle(.insetGrouped)
-            .navigationTitle("About Hayatar")
         }
-    }}
+        .listStyle(.insetGrouped)
+        .navigationTitle("About Hayatar")
+    }
+    
+}
 
 struct AboutView_Previews: PreviewProvider {
     static var previews: some View {
