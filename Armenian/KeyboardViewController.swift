@@ -13,13 +13,19 @@ import SharedDefaults
 class KeyboardViewController: KeyboardInputViewController {
     private let defaults = SharedDefaults(canAccessCloud: false)
     
+    deinit {
+        NSLog("---- KeyboardViewController")
+    }
+    
     override func viewDidLoad() {
         String.sentenceDelimiters = ["։"]
         
         let layout = Layout(rawValue: defaults.layout.value)!
         
         keyboardContext.setLocale(.armenian)
-        autocompleteProvider = HunspellAutocompleteProvider(defaults: defaults)
+        if defaults.enableSuggestions.value {
+            autocompleteProvider = HunspellAutocompleteProvider(defaults: defaults)
+        }
         
         do {
             calloutActionProvider = try ArmenianCalloutActionProvider(defaults: defaults)

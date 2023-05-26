@@ -10,6 +10,10 @@ import KeyboardKit
 import UIKit
 
 class ArmenianActionHandler: StandardKeyboardActionHandler {
+    deinit {
+        NSLog("---- ArmenianActionHandler")
+    }
+    
     override func tryEndSentence(after gesture: KeyboardGesture, on action: KeyboardAction) {
         guard keyboardBehavior.shouldEndSentence(after: gesture, on: action) else { return }
         textDocumentProxy.endArmenianSentence()

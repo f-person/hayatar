@@ -10,6 +10,10 @@ import KeyboardKit
 import SharedDefaults
 
 class ArmenianCalloutActionProvider: BaseCalloutActionProvider {
+    deinit {
+        NSLog("---- ArmenianCalloutActionProvider")
+    }
+    
     public init(defaults: SharedDefaults) throws {
         self.defaults = defaults
     }

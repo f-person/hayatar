@@ -75,6 +75,12 @@ struct PreferencesView: View {
                 
                 Section(header: Text("Suggestions")) {
                     Toggle(isOn: Binding(
+                        get: { defaults.enableSuggestions.value },
+                        set: { defaults.enableSuggestions.value = $0 }
+                    )) {
+                        Text("Enable suggestions")
+                    }
+                    Toggle(isOn: Binding(
                         get: { defaults.replaceYev.value },
                         set: { defaults.replaceYev.value = $0 }
                     )) {

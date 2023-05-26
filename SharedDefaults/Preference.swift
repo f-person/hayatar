@@ -36,6 +36,7 @@ public enum PreferenceKey: String, CaseIterable {
     case replaceYev
     case spellCheckDictionary
     case layout
+    case enableSuggestions
     
     public var defaultValue: Any {
         switch self {
@@ -59,6 +60,8 @@ public enum PreferenceKey: String, CaseIterable {
             return SpellCheckDictionary.armenianSpellCheckDictionary.rawValue
         case .layout:
             return Layout.phonetic.rawValue
+        case .enableSuggestions:
+            return true
         }
     }
 }

@@ -14,6 +14,10 @@ public let numericCharAfterKeyboardType = "֊"
 public let numericCharBeforeBackspace = "»"
 
 public class ArmenianInputSetProvider: InputSetProvider, LocalizedService {
+    deinit {
+        NSLog("---- ArmenianInputSetProvider")
+    }
+    
     public init(layout: Layout) {
         self.alphabeticInputSet = layout.inputSet
         self.numericInputSet = .armenian()

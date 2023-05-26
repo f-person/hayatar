@@ -14,6 +14,10 @@ import SwiftUI
  more consistent between lowercase and uppercase states.
  */
 class ArmenianKeyboardAppearance: StandardKeyboardAppearance {
+    deinit {
+        NSLog("---- ArmenianKeyboardAppearance")
+    }
+    
     override func buttonFontSize(for action: KeyboardAction) -> CGFloat {
         if let override = buttonFontSizePadOverride(for: action) { return override }
         if buttonImage(for: action) != nil { return 20 }

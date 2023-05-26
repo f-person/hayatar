@@ -10,6 +10,10 @@ import KeyboardKit
 import SharedDefaults
 
 class HunspellAutocompleteProvider: AutocompleteProvider {
+    deinit {
+        NSLog("---- HunspellAutocompleteProvider")
+    }
+    
     init(defaults: SharedDefaults) {
         self.defaults = defaults
         if let dictionary = SpellCheckDictionary(rawValue: defaults.spellCheckDictionary.value) {

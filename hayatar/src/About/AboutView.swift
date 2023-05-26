@@ -116,9 +116,8 @@ struct AboutView: View {
                 .foregroundColor(linkForegroundColor)
                 .listRowBackground(Color.clear)
             }
+            .navigationTitle("About Hayatar")
         }
-        .listStyle(.insetGrouped)
-        .navigationTitle("About Hayatar")
     }
     
 }

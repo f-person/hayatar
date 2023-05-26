@@ -10,6 +10,10 @@ import KeyboardKit
 import SharedDefaults
 
 class ArmenianKeyboardLayoutProvider: StandardKeyboardLayoutProvider {
+    deinit {
+        NSLog("---- ArmenianKeyboardLayoutProvider")
+    }
+    
     init(keyboardContext: KeyboardContext, inputSetProvider: InputSetProvider, layout: Layout) {
         self.layout = layout
         
