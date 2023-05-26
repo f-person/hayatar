@@ -14,12 +14,20 @@ class ArmenianKeyboardLayoutProvider: StandardKeyboardLayoutProvider {
         NSLog("---- ArmenianKeyboardLayoutProvider")
     }
     
-    init(keyboardContext: KeyboardContext, inputSetProvider: InputSetProvider, layout: Layout) {
+    init(
+        keyboardContext: KeyboardContext,
+        inputSetProvider: InputSetProvider,
+        layout: Layout,
+        commaCharacter: String
+    ) {
         self.layout = layout
+        self.commaCharacter = commaCharacter
         
         super.init(keyboardContext: keyboardContext, inputSetProvider: inputSetProvider)
     }
+    
     let layout: Layout
+    let commaCharacter: String
     
     override func keyboardLayout(for context: KeyboardContext) -> KeyboardLayout {
         let keyboardLayout: KeyboardLayout
@@ -152,7 +160,7 @@ class ArmenianKeyboardLayoutProvider: StandardKeyboardLayoutProvider {
         
         let commaCalloutKey = createLayoutItem(
             layout: layout,
-            action: .character(","),
+            action: .character(commaCharacter),
             width: .percentage(0.1)
         )
         let colonCalloutKey = createLayoutItem(

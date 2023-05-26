@@ -26,35 +26,15 @@ struct PreferencesView: View {
         return ConditionalNavigationView {
             Form {
                 Section(header: Text("Feedback")) {
-                    Toggle(isOn: Binding(
-                        get: { defaults.enableHapticFeedback.value },
-                        set: { defaults.enableHapticFeedback.value = $0 }
-                    )) {
+                    Toggle(isOn: defaults.enableHapticFeedback.binding()) {
                         Text("Haptic Feedback")
                     }
-                    Toggle(isOn: Binding(
-                        get: { defaults.enableAudioFeedback.value },
-                        set: { defaults.enableAudioFeedback.value = $0 }
-                    )) {
+                    Toggle(isOn: defaults.enableAudioFeedback.binding()) {
                         Text("Input Sound")
                     }
                 }
                 
                 Section(header: Text("Layout")) {
-                    Toggle(isOn: Binding(
-                        get: { defaults.displayCalloutHints.value },
-                        set: { defaults.displayCalloutHints.value = $0 }
-                    )) {
-                        Text("Display callout hints")
-                    }
-                    LabelledTextField(title: "Callout characters for \",\"", text: Binding(
-                        get: { defaults.commaCalloutCharacters.value },
-                        set: { defaults.commaCalloutCharacters.value = $0 }
-                    ))
-                    LabelledTextField(title: "Callout characters for \"։\"", text: Binding(
-                        get: { defaults.colonCalloutCharacters.value },
-                        set: { defaults.colonCalloutCharacters.value = $0 }
-                    ))
                     Picker("Keyboard Layout", selection: $tempSelectedLayout) {
                         ForEach(Layout.allCases, id: \.self) { layout in
                             Text(layout.name).tag(layout.rawValue)
@@ -62,28 +42,25 @@ struct PreferencesView: View {
                     }.onChange(of: tempSelectedLayout) {
                         defaults.layout.value = $0.rawValue
                     }
+                    Toggle(isOn: defaults.displayCalloutHints.binding()) {
+                        Text("Display callout hints")
+                    }
+                    LabelledTextField(title: "\",\" replacement (e.g. with \"և\")", text: defaults.commaReplacement.binding())
+                    LabelledTextField(title: "Callout characters for \",\"", text: defaults.commaCalloutCharacters.binding())
+                    LabelledTextField(title: "Callout characters for \"։\"", text: defaults.colonCalloutCharacters.binding())
                 }
                 
                 Section(header: Text("Behavior")) {
-                    Toggle(isOn: Binding(
-                        get: { defaults.enableAutocapitalization.value },
-                        set: { defaults.enableAutocapitalization.value = $0 }
-                    )) {
+                    Toggle(isOn: defaults.enableAutocapitalization.binding()) {
                         Text("Autocapitalization")
                     }
                 }
                 
                 Section(header: Text("Suggestions")) {
-                    Toggle(isOn: Binding(
-                        get: { defaults.enableSuggestions.value },
-                        set: { defaults.enableSuggestions.value = $0 }
-                    )) {
+                    Toggle(isOn: defaults.enableSuggestions.binding()) {
                         Text("Enable suggestions")
                     }
-                    Toggle(isOn: Binding(
-                        get: { defaults.replaceYev.value },
-                        set: { defaults.replaceYev.value = $0 }
-                    )) {
+                    Toggle(isOn: defaults.replaceYev.binding()) {
                         Text("Replace «և» with «եւ»")
                     }
                     Picker("Dictionary", selection: $tempSelectedDictionary) {

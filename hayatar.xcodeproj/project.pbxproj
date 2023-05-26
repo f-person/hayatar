@@ -24,6 +24,7 @@
 		022D42F429CE6A3A000F71B1 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D42F329CE6A3A000F71B1 /* KeyboardViewController.swift */; };
 		022D42F829CE6A3A000F71B1 /* Armenian.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 022D42F129CE6A39000F71B1 /* Armenian.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		022D42FF29CE6DED000F71B1 /* KeyboardKit in Frameworks */ = {isa = PBXBuildFile; productRef = 022D42FE29CE6DED000F71B1 /* KeyboardKit */; };
+		023DDEFA2A2140D20085A3C5 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023DDEF92A2140D20085A3C5 /* Helpers.swift */; };
 		02485AAC29DFABCE00244E8F /* SharedDefaults.h in Headers */ = {isa = PBXBuildFile; fileRef = 02485AAB29DFABCE00244E8F /* SharedDefaults.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02485AAF29DFABCE00244E8F /* SharedDefaults.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02485AA929DFABCE00244E8F /* SharedDefaults.framework */; };
 		02485AB029DFABCE00244E8F /* SharedDefaults.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 02485AA929DFABCE00244E8F /* SharedDefaults.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -135,6 +136,7 @@
 		022D42F129CE6A39000F71B1 /* Armenian.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Armenian.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		022D42F329CE6A3A000F71B1 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		022D42F529CE6A3A000F71B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		023DDEF92A2140D20085A3C5 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		02485AA929DFABCE00244E8F /* SharedDefaults.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SharedDefaults.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		02485AAB29DFABCE00244E8F /* SharedDefaults.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SharedDefaults.h; sourceTree = "<group>"; };
 		02485ABB29DFAC2500244E8F /* SharedDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedDefaults.swift; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 				02485ABD29DFBE2500244E8F /* LabelledTextField.swift */,
 				02485ABF29DFC06700244E8F /* ResetSettingsButton.swift */,
 				025FC95929E0FE09008B7E6B /* SyncSettingsView.swift */,
+				023DDEF92A2140D20085A3C5 /* Helpers.swift */,
 			);
 			path = Preferences;
 			sourceTree = "<group>";
@@ -596,6 +599,7 @@
 				025FC95A29E0FE09008B7E6B /* SyncSettingsView.swift in Sources */,
 				0207FDBB29FC8DF800D041B7 /* AboutView.swift in Sources */,
 				0227F0512A0FC8D100C67168 /* InstructionsView.swift in Sources */,
+				023DDEFA2A2140D20085A3C5 /* Helpers.swift in Sources */,
 				02485AC029DFC06700244E8F /* ResetSettingsButton.swift in Sources */,
 				0207FDB629FC873F00D041B7 /* AppView.swift in Sources */,
 				022D42E229CE69C5000F71B1 /* PreferencesView.swift in Sources */,
@@ -789,7 +793,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = hayatar/hayatar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"hayatar/Preview Content\"";
 				DEVELOPMENT_TEAM = 82MV322Q6H;
 				ENABLE_PREVIEWS = YES;
@@ -828,7 +832,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = hayatar/hayatar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"hayatar/Preview Content\"";
 				DEVELOPMENT_TEAM = 82MV322Q6H;
 				ENABLE_PREVIEWS = YES;
@@ -864,7 +868,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Armenian/Armenian.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 82MV322Q6H;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Armenian/Info.plist;
@@ -894,7 +898,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Armenian/Armenian.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 82MV322Q6H;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Armenian/Info.plist;

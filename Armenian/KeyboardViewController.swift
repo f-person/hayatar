@@ -37,7 +37,8 @@ class KeyboardViewController: KeyboardInputViewController {
         keyboardLayoutProvider = ArmenianKeyboardLayoutProvider(
             keyboardContext: keyboardContext,
             inputSetProvider: inputSetProvider,
-            layout: layout
+            layout: layout,
+            commaCharacter: defaults.commaReplacement.value
         )
         
         keyboardFeedbackSettings = KeyboardFeedbackSettings(

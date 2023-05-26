@@ -52,6 +52,7 @@ public class SharedDefaults {
     public lazy var spellCheckDictionary = Preference<String>(storage: storages, key: .spellCheckDictionary)
     public lazy var layout = Preference<String>(storage: storages, key: .layout)
     public lazy var enableSuggestions = Preference<Bool>(storage: storages, key: .enableSuggestions)
+    public lazy var commaReplacement = Preference<String>(storage: storages, key: .commaReplacement)
     
     public lazy var enableSync: Preference<Bool> = {
         var storage = storages

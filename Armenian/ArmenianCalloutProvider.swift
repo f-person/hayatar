@@ -24,6 +24,7 @@ class ArmenianCalloutActionProvider: BaseCalloutActionProvider {
         switch action {
         case .character(let char):
             let layout = Layout(rawValue: defaults.layout.value)
+            let commaCharacter = defaults.commaReplacement.value
             let singleCallout = layout?.singleCharacterCallouts[char.lowercased()]
             
             if singleCallout != nil {
@@ -51,7 +52,7 @@ class ArmenianCalloutActionProvider: BaseCalloutActionProvider {
                 ]
             case "։":
                 return defaults.colonCalloutCharacters.value.map { .character(String($0)) }
-            case ",":
+            case commaCharacter:
                 return defaults.commaCalloutCharacters.value.map { .character(String($0)) }
             case "֎":
                 return [.character("֎"), .character("֍")]
