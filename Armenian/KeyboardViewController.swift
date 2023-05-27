@@ -24,11 +24,19 @@ class KeyboardViewController: KeyboardInputViewController {
         
         keyboardContext.setLocale(.armenian)
         if defaults.enableSuggestions.value {
-            autocompleteProvider = HunspellAutocompleteProvider(defaults: defaults)
+            autocompleteProvider = HunspellAutocompleteProvider(
+                rawDictionary: defaults.spellCheckDictionary.value,
+                replaceYev: defaults.replaceYev.value
+            )
         }
         
         do {
-            calloutActionProvider = try ArmenianCalloutActionProvider(defaults: defaults)
+            calloutActionProvider = try ArmenianCalloutActionProvider(
+                rawLayout: defaults.layout.value,
+                commaReplacement: defaults.commaReplacement.value,
+                colonCalloutCharacters: defaults.colonCalloutCharacters.value,
+                commaCalloutCharacters: defaults.commaCalloutCharacters.value
+            )
         } catch {
             NSLog("Could not initialize ArmenianCalloutActionProvider: \(error)")
         }

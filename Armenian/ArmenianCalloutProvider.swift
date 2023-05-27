@@ -14,18 +14,27 @@ class ArmenianCalloutActionProvider: BaseCalloutActionProvider {
         NSLog("---- ArmenianCalloutActionProvider")
     }
     
-    public init(defaults: SharedDefaults) throws {
-        self.defaults = defaults
+    public init(
+        rawLayout: String,
+        commaReplacement: String,
+        colonCalloutCharacters: String,
+        commaCalloutCharacters: String
+    ) throws {
+        self.layout = Layout(rawValue: rawLayout) ?? Layout(rawValue: PreferenceKey.layout.defaultValue as! String)!
+        self.commaReplacement = commaReplacement
+        self.colonCalloutCharacters = colonCalloutCharacters
+        self.commaCalloutCharacters = commaCalloutCharacters
     }
-    // TODO(f-person): Maybe we shouldn't keep an instance of defaults and instead keep only the required properties
-    private let defaults: SharedDefaults
+    
+    let layout: Layout
+    let commaReplacement: String
+    let colonCalloutCharacters: String
+    let commaCalloutCharacters: String
     
     override func calloutActions(for action: KeyboardAction) -> [KeyboardAction] {
         switch action {
         case .character(let char):
-            let layout = Layout(rawValue: defaults.layout.value)
-            let commaCharacter = defaults.commaReplacement.value
-            let singleCallout = layout?.singleCharacterCallouts[char.lowercased()]
+            let singleCallout = layout.singleCharacterCallouts[char.lowercased()]
             
             if singleCallout != nil {
                 return [.character(singleCallout!)]
@@ -51,9 +60,9 @@ class ArmenianCalloutActionProvider: BaseCalloutActionProvider {
                     .character("Ըւ")
                 ]
             case "։":
-                return defaults.colonCalloutCharacters.value.map { .character(String($0)) }
-            case commaCharacter:
-                return defaults.commaCalloutCharacters.value.map { .character(String($0)) }
+                return colonCalloutCharacters.map { .character(String($0)) }
+            case commaReplacement:
+                return commaCalloutCharacters.map { .character(String($0)) }
             case "֎":
                 return [.character("֎"), .character("֍")]
             default:
