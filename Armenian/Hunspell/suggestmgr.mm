@@ -700,18 +700,33 @@ int SuggestMgr::forgotchar(char ** wlst, const char * word, int ns, int cpdsugge
 // error is missing a letter it needs
 int SuggestMgr::forgotchar_utf(char ** wlst, const w_char * word, int wl, int ns, int cpdsuggest)
 {
-   w_char  candidate_utf[MAXSWL];
-   char    candidate[MAXSWUTF8L];
+   if(wl >= MAXSWL || wl >= MAXSWUTF8L/sizeof(w_char)) {
+       // Handle error
+       return -1;
+   }
+   
+   w_char  candidate_utf[MAXSWL+1]; // Add 1 to accommodate for potential extra character
+   char    candidate[MAXSWUTF8L+1]; // Add 1 for null character
    w_char * p;
    clock_t timelimit = clock();
    int timer = MINTIMER;
+   
    // try inserting a tryme character at the end of the word and before every letter
    for (int i = 0;  i < ctryl;  i++) {
-      memcpy (candidate_utf, word, wl * sizeof(w_char));
+      memcpy(candidate_utf, word, wl * sizeof(w_char));
+      
       for (p = candidate_utf + wl;  p >= candidate_utf; p--)  {
          *(p + 1) = *p;
          *p = ctry_utf[i];
+         
+         // Ensure null-termination of the string
+          w_char null_w_char = {0, 0};
+          candidate_utf[wl+1] = null_w_char;
+
+         // Convert to UTF-8 and ensure null-termination
          u16_u8(candidate, MAXSWUTF8L, candidate_utf, wl + 1);
+         candidate[MAXSWUTF8L] = '\0';
+         
          ns = testsug(wlst, candidate, strlen(candidate), ns, cpdsuggest, &timer, &timelimit);
          if (ns == -1) return -1;
          if (!timer) return ns;
