@@ -26,6 +26,13 @@ public extension Layout {
                 .init(chars: "աստֆկհճքլթփ"),
                 .init(chars: "զցգւպնմշղծ")
             ])
+        case .hmQwerty:
+            return AlphabeticInputSet(rows: [
+                .init(chars: "1234567890"),
+                .init(chars: "ճւերտյւիոպ"),
+                .init(chars: "ասդֆգհձկլ"),
+                .init(chars: "զխծվբնմ")
+            ])
         }
         
     }
@@ -36,6 +43,8 @@ public extension Layout {
             return .character(isUppercased ? "Շ" : "շ")
         case .western:
             return .character(isUppercased ? "Ծ" : "ծ")
+        case .hmQwerty:
+            return .character(isUppercased ? "Մ" : "մ")
         }
     }
     
@@ -57,6 +66,8 @@ public extension Layout {
                 "«": "1", "»": "2", "ձ": "3", "-": "4", "՛": "5",
                 "՜": "6", "՞": "7", "՚": "8", "օ": "9", "ռ": "0", "ժ": "և"
             ]
+        case .hmQwerty:
+            return ["ե": "և"]
         }
     }
     
@@ -74,6 +85,8 @@ public extension Layout {
             case _:
                 return [:]
             }
+        case .hmQwerty:
+            return [:]
         }
     }
 }

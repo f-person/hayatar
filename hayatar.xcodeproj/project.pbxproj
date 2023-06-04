@@ -15,6 +15,9 @@
 		0207FDBB29FC8DF800D041B7 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0207FDBA29FC8DF800D041B7 /* AboutView.swift */; };
 		0208A11B29CEEF8700905755 /* ArmenianLayoutProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0208A11A29CEEF8700905755 /* ArmenianLayoutProvider.swift */; };
 		0208A11D29CEF20E00905755 /* ArmenianInputSetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0208A11C29CEF20E00905755 /* ArmenianInputSetProvider.swift */; };
+		02099AD12A2974D60050B74A /* hy-c.dic in Resources */ = {isa = PBXBuildFile; fileRef = 02099AD02A2974D60050B74A /* hy-c.dic */; };
+		02099AD42A2974F20050B74A /* hy-c.aff in Resources */ = {isa = PBXBuildFile; fileRef = 02099AD22A2974F20050B74A /* hy-c.aff */; };
+		02099AD52A2974F20050B74A /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 02099AD32A2974F20050B74A /* license.txt */; };
 		0218B21E29DB63D90073A853 /* ArmenianActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0218B21D29DB63D90073A853 /* ArmenianActionHandler.swift */; };
 		0227F0512A0FC8D100C67168 /* InstructionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0227F0502A0FC8D100C67168 /* InstructionsView.swift */; };
 		022D42E029CE69C5000F71B1 /* hayatarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D42DF29CE69C5000F71B1 /* hayatarApp.swift */; };
@@ -126,6 +129,9 @@
 		0207FDBA29FC8DF800D041B7 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		0208A11A29CEEF8700905755 /* ArmenianLayoutProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmenianLayoutProvider.swift; sourceTree = "<group>"; };
 		0208A11C29CEF20E00905755 /* ArmenianInputSetProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmenianInputSetProvider.swift; sourceTree = "<group>"; };
+		02099AD02A2974D60050B74A /* hy-c.dic */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "hy-c.dic"; sourceTree = "<group>"; };
+		02099AD22A2974F20050B74A /* hy-c.aff */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "hy-c.aff"; sourceTree = "<group>"; };
+		02099AD32A2974F20050B74A /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
 		0218B21D29DB63D90073A853 /* ArmenianActionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmenianActionHandler.swift; sourceTree = "<group>"; };
 		0227F0502A0FC8D100C67168 /* InstructionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsView.swift; sourceTree = "<group>"; };
 		022D42DC29CE69C5000F71B1 /* hayatar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hayatar.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -233,6 +239,7 @@
 		020237DF29F5496B0024FF8B /* Dictionaries */ = {
 			isa = PBXGroup;
 			children = (
+				02099ACF2A2974B80050B74A /* hyspell_hy_c */,
 				020237E129F550050024FF8B /* martakert_hyspell */,
 				020237E029F54DA40024FF8B /* arm_spellcheck_dict */,
 			);
@@ -298,6 +305,16 @@
 				0227F0502A0FC8D100C67168 /* InstructionsView.swift */,
 			);
 			path = About;
+			sourceTree = "<group>";
+		};
+		02099ACF2A2974B80050B74A /* hyspell_hy_c */ = {
+			isa = PBXGroup;
+			children = (
+				02099AD22A2974F20050B74A /* hy-c.aff */,
+				02099AD32A2974F20050B74A /* license.txt */,
+				02099AD02A2974D60050B74A /* hy-c.dic */,
+			);
+			path = hyspell_hy_c;
 			sourceTree = "<group>";
 		};
 		022D42D329CE69C5000F71B1 = {
@@ -567,15 +584,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				0274E27829EAD4B500AC6CB6 /* arm_spellcheck_dict.aff in Resources */,
+				02099AD12A2974D60050B74A /* hy-c.dic in Resources */,
 				02D0226E29E848EA00C34C0A /* license.hunspell in Resources */,
 				0274E27729EAD4B500AC6CB6 /* arm_spellcheck_dict.dic in Resources */,
 				02D0227029E848EA00C34C0A /* dictionary.lst in Resources */,
 				02D0227E29E848EA00C34C0A /* makefile.mk in Resources */,
 				02D0226D29E848EA00C34C0A /* README in Resources */,
+				02099AD42A2974F20050B74A /* hy-c.aff in Resources */,
 				020237E629F550490024FF8B /* LICENSE in Resources */,
 				020237E729F550490024FF8B /* martakert_hyspell.aff in Resources */,
 				02D0227C29E848EA00C34C0A /* hunvisapi.h.in in Resources */,
 				020237E529F550490024FF8B /* martakert_hyspell.dic in Resources */,
+				02099AD52A2974F20050B74A /* license.txt in Resources */,
 				02D0228829E848EA00C34C0A /* hunspell.dsp in Resources */,
 				02D0227D29E848EA00C34C0A /* license.myspell in Resources */,
 				0274E27629EAD4B500AC6CB6 /* README-arm_spellcheck_dict.txt in Resources */,
@@ -793,7 +813,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = hayatar/hayatar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"hayatar/Preview Content\"";
 				DEVELOPMENT_TEAM = 82MV322Q6H;
 				ENABLE_PREVIEWS = YES;
@@ -832,7 +852,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = hayatar/hayatar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"hayatar/Preview Content\"";
 				DEVELOPMENT_TEAM = 82MV322Q6H;
 				ENABLE_PREVIEWS = YES;
@@ -868,7 +888,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Armenian/Armenian.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 82MV322Q6H;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Armenian/Info.plist;
@@ -898,7 +918,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Armenian/Armenian.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 82MV322Q6H;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Armenian/Info.plist;
