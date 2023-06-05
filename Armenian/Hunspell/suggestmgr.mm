@@ -1850,7 +1850,13 @@ int SuggestMgr::leftcommonsubstring(char * s1, const char * s2) {
     } else {
       char * olds = s1;
       // decapitalise dictionary word
-      if ((*s1 != *s2) && (*s1 != csconv[((unsigned char)*s2)].clower)) return 0;
+        if (s1 && s2 && csconv &&
+            ((unsigned char)*s2 < sizeof(csconv)) &&
+            (*s1 != *s2) &&
+            (*s1 != csconv[((unsigned char)*s2)].clower)) {
+            return 0;
+        }
+        
       do {
         s1++; s2++;
       } while ((*s1 == *s2) && (*s1 != '\0'));
