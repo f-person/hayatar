@@ -72,6 +72,7 @@ public enum PreferenceKey: String, CaseIterable {
 public enum SpellCheckDictionary: String, CaseIterable {
     case armenianSpellCheckDictionary
     case martakertHyspell
+    case wooormHyw
     
     public var filename: String {
         switch self {
@@ -79,6 +80,8 @@ public enum SpellCheckDictionary: String, CaseIterable {
             return "arm_spellcheck_dict"
         case .martakertHyspell:
             return "martakert_hyspell"
+        case .wooormHyw:
+            return "wooorm_hyw"
         }
     }
     
@@ -88,6 +91,8 @@ public enum SpellCheckDictionary: String, CaseIterable {
             return "Armenian Spell Checker Dictionary"
         case .martakertHyspell:
             return "Hyspell by martakert"
+        case .wooormHyw:
+            return "hyw by wooorm (դասական)"
         }
     }
     
@@ -97,6 +102,8 @@ public enum SpellCheckDictionary: String, CaseIterable {
             return 47306
         case .martakertHyspell:
             return 65344
+        case .wooormHyw:
+            return 68594
         }
     }
 }
@@ -109,6 +116,7 @@ public typealias SLayout = Layout
 public enum Layout: String, CaseIterable {
     case phonetic
     case western
+    case hmQwerty
     
     public var name: String {
         switch self {
@@ -116,6 +124,8 @@ public enum Layout: String, CaseIterable {
             return "Phonetic"
         case .western:
             return "Western"
+        case .hmQwerty:
+            return "HM QWERTY"
         }
     }
 }
