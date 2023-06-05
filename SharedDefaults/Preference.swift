@@ -117,6 +117,7 @@ public enum Layout: String, CaseIterable {
     case phonetic
     case western
     case hmQwerty
+    case typewriter
     
     public var name: String {
         switch self {
@@ -126,6 +127,8 @@ public enum Layout: String, CaseIterable {
             return "Western"
         case .hmQwerty:
             return "HM QWERTY"
+        case .typewriter:
+            return "Typewriter"
         }
     }
 }

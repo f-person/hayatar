@@ -63,7 +63,7 @@ class ArmenianKeyboardLayoutProvider: StandardKeyboardLayoutProvider {
         
         keyboardLayout.itemRows.insert(
             createShiftKey(context, keyboardLayout),
-            before: .character(isUpperCased ? "Զ" : "զ"),
+            before: layout.characterAfterShift(isUpperCased),
             atRow: 3
         )
         keyboardLayout.itemRows.insert(

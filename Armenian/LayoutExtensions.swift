@@ -33,6 +33,13 @@ public extension Layout {
                 .init(chars: "ասդֆգհձկլ"),
                 .init(chars: "զխծվբնմ")
             ])
+        case .typewriter:
+            return AlphabeticInputSet(rows: [
+                .init(chars: "՝ֆձ֊՞․՛)օէղ"),
+                .init(chars: "ճփբսմուկըթծց»"),
+                .init(chars: "ջվգեանիտհպր"),
+                .init(chars: "ժդչյզլքխշռ")
+            ])
         }
         
     }
@@ -45,6 +52,17 @@ public extension Layout {
             return .character(isUppercased ? "Ծ" : "ծ")
         case .hmQwerty:
             return .character(isUppercased ? "Մ" : "մ")
+        case .typewriter:
+            return .character(isUppercased ? "Ռ" : "ռ")
+        }
+    }
+    
+    func characterAfterShift(_ isUppercased: Bool) -> KeyboardAction {
+        switch self {
+        case .typewriter:
+            return .character(isUppercased ? "Ժ" : "ժ")
+        default:
+            return .character(isUppercased ? "Զ" : "զ")
         }
     }
     
@@ -68,6 +86,11 @@ public extension Layout {
             ]
         case .hmQwerty:
             return ["ե": "և"]
+        case .typewriter:
+            return [
+                "՝": "1", "ֆ": "2", "ձ": "3", "֊": "4", "՞": "5",
+                "․": "6", "՛": "7", ")": "8", "օ": "9", "է": "0","ղ": "և"
+            ]
         }
     }
     
@@ -87,6 +110,13 @@ public extension Layout {
             }
         case .hmQwerty:
             return [:]
+        case .typewriter:
+            switch type {
+            case .alphabetic(_):
+                return [1: 0.0909, 2: 0.0909, 3: 0.08333]
+            case _:
+                return [:]
+            }
         }
     }
 }
