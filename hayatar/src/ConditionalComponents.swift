@@ -35,3 +35,10 @@ struct ConditionalButtonStyle: ViewModifier {
     }
 }
 
+var conditionalNavigationPickerStyle: some PickerStyle {
+    if #available(iOS 16.0, *) {
+        return NavigationLinkPickerStyle()
+    } else {
+        return DefaultPickerStyle()
+    }
+}

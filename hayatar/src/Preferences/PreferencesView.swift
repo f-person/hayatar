@@ -39,7 +39,8 @@ struct PreferencesView: View {
                         ForEach(Layout.allCases, id: \.self) { layout in
                             Text(layout.name).tag(layout.rawValue)
                         }
-                    }.onChange(of: tempSelectedLayout) {
+                    }
+                    .onChange(of: tempSelectedLayout) {
                         defaults.layout.value = $0.rawValue
                     }
                     Toggle(isOn: defaults.displayCalloutHints.binding()) {
@@ -67,9 +68,11 @@ struct PreferencesView: View {
                         ForEach(SpellCheckDictionary.allCases, id: \.self) { dictionary in
                             Text("\(dictionary.name)\n(\(dictionary.totalWords) words)").tag(dictionary.rawValue)
                         }
-                    }.onChange(of: tempSelectedDictionary) {
+                    }
+                    .onChange(of: tempSelectedDictionary) {
                         defaults.spellCheckDictionary.value = $0.rawValue
                     }
+                    .pickerStyle(conditionalNavigationPickerStyle)
                 }
                 
                 SyncSettingsView(defaults: defaults)
