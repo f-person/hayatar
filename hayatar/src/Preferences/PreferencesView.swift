@@ -36,7 +36,8 @@ struct PreferencesView: View {
                 
                 Section(header: Text("Layout")) {
                     Picker("Keyboard Layout", selection: $tempSelectedLayout) {
-                        ForEach(Layout.allCases, id: \.self) { layout in
+                        // Temporarily hide hmQwerty until it's ready
+                        ForEach(Layout.allCases.filter {$0 != Layout.hmQwerty} , id: \.self) { layout in
                             Text(layout.name).tag(layout.rawValue)
                         }
                     }
