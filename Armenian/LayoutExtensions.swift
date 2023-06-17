@@ -113,7 +113,7 @@ public extension Layout {
         case .typewriter:
             switch type {
             case .alphabetic(_):
-                return [1: 0.0909, 2: 0.0909, 3: 0.08333]
+                return [0: 0.0909, 1: 0.0769230769, 2: 0.0909]
             case _:
                 return [:]
             }
