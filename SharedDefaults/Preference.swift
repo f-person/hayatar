@@ -38,6 +38,8 @@ public enum PreferenceKey: String, CaseIterable {
     case layout
     case enableSuggestions
     case commaReplacement
+    case colonReplacement
+    case displayColon
     
     public var defaultValue: Any {
         switch self {
@@ -65,6 +67,10 @@ public enum PreferenceKey: String, CaseIterable {
             return true
         case .commaReplacement:
             return ","
+        case .colonReplacement:
+            return "։"
+        case .displayColon:
+            return true
         }
     }
 }

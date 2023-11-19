@@ -17,17 +17,20 @@ class ArmenianCalloutActionProvider: BaseCalloutActionProvider {
     public init(
         rawLayout: String,
         commaReplacement: String,
+        colonReplacement: String,
         colonCalloutCharacters: String,
         commaCalloutCharacters: String
     ) throws {
         self.layout = Layout(rawValue: rawLayout) ?? Layout(rawValue: PreferenceKey.layout.defaultValue as! String)!
         self.commaReplacement = commaReplacement
+        self.colonReplacement = colonReplacement
         self.colonCalloutCharacters = colonCalloutCharacters
         self.commaCalloutCharacters = commaCalloutCharacters
     }
     
     let layout: Layout
     let commaReplacement: String
+    let colonReplacement: String
     let colonCalloutCharacters: String
     let commaCalloutCharacters: String
     
@@ -59,7 +62,7 @@ class ArmenianCalloutActionProvider: BaseCalloutActionProvider {
                     .character("Իւ"),
                     .character("Ըւ")
                 ]
-            case "։":
+            case colonReplacement:
                 return colonCalloutCharacters.map { .character(String($0)) }
             case commaReplacement:
                 return commaCalloutCharacters.map { .character(String($0)) }

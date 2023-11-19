@@ -53,6 +53,8 @@ public class SharedDefaults {
     public lazy var layout = Preference<String>(storage: storages, key: .layout)
     public lazy var enableSuggestions = Preference<Bool>(storage: storages, key: .enableSuggestions)
     public lazy var commaReplacement = Preference<String>(storage: storages, key: .commaReplacement)
+    public lazy var colonReplacement = Preference<String>(storage: storages, key: .colonReplacement)
+    public lazy var displayColon = Preference<Bool>(storage: storages, key: .displayColon)
     
     public lazy var enableSync: Preference<Bool> = {
         var storage = storages
@@ -69,6 +71,8 @@ public class SharedDefaults {
         displayCalloutHints.value = displayCalloutHints.key.defaultValue as! Bool
         replaceYev.value = replaceYev.key.defaultValue as! Bool
         spellCheckDictionary.value = spellCheckDictionary.key.defaultValue as! String
+        colonReplacement.value = colonReplacement.key.defaultValue as! String
+        displayColon.value = displayColon.key.defaultValue as! Bool
     }
     
     public func syncPreferencesToCloud() {

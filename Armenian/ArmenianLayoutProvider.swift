@@ -18,16 +18,19 @@ class ArmenianKeyboardLayoutProvider: StandardKeyboardLayoutProvider {
         keyboardContext: KeyboardContext,
         inputSetProvider: InputSetProvider,
         layout: Layout,
-        commaCharacter: String
+        commaCharacter: String,
+        colonCharacter: String
     ) {
         self.layout = layout
         self.commaCharacter = commaCharacter
+        self.colonCharacter = colonCharacter
         
         super.init(keyboardContext: keyboardContext, inputSetProvider: inputSetProvider)
     }
     
     let layout: Layout
     let commaCharacter: String
+    let colonCharacter: String
     
     override func keyboardLayout(for context: KeyboardContext) -> KeyboardLayout {
         let keyboardLayout: KeyboardLayout
@@ -126,10 +129,10 @@ class ArmenianKeyboardLayoutProvider: StandardKeyboardLayoutProvider {
         return layout
     }
     
-    private func createBottomRow(_ context: KeyboardContext, _ layout: KeyboardLayout) -> KeyboardLayoutItemRow {
+    private func createBottomRow(_ context: KeyboardContext, _ layout: KeyboardLayout) -> KeyboardLayoutItem.Row {
         let bottomSystemKeyWidth = bottomSystemButtonWidth(for: context)
         
-        let newKeyboardType: KeyboardType
+        let newKeyboardType: Keyboard.KeyboardType
         switch context.keyboardType {
         case .alphabetic:
             newKeyboardType = .numeric
@@ -165,7 +168,7 @@ class ArmenianKeyboardLayoutProvider: StandardKeyboardLayoutProvider {
         )
         let colonCalloutKey = createLayoutItem(
             layout: layout,
-            action: .character("։"),
+            action: .character(colonCharacter),
             width: .percentage(0.1)
         )
         
@@ -201,11 +204,11 @@ class ArmenianKeyboardLayoutProvider: StandardKeyboardLayoutProvider {
     private func createLayoutItem(
         layout: KeyboardLayout,
         action: KeyboardAction,
-        width: KeyboardLayoutItemWidth = .inputPercentage(1)
+        width: KeyboardLayoutItem.Width = .inputPercentage(1)
     ) -> KeyboardLayoutItem {
         return KeyboardLayoutItem(
             action: action,
-            size: KeyboardLayoutItemSize(width: width, height: layout.idealItemHeight),
+            size: KeyboardLayoutItem.Size(width: width, height: layout.idealItemHeight),
             insets: layout.idealItemInsets
         )
     }

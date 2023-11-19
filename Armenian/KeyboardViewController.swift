@@ -34,6 +34,7 @@ class KeyboardViewController: KeyboardInputViewController {
             calloutActionProvider = try ArmenianCalloutActionProvider(
                 rawLayout: defaults.layout.value,
                 commaReplacement: defaults.commaReplacement.value,
+                colonReplacement: defaults.colonReplacement.value,
                 colonCalloutCharacters: defaults.colonCalloutCharacters.value,
                 commaCalloutCharacters: defaults.commaCalloutCharacters.value
             )
@@ -46,7 +47,8 @@ class KeyboardViewController: KeyboardInputViewController {
             keyboardContext: keyboardContext,
             inputSetProvider: inputSetProvider,
             layout: layout,
-            commaCharacter: defaults.commaReplacement.value
+            commaCharacter: defaults.commaReplacement.value,
+            colonCharacter: defaults.colonReplacement.value
         )
         
         keyboardFeedbackSettings = KeyboardFeedbackSettings(

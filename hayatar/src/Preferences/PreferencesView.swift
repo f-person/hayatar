@@ -48,6 +48,7 @@ struct PreferencesView: View {
                         Text("Display callout hints")
                     }
                     LabelledTextField(title: "\",\" replacement (e.g. with \"և\")", text: defaults.commaReplacement.binding())
+                    LabelledTextField(title: "\"։\" replacement (e.g. with \"՞\")", text: defaults.colonReplacement.binding())
                     LabelledTextField(title: "Callout characters for \",\"", text: defaults.commaCalloutCharacters.binding())
                     LabelledTextField(title: "Callout characters for \"։\"", text: defaults.colonCalloutCharacters.binding())
                 }
